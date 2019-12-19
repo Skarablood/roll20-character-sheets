@@ -1,0 +1,21 @@
+
+mixin diceOptions(selected)
+	each val in ['d4', 'd6', 'd8', 'd10', 'd12', 'd20']
+		if selected === val
+			option(data-i18n=val value=val selected)
+		else
+			option(data-i18n=val value=val)
+
+mixin deathSaves(type)
+	-let n = 0;
+	span(data-i18n=type)
+	.line
+	while n < 4
+		input(name=`attr_${type}` type='checkbox' value=n++)
+
+mixin textInput(name)
+	- const placeholder = name.replace('_', ' ');
+	input(name=`attr_${name}` placeholder=placeholder title=`@{${name}}` type='text' value='')
+
+mixin numberInput(name)
+	input(name=`attr_${name}` title=`@{${name}}` type='number' value='')

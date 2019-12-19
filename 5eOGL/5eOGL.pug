@@ -1,0 +1,109 @@
+input(name='attr_version' type='hidden' value='1')
+
+//- TABS
+  =============================
+input.type(name='attr_sheet_type', type='hidden', value='character')
+input(name='attr_toggles', type='hidden', value='')
+
+include src/pug/_mixins.pug
+
+//-NPC SHEET
+  =============================
+
+//- CHARACTER INFO
+  =============================
+.pc
+  .character-info.grid.background
+    img(alt='D&D 5e Logo' src='')
+    .grid.character-names
+      each val in ['character_name', 'player_name']
+        +textInput(val)
+    .grid.class-level
+      +textInput('class')
+      +numberInput('level')
+      .bottom-border
+      h2(data-i18n='class & level')
+    .grid.race-background
+      each val in ['race', 'background', 'alignment', 'experience']
+        +textInput(val)
+      .bottom-border
+      each val in ['race', 'background', 'alignment', 'experience']
+        h2(data-i18n=val)
+  
+  .inspiration-row.grid.background
+    .inspiration.border
+      h1(data-i18n='inspiration')
+      input(name='attr_inspiration' type='checkbox' value='')
+    .initiative.border
+      button(data-i18n='initiative' name='roll_initiative' type='roll' value='')
+      +textInput('initiative')
+    .armor.border
+      button(data-i18n='armor' name='roll_armor' type='roll' value='')
+      +numberInput('armor_class')
+      span(data-i18n='class')
+    .hit-points.border
+      h1(data-i18n='hit points')
+      +numberInput('hit_points')
+      span(data-i18n='current')
+      span /
+      +numberInput('hit_points_max')
+      span(data-i18n='max')
+      .divider(style='width: 1px; background-color: black;')
+      +numberInput('hit_points_temp')
+      span(data-i18n='temp')
+    .hit-dice.border
+      button(data-i18n='hit dice' name='roll_hit-dice' type='roll' value='')
+      select(name='attr_hit_die' value='d6')
+        +diceOptions('d6')
+      input(name='attr_hit_dice' type='number' value='')
+      span(data-i18n='current')
+      span /
+      input(name='attr_hit_dice_max' type='number' value='') 
+      span(data-i18n='max')
+    .death-saves.border
+      button(data-i18n='death saves' name='roll_death-save' type='roll' value='')
+      .row
+        +deathSaves('success')
+      .row
+        +deathSaves('fail')
+
+  .column.background
+    ABILITIES
+  .column.background
+    SKILLS
+  .column.background
+    EVERYTHING ELSE
+
+
+
+
+
+//-FOOTER
+  =============================
+footer
+  span Version 
+  span(name='attr_version')
+
+//-HIDDEN ATTRIBUTES
+  =============================
+
+//-ROLL TEMPLATE
+  =============================
+.rolltemplates
+  rolltemplate.sheet-rolltemplate-rolls
+    // - Display a header on the template -
+    .sheet-template-header
+      | {{#header}}{{header}}{{/header}}
+    // - Display the dice roll in the template -
+    .sheet-template-body
+      | {{#dice}}
+      .sheet-template-row {{dice}}
+      | {/dice}}
+      // - Display a description. This is great for text included with a roll -
+      | {{#desc}}
+      .sheet-template-row
+        span.sheet-template-desc
+      | {{/desc}}
+
+//- SCRIPTS
+include src/js/scripts.js

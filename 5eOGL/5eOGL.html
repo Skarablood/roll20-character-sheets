@@ -1,0 +1,102 @@
+
+<input name="attr_version" type="hidden" value="1"/>
+<input class="type" name="attr_sheet_type" type="hidden" value="character"/>
+<input name="attr_toggles" type="hidden" value=""/>
+<div class="pc">
+  <div class="character-info grid background"><img alt="D&amp;D 5e Logo" src=""/>
+    <div class="grid character-names">
+      <input name="attr_character_name" placeholder="character name" title="@{character_name}" type="text" value=""/>
+      <input name="attr_player_name" placeholder="player name" title="@{player_name}" type="text" value=""/>
+    </div>
+    <div class="grid class-level">
+      <input name="attr_class" placeholder="class" title="@{class}" type="text" value=""/>
+      <input name="attr_level" title="@{level}" type="number" value=""/>
+      <div class="bottom-border"></div>
+      <h2 data-i18n="class &amp; level"></h2>
+    </div>
+    <div class="grid race-background">
+      <input name="attr_race" placeholder="race" title="@{race}" type="text" value=""/>
+      <input name="attr_background" placeholder="background" title="@{background}" type="text" value=""/>
+      <input name="attr_alignment" placeholder="alignment" title="@{alignment}" type="text" value=""/>
+      <input name="attr_experience" placeholder="experience" title="@{experience}" type="text" value=""/>
+      <div class="bottom-border"></div>
+      <h2 data-i18n="race"></h2>
+      <h2 data-i18n="background"></h2>
+      <h2 data-i18n="alignment"></h2>
+      <h2 data-i18n="experience"></h2>
+    </div>
+  </div>
+  <div class="inspiration-row grid background">
+    <div class="inspiration border">
+      <h1 data-i18n="inspiration"></h1>
+      <input name="attr_inspiration" type="checkbox" value=""/>
+    </div>
+    <div class="initiative border">
+      <button data-i18n="initiative" name="roll_initiative" type="roll" value=""></button>
+      <input name="attr_initiative" placeholder="initiative" title="@{initiative}" type="text" value=""/>
+    </div>
+    <div class="armor border">
+      <button data-i18n="armor" name="roll_armor" type="roll" value=""></button>
+      <input name="attr_armor_class" title="@{armor_class}" type="number" value=""/><span data-i18n="class"></span>
+    </div>
+    <div class="hit-points border">
+      <h1 data-i18n="hit points"></h1>
+      <input name="attr_hit_points" title="@{hit_points}" type="number" value=""/><span data-i18n="current"></span><span>/</span>
+      <input name="attr_hit_points_max" title="@{hit_points_max}" type="number" value=""/><span data-i18n="max"></span>
+      <div class="divider" style="width: 1px; background-color: black;"></div>
+      <input name="attr_hit_points_temp" title="@{hit_points_temp}" type="number" value=""/><span data-i18n="temp"></span>
+    </div>
+    <div class="hit-dice border">
+      <button data-i18n="hit dice" name="roll_hit-dice" type="roll" value=""></button>
+      <select name="attr_hit_die" value="d6">
+        <option data-i18n="d4" value="d4"></option>
+        <option data-i18n="d6" value="d6" selected="selected"></option>
+        <option data-i18n="d8" value="d8"></option>
+        <option data-i18n="d10" value="d10"></option>
+        <option data-i18n="d12" value="d12"></option>
+        <option data-i18n="d20" value="d20"></option>
+      </select>
+      <input name="attr_hit_dice" type="number" value=""/><span data-i18n="current"></span><span>/</span>
+      <input name="attr_hit_dice_max" type="number" value=""/><span data-i18n="max"></span>
+    </div>
+    <div class="death-saves border">
+      <button data-i18n="death saves" name="roll_death-save" type="roll" value=""></button>
+      <div class="row"><span data-i18n="success"></span>
+        <div class="line"></div>
+        <input name="attr_success" type="checkbox" value="0"/>
+        <input name="attr_success" type="checkbox" value="1"/>
+        <input name="attr_success" type="checkbox" value="2"/>
+        <input name="attr_success" type="checkbox" value="3"/>
+      </div>
+      <div class="row"><span data-i18n="fail"></span>
+        <div class="line"></div>
+        <input name="attr_fail" type="checkbox" value="0"/>
+        <input name="attr_fail" type="checkbox" value="1"/>
+        <input name="attr_fail" type="checkbox" value="2"/>
+        <input name="attr_fail" type="checkbox" value="3"/>
+      </div>
+    </div>
+  </div>
+  <div class="column background">
+    <ABILITIES></ABILITIES>
+  </div>
+  <div class="column background">
+    <SKILLS></SKILLS>
+  </div>
+  <div class="column background">
+    <EVERYTHING>ELSE</EVERYTHING>
+  </div>
+</div>
+<footer><span>Version </span><span name="attr_version"></span></footer>
+<div class="rolltemplates">
+  <rolltemplate class="sheet-rolltemplate-rolls">
+    <!-- - Display a header on the template --->
+    <div class="sheet-template-header">{{#header}}{{header}}{{/header}}</div>
+    <!-- - Display the dice roll in the template --->
+    <div class="sheet-template-body">{{#dice}}
+      <div class="sheet-template-row">{{dice}}</div>{/dice}}
+      <!-- - Display a description. This is great for text included with a roll --->{{#desc}}
+      <div class="sheet-template-row"><span class="sheet-template-desc"></span></div>{{/desc}}
+    </div>
+  </rolltemplate>
+</div>
