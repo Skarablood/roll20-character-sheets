@@ -33,7 +33,7 @@ include src/pug/_mixins.pug
   .inspiration-row.grid.background
     .inspiration.border
       h1(data-i18n='inspiration')
-      input(name='attr_inspiration' type='checkbox' value='')
+      input(name='attr_inspiration' type='checkbox')
     .initiative.border
       button(data-i18n='initiative' name='roll_initiative' type='roll' value='')
       +textInput('initiative')
@@ -42,7 +42,7 @@ include src/pug/_mixins.pug
       +numberInput('armor_class')
       span(data-i18n='class')
     .hit-points.border
-      h1(data-i18n='hit points')
+      button(data-i18n='hit points')
       +numberInput('hit_points')
       span(data-i18n='current')
       span /
