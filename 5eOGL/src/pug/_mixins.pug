@@ -1,16 +1,17 @@
 
 mixin deathSaves(type)
-	-let n = 0;
-	span(data-i18n=type)
-	.line
-	while n < 4
-		label(data-i18n-title=`toggle ${type} death save` title=`toggle ${type} death save`)
-			input(name=`attr_${type}` type='checkbox' value=n++)
+	-let n = 1;
+	h2(data-i18n=type)
+	.grid(class=`${type}`)
+		.line
+		while n < 4
+			label(data-i18n-title=`toggle ${type} death save` title=`toggle ${type} death save`)
+				input(name=`attr_${type}` type='checkbox' value=n++)
 
 mixin textInput(name)
 	- const attrName = name.replace(/ /g, '_');
 	label(data-i18n-title=`enter ${name}` title=`enter ${name}`)
-		input(data-i18n-placeholder=attrName name=`attr_${attrName}` placeholder=attrName title=`@{${attrName}}` type='text' value='')
+		input(data-i18n-placeholder=attrName name=`attr_${attrName}` placeholder=name title=`@{${attrName}}` type='text' value='')
 
 mixin numberInput(name)
 	- const attrName = name.replace(/ /g, '_');

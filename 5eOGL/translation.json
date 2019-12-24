@@ -84,4 +84,6 @@
 	,"ability":"ability"
 	,"performance":"performance"
 	,"persuasion":"persuasion"
+	,"toggle inspiration":"toggle inspiration"
+	,"enter hit points":"enter hit points"
 }

@@ -25,50 +25,61 @@ include src/pug/_mixins.pug
     .grid.class-level
       +textInput('class')
       +numberInput('level')
-      .bottom-border
+      .border-bottom
       h2(data-i18n='class & level')
     .grid.race-background
       each val in ['race', 'background', 'alignment', 'experience']
         +textInput(val)
-      .bottom-border
+      .border-bottom
       each val in ['race', 'background', 'alignment', 'experience']
         h2(data-i18n=val)
   
   .inspiration-row.grid.background
     .inspiration.border
-      h1(data-i18n='inspiration')
-      +checkboxInput(`inspiration`)
+      .header
+        h1(data-i18n='inspiration')
+      .body
+        +checkboxInput(`inspiration`)
     .initiative.border
-      +rollButton('initiative')
-      +textInput('initiative')
+      .header
+        +rollButton('initiative')
+      .body
+        +textInput('initiative')
     .armor.border
-      button(data-i18n='armor' name='roll_armor' type='roll' value='')
-      +numberInput('armor class')
-      span(data-i18n='class')
+      .header
+        button(data-i18n='armor' name='roll_armor' type='roll' value='')
+      .body
+        +numberInput('armor class')
+        h1(data-i18n='class')
     .hit-points.border
-      h1(data-i18n='hit points')
-      +numberInput('hit points')
-      span(data-i18n='current')
-      span /
-      +numberInput('hit points max')
-      span(data-i18n='max')
-      .divider(style='width: 1px; background-color: black;')
-      +numberInput('hit points temp')
-      span(data-i18n='temp')
+      .header
+        h1(data-i18n='hit points')
+      .body.grid
+        .current.grid
+          h2(data-i18n='current')
+          +numberInput('hit points')
+          span /
+          h2(data-i18n='max')
+          +numberInput('hit points max')
+        .temp.grid
+          h2(data-i18n='temp')
+          +numberInput('hit points temp')
     .hit-dice.border
-      +rollButton('hit dice')
-      select(name='attr_hit_die' value='d6')
-        +diceOptions('d6')
-      +numberInput('hit dice')
-      span(data-i18n='current')
-      span /
-      +numberInput('hit dice max')
-      span(data-i18n='max')
+      .header.grid
+        +rollButton('hit dice')
+        select(name='attr_hit_die' title='@{hit_die}' value='d6')
+          +diceOptions('d6')
+      .body.grid
+        h2(data-i18n='current')
+        +numberInput('hit dice')
+        span /
+        h2(data-i18n='max')
+        +numberInput('hit dice max')
     .death-saves.border
-      +rollButton('death saves')
-      .row
+      .header
+        +rollButton('death saves')
+      .body.grid
         +deathSaves('success')
-      .row
         +deathSaves('fail')
 
   .body
@@ -94,7 +105,7 @@ include src/pug/_mixins.pug
         +numberInput('passive perception')
 
       .skills.border
-        h1.bottom-border(data-i18n='skills')
+        h1.border-bottom(data-i18n='skills')
 
         .skill-headers
           h2(data-i18n='Prof/Exp')
