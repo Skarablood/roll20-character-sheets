@@ -89,7 +89,7 @@ textarea {
   white-space: pre-line; }
 
 .charsheet {
-  min-width: 30em; }
+  min-width: 850px; }
 
 /* HIDE DIFFERENT SHEET TYPES BY DEFAULT
    ============================= */
@@ -149,3 +149,61 @@ div.sheet-inspiration-row {
   grid-template-columns: 1fr 2fr 2fr 5fr 3fr 4fr; }
   div.sheet-inspiration-row h1 {
     font-size: 0.8em; }
+
+div.sheet-body div.sheet-column {
+  display: inline-block; }
+  div.sheet-body div.sheet-column:nth-of-type(1) {
+    width: 20%; }
+  div.sheet-body div.sheet-column:nth-of-type(2) {
+    width: 38%; }
+  div.sheet-body div.sheet-column:nth-of-type(3) {
+    width: 30%; }
+
+/* The switch - the box around the slider */
+.sheet-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px; }
+
+/* Hide default HTML checkbox */
+.sheet-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0; }
+
+/* The slider */
+.sheet-slider {
+  -webkit-transition: .4s;
+  background-color: #ccc;
+  border-radius: 34px;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s; }
+
+.sheet-slider:before {
+  -webkit-transition: .4s;
+  background-color: white;
+  border-radius: 50%;
+  bottom: 4px;
+  content: "";
+  height: 16px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 16px; }
+
+input:checked + .sheet-slider {
+  background-color: black; }
+
+input:focus + .sheet-slider {
+  box-shadow: 0 0 1px black; }
+
+input:checked + .sheet-slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px); }

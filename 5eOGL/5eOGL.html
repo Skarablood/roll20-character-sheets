@@ -5,20 +5,36 @@
 <div class="pc">
   <div class="character-info grid background"><img alt="D&amp;D 5e Logo" src=""/>
     <div class="grid character-names">
-      <input name="attr_character_name" placeholder="character name" title="@{character_name}" type="text" value=""/>
-      <input name="attr_player_name" placeholder="player name" title="@{player_name}" type="text" value=""/>
+      <label data-i18n-title="enter character_name" title="enter character_name">
+        <input data-i18n-placeholder="character_name" name="attr_character_name" placeholder="character_name" title="@{character_name}" type="text" value=""/>
+      </label>
+      <label data-i18n-title="enter player_name" title="enter player_name">
+        <input data-i18n-placeholder="player_name" name="attr_player_name" placeholder="player_name" title="@{player_name}" type="text" value=""/>
+      </label>
     </div>
     <div class="grid class-level">
-      <input name="attr_class" placeholder="class" title="@{class}" type="text" value=""/>
-      <input name="attr_level" title="@{level}" type="number" value=""/>
+      <label data-i18n-title="enter class" title="enter class">
+        <input data-i18n-placeholder="class" name="attr_class" placeholder="class" title="@{class}" type="text" value=""/>
+      </label>
+      <label data-i18n-title="enter level" title="enter level">
+        <input name="attr_level" title="@{level}" type="number" value=""/>
+      </label>
       <div class="bottom-border"></div>
       <h2 data-i18n="class &amp; level"></h2>
     </div>
     <div class="grid race-background">
-      <input name="attr_race" placeholder="race" title="@{race}" type="text" value=""/>
-      <input name="attr_background" placeholder="background" title="@{background}" type="text" value=""/>
-      <input name="attr_alignment" placeholder="alignment" title="@{alignment}" type="text" value=""/>
-      <input name="attr_experience" placeholder="experience" title="@{experience}" type="text" value=""/>
+      <label data-i18n-title="enter race" title="enter race">
+        <input data-i18n-placeholder="race" name="attr_race" placeholder="race" title="@{race}" type="text" value=""/>
+      </label>
+      <label data-i18n-title="enter background" title="enter background">
+        <input data-i18n-placeholder="background" name="attr_background" placeholder="background" title="@{background}" type="text" value=""/>
+      </label>
+      <label data-i18n-title="enter alignment" title="enter alignment">
+        <input data-i18n-placeholder="alignment" name="attr_alignment" placeholder="alignment" title="@{alignment}" type="text" value=""/>
+      </label>
+      <label data-i18n-title="enter experience" title="enter experience">
+        <input data-i18n-placeholder="experience" name="attr_experience" placeholder="experience" title="@{experience}" type="text" value=""/>
+      </label>
       <div class="bottom-border"></div>
       <h2 data-i18n="race"></h2>
       <h2 data-i18n="background"></h2>
@@ -29,22 +45,34 @@
   <div class="inspiration-row grid background">
     <div class="inspiration border">
       <h1 data-i18n="inspiration"></h1>
-      <input name="attr_inspiration" type="checkbox"/>
+      <label data-i18n-title="toggle inspiration" title="enter inspiration">
+        <input name="attr_inspiration" title="@{inspiration}" type="checkbox" value="save"/>
+      </label>
     </div>
     <div class="initiative border">
       <button data-i18n="initiative" name="roll_initiative" type="roll" value=""></button>
-      <input name="attr_initiative" placeholder="initiative" title="@{initiative}" type="text" value=""/>
+      <label data-i18n-title="enter initiative" title="enter initiative">
+        <input data-i18n-placeholder="initiative" name="attr_initiative" placeholder="initiative" title="@{initiative}" type="text" value=""/>
+      </label>
     </div>
     <div class="armor border">
       <button data-i18n="armor" name="roll_armor" type="roll" value=""></button>
-      <input name="attr_armor_class" title="@{armor_class}" type="number" value=""/><span data-i18n="class"></span>
+      <label data-i18n-title="enter armor class" title="enter armor class">
+        <input name="attr_armor_class" title="@{armor_class}" type="number" value=""/>
+      </label><span data-i18n="class"></span>
     </div>
     <div class="hit-points border">
       <h1 data-i18n="hit points"></h1>
-      <input name="attr_hit_points" title="@{hit_points}" type="number" value=""/><span data-i18n="current"></span><span>/</span>
-      <input name="attr_hit_points_max" title="@{hit_points_max}" type="number" value=""/><span data-i18n="max"></span>
+      <label data-i18n-title="enter hit points" title="enter hit points">
+        <input name="attr_hit_points" title="@{hit_points}" type="number" value=""/>
+      </label><span data-i18n="current"></span><span>/</span>
+      <label data-i18n-title="enter hit points max" title="enter hit points max">
+        <input name="attr_hit_points_max" title="@{hit_points_max}" type="number" value=""/>
+      </label><span data-i18n="max"></span>
       <div class="divider" style="width: 1px; background-color: black;"></div>
-      <input name="attr_hit_points_temp" title="@{hit_points_temp}" type="number" value=""/><span data-i18n="temp"></span>
+      <label data-i18n-title="enter hit points temp" title="enter hit points temp">
+        <input name="attr_hit_points_temp" title="@{hit_points_temp}" type="number" value=""/>
+      </label><span data-i18n="temp"></span>
     </div>
     <div class="hit-dice border">
       <button data-i18n="hit dice" name="roll_hit-dice" type="roll" value=""></button>
@@ -56,35 +84,166 @@
         <option data-i18n="d12" value="d12"></option>
         <option data-i18n="d20" value="d20"></option>
       </select>
-      <input name="attr_hit_dice" type="number" value=""/><span data-i18n="current"></span><span>/</span>
-      <input name="attr_hit_dice_max" type="number" value=""/><span data-i18n="max"></span>
+      <label data-i18n-title="enter hit dice" title="enter hit dice">
+        <input name="attr_hit_dice" title="@{hit_dice}" type="number" value=""/>
+      </label><span data-i18n="current"></span><span>/
+        <label data-i18n-title="enter hit dice max" title="enter hit dice max">
+          <input name="attr_hit_dice_max" title="@{hit_dice_max}" type="number" value=""/>
+        </label></span><span data-i18n="max"></span>
     </div>
     <div class="death-saves border">
       <button data-i18n="death saves" name="roll_death-save" type="roll" value=""></button>
       <div class="row"><span data-i18n="success"></span>
         <div class="line"></div>
-        <input name="attr_success" type="checkbox" value="0"/>
-        <input name="attr_success" type="checkbox" value="1"/>
-        <input name="attr_success" type="checkbox" value="2"/>
-        <input name="attr_success" type="checkbox" value="3"/>
+        <label data-i18n-title="toggle success death save" title="toggle success death save">
+          <input name="attr_success" type="checkbox" value="0"/>
+        </label>
+        <label data-i18n-title="toggle success death save" title="toggle success death save">
+          <input name="attr_success" type="checkbox" value="1"/>
+        </label>
+        <label data-i18n-title="toggle success death save" title="toggle success death save">
+          <input name="attr_success" type="checkbox" value="2"/>
+        </label>
+        <label data-i18n-title="toggle success death save" title="toggle success death save">
+          <input name="attr_success" type="checkbox" value="3"/>
+        </label>
       </div>
       <div class="row"><span data-i18n="fail"></span>
         <div class="line"></div>
-        <input name="attr_fail" type="checkbox" value="0"/>
-        <input name="attr_fail" type="checkbox" value="1"/>
-        <input name="attr_fail" type="checkbox" value="2"/>
-        <input name="attr_fail" type="checkbox" value="3"/>
+        <label data-i18n-title="toggle fail death save" title="toggle fail death save">
+          <input name="attr_fail" type="checkbox" value="0"/>
+        </label>
+        <label data-i18n-title="toggle fail death save" title="toggle fail death save">
+          <input name="attr_fail" type="checkbox" value="1"/>
+        </label>
+        <label data-i18n-title="toggle fail death save" title="toggle fail death save">
+          <input name="attr_fail" type="checkbox" value="2"/>
+        </label>
+        <label data-i18n-title="toggle fail death save" title="toggle fail death save">
+          <input name="attr_fail" type="checkbox" value="3"/>
+        </label>
       </div>
     </div>
   </div>
-  <div class="column background">
-    <ABILITIES></ABILITIES>
-  </div>
-  <div class="column background">
-    <SKILLS></SKILLS>
-  </div>
-  <div class="column background">
-    <EVERYTHING>ELSE</EVERYTHING>
+  <div class="body">
+    <div class="ability column background">
+      <div class="border strength">
+        <button data-i18n="strength" name="roll_strength" value=""></button>
+        <label data-i18n-title="enter strength modifier" title="enter strength modifier">
+          <input data-i18n-placeholder="strength_modifier" name="attr_strength_modifier" placeholder="strength_modifier" title="@{strength_modifier}" type="text" value=""/>
+        </label>
+        <label data-i18n-title="enter strength score" title="enter strength score">
+          <input name="attr_strength_score" title="@{strength_score}" type="number" value=""/>
+        </label>
+        <label data-i18n-title="toggle strength saving throw proficiency" title="enter strength saving throw proficiency">
+          <input name="attr_strength_saving_throw_proficiency" title="@{strength_saving_throw_proficiency}" type="checkbox" value="save"/>
+        </label>
+        <label data-i18n-title="enter strength saving throw modifier" title="enter strength saving throw modifier">
+          <input name="attr_strength_saving_throw_modifier" title="@{strength_saving_throw_modifier}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="border dexterity">
+        <button data-i18n="dexterity" name="roll_dexterity" value=""></button>
+        <label data-i18n-title="enter dexterity modifier" title="enter dexterity modifier">
+          <input data-i18n-placeholder="dexterity_modifier" name="attr_dexterity_modifier" placeholder="dexterity_modifier" title="@{dexterity_modifier}" type="text" value=""/>
+        </label>
+        <label data-i18n-title="enter dexterity score" title="enter dexterity score">
+          <input name="attr_dexterity_score" title="@{dexterity_score}" type="number" value=""/>
+        </label>
+        <label data-i18n-title="toggle dexterity saving throw proficiency" title="enter dexterity saving throw proficiency">
+          <input name="attr_dexterity_saving_throw_proficiency" title="@{dexterity_saving_throw_proficiency}" type="checkbox" value="save"/>
+        </label>
+        <label data-i18n-title="enter dexterity saving throw modifier" title="enter dexterity saving throw modifier">
+          <input name="attr_dexterity_saving_throw_modifier" title="@{dexterity_saving_throw_modifier}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="border constitution">
+        <button data-i18n="constitution" name="roll_constitution" value=""></button>
+        <label data-i18n-title="enter constitution modifier" title="enter constitution modifier">
+          <input data-i18n-placeholder="constitution_modifier" name="attr_constitution_modifier" placeholder="constitution_modifier" title="@{constitution_modifier}" type="text" value=""/>
+        </label>
+        <label data-i18n-title="enter constitution score" title="enter constitution score">
+          <input name="attr_constitution_score" title="@{constitution_score}" type="number" value=""/>
+        </label>
+        <label data-i18n-title="toggle constitution saving throw proficiency" title="enter constitution saving throw proficiency">
+          <input name="attr_constitution_saving_throw_proficiency" title="@{constitution_saving_throw_proficiency}" type="checkbox" value="save"/>
+        </label>
+        <label data-i18n-title="enter constitution saving throw modifier" title="enter constitution saving throw modifier">
+          <input name="attr_constitution_saving_throw_modifier" title="@{constitution_saving_throw_modifier}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="border intelligence">
+        <button data-i18n="intelligence" name="roll_intelligence" value=""></button>
+        <label data-i18n-title="enter intelligence modifier" title="enter intelligence modifier">
+          <input data-i18n-placeholder="intelligence_modifier" name="attr_intelligence_modifier" placeholder="intelligence_modifier" title="@{intelligence_modifier}" type="text" value=""/>
+        </label>
+        <label data-i18n-title="enter intelligence score" title="enter intelligence score">
+          <input name="attr_intelligence_score" title="@{intelligence_score}" type="number" value=""/>
+        </label>
+        <label data-i18n-title="toggle intelligence saving throw proficiency" title="enter intelligence saving throw proficiency">
+          <input name="attr_intelligence_saving_throw_proficiency" title="@{intelligence_saving_throw_proficiency}" type="checkbox" value="save"/>
+        </label>
+        <label data-i18n-title="enter intelligence saving throw modifier" title="enter intelligence saving throw modifier">
+          <input name="attr_intelligence_saving_throw_modifier" title="@{intelligence_saving_throw_modifier}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="border wisdom">
+        <button data-i18n="wisdom" name="roll_wisdom" value=""></button>
+        <label data-i18n-title="enter wisdom modifier" title="enter wisdom modifier">
+          <input data-i18n-placeholder="wisdom_modifier" name="attr_wisdom_modifier" placeholder="wisdom_modifier" title="@{wisdom_modifier}" type="text" value=""/>
+        </label>
+        <label data-i18n-title="enter wisdom score" title="enter wisdom score">
+          <input name="attr_wisdom_score" title="@{wisdom_score}" type="number" value=""/>
+        </label>
+        <label data-i18n-title="toggle wisdom saving throw proficiency" title="enter wisdom saving throw proficiency">
+          <input name="attr_wisdom_saving_throw_proficiency" title="@{wisdom_saving_throw_proficiency}" type="checkbox" value="save"/>
+        </label>
+        <label data-i18n-title="enter wisdom saving throw modifier" title="enter wisdom saving throw modifier">
+          <input name="attr_wisdom_saving_throw_modifier" title="@{wisdom_saving_throw_modifier}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="border charisma">
+        <button data-i18n="charisma" name="roll_charisma" value=""></button>
+        <label data-i18n-title="enter charisma modifier" title="enter charisma modifier">
+          <input data-i18n-placeholder="charisma_modifier" name="attr_charisma_modifier" placeholder="charisma_modifier" title="@{charisma_modifier}" type="text" value=""/>
+        </label>
+        <label data-i18n-title="enter charisma score" title="enter charisma score">
+          <input name="attr_charisma_score" title="@{charisma_score}" type="number" value=""/>
+        </label>
+        <label data-i18n-title="toggle charisma saving throw proficiency" title="enter charisma saving throw proficiency">
+          <input name="attr_charisma_saving_throw_proficiency" title="@{charisma_saving_throw_proficiency}" type="checkbox" value="save"/>
+        </label>
+        <label data-i18n-title="enter charisma saving throw modifier" title="enter charisma saving throw modifier">
+          <input name="attr_charisma_saving_throw_modifier" title="@{charisma_saving_throw_modifier}" type="number" value=""/>
+        </label>
+      </div>
+      <fieldset class="repeating_ability"></fieldset>
+    </div>
+    <div class="column background">
+      <div class="speed">
+        <h1 data-i18n="walking speed"></h1>
+        <label data-i18n-title="enter walking speed" title="enter walking speed">
+          <input name="attr_walking_speed" title="@{walking_speed}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="speed">
+        <h1 data-i18n="passive perception"></h1>
+        <label data-i18n-title="enter passive erception" title="enter passive erception">
+          <input name="attr_passive_erception" title="@{passive_erception}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="skills border">
+        <h1 class="bottom-border" data-i18n="skills"></h1>
+        <div class="skill-column">
+          <h2 data-i18n="Prof/Exp"></h2>
+        </div>
+        <div class="skill-column"></div>
+        <div class="skill-column"></div>
+      </div>
+    </div>
+    <div class="column background">
+      <EVERYTHING>ELSE</EVERYTHING>
+    </div>
   </div>
 </div>
 <footer><span>Version </span><span name="attr_version"></span></footer>
