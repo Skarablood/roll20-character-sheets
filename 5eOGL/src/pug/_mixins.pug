@@ -1,11 +1,4 @@
 
-mixin diceOptions(selected)
-	each val in ['d4', 'd6', 'd8', 'd10', 'd12', 'd20']
-		if selected === val
-			option(data-i18n=val value=val selected)
-		else
-			option(data-i18n=val value=val)
-
 mixin deathSaves(type)
 	-let n = 0;
 	span(data-i18n=type)
@@ -27,4 +20,21 @@ mixin numberInput(name)
 mixin checkboxInput(name)
 	- const attrName = name.replace(/ /g, '_');
 	label(data-i18n-title=`toggle ${name}` title=`enter ${name}`)
-		input(name=`attr_${attrName}` title=`@{${attrName}}` type='checkbox' value='save')
+		input(name=`attr_${attrName}` title=`@{${attrName}}` type='checkbox' value=name)
+
+mixin rollButton(name)
+	- const attrName = name.replace(/ /g, '-');
+	button(data-i18n=name name=`roll_${attrName}` type='roll' value='')
+
+mixin abilitySelect(name)
+	- const attrName = name.replace(/ /g, '_');
+	select(name=`attr_${attrName}_ability_modifier` title=`@{${attrName}_ability_modifier}`)
+		each val in abilitiesScores
+			option(data-i18n=val value=`${val}_modifier`)
+
+mixin diceOptions(selected)
+	each val in ['d4', 'd6', 'd8', 'd10', 'd12', 'd20']
+		if selected === val
+			option(data-i18n=val value=val selected)
+		else
+			option(data-i18n=val value=val)

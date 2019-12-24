@@ -227,8 +227,11 @@ div.sheet-inspiration-row {
 }
 
 div.sheet-body {
+    margin-top: 1%;
+
     div.sheet-column {
         display: inline-block;
+        vertical-align: top;
 
         &:nth-of-type(1) {
             width: 20%;

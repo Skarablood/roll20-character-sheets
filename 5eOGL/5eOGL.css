@@ -150,14 +150,17 @@ div.sheet-inspiration-row {
   div.sheet-inspiration-row h1 {
     font-size: 0.8em; }
 
-div.sheet-body div.sheet-column {
-  display: inline-block; }
-  div.sheet-body div.sheet-column:nth-of-type(1) {
-    width: 20%; }
-  div.sheet-body div.sheet-column:nth-of-type(2) {
-    width: 38%; }
-  div.sheet-body div.sheet-column:nth-of-type(3) {
-    width: 30%; }
+div.sheet-body {
+  margin-top: 1%; }
+  div.sheet-body div.sheet-column {
+    display: inline-block;
+    vertical-align: top; }
+    div.sheet-body div.sheet-column:nth-of-type(1) {
+      width: 20%; }
+    div.sheet-body div.sheet-column:nth-of-type(2) {
+      width: 38%; }
+    div.sheet-body div.sheet-column:nth-of-type(3) {
+      width: 30%; }
 
 /* The switch - the box around the slider */
 .sheet-switch {

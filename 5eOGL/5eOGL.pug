@@ -7,6 +7,10 @@ input(name='attr_toggles', type='hidden', value='')
 
 include src/pug/_mixins.pug
 
+- const skillsList = ['acrobatics','animal handling','arcana','athletics','deception','history','insight','intimidation','investigation','medicine','nature','perception','performance','persuasion','religion','sleight of hand','stealth','survival'];
+- const abilitiesScores = ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'];
+- const proficiencyTypes = ['armor', 'language', 'tool', 'other', 'weapon'];
+
 //-NPC SHEET
   =============================
 
@@ -33,9 +37,9 @@ include src/pug/_mixins.pug
   .inspiration-row.grid.background
     .inspiration.border
       h1(data-i18n='inspiration')
-      +checkboxInput(`inspiration`)
+      +checkboxInput(`inspiration`, )
     .initiative.border
-      button(data-i18n='initiative' name='roll_initiative' type='roll' value='')
+      +rollButton('initiative')
       +textInput('initiative')
     .armor.border
       button(data-i18n='armor' name='roll_armor' type='roll' value='')
@@ -52,7 +56,7 @@ include src/pug/_mixins.pug
       +numberInput('hit points temp')
       span(data-i18n='temp')
     .hit-dice.border
-      button(data-i18n='hit dice' name='roll_hit-dice' type='roll' value='')
+      +rollButton('hit dice')
       select(name='attr_hit_die' value='d6')
         +diceOptions('d6')
       +numberInput('hit dice')
@@ -61,48 +65,16 @@ include src/pug/_mixins.pug
        +numberInput('hit dice max')
       span(data-i18n='max')
     .death-saves.border
-      button(data-i18n='death saves' name='roll_death-save' type='roll' value='')
+      +rollButton('death saves')
       .row
         +deathSaves('success')
       .row
         +deathSaves('fail')
 
   .body
-    .ability.column.background
-      - const abilitiesScores = ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma']
-      each val in abilitiesScores
-        .border(class=`${val.toLowerCase()}`)
-          button(data-i18n=val name=`roll_${val}` value='')
-          +textInput(`${val} modifier`)
-          +numberInput(`${val} score`)
-          +checkboxInput(`${val} saving throw proficiency`)
-          +numberInput(`${val} saving throw modifier`)
-
-      fieldset(class='repeating_ability')
-
-
-    .column.background
-      .speed
-        h1(data-i18n='walking speed')
-        +numberInput('walking speed')
-
-      .speed
-        h1(data-i18n='passive perception')
-        +numberInput('passive erception')
-
-      .skills.border
-        h1.bottom-border(data-i18n='skills')
-
-        .skill-column
-          h2(data-i18n='Prof/Exp')
-
-        .skill-column
-
-        .skill-column
 
     .column.background
       EVERYTHING ELSE
-
 
 
 
