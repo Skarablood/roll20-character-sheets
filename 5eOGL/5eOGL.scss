@@ -298,13 +298,31 @@ div.sheet-inspiration-row {
             div.sheet-grid {
                grid-template-columns: 1fr 1fr 1fr;
                grid-row-gap: 2%;
+
+               label {
+                    grid-row: 1;
+                    margin-top: 5%;
+
+                    @for $i from 1 to 4 {
+                        &:nth-of-type(#{$i}) {
+                            grid-column: $i;
+                        }
+                    }
+                }
+
+                input {
+                    margin-left: 40%;
+                }
             }
 
             div.sheet-line {
-                grid-column: 1 / 4;
+                background-color: $black;
+                grid-area: 1 / 1 / 1 / 4;
                 height: 5px;
                 position: relative;
+                top: 48%;
                 width: 100%;
+                z-index: -1;
             }
         }
     }
