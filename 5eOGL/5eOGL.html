@@ -86,10 +86,10 @@
       </select>
       <label data-i18n-title="enter hit dice" title="enter hit dice">
         <input name="attr_hit_dice" title="@{hit_dice}" type="number" value=""/>
-      </label><span data-i18n="current"></span><span>/
-        <label data-i18n-title="enter hit dice max" title="enter hit dice max">
-          <input name="attr_hit_dice_max" title="@{hit_dice_max}" type="number" value=""/>
-        </label></span><span data-i18n="max"></span>
+      </label><span data-i18n="current"></span><span>/</span>
+      <label data-i18n-title="enter hit dice max" title="enter hit dice max">
+        <input name="attr_hit_dice_max" title="@{hit_dice_max}" type="number" value=""/>
+      </label><span data-i18n="max"></span>
     </div>
     <div class="death-saves border">
       <button data-i18n="death saves" name="roll_death-saves" type="roll" value=""></button>
@@ -226,7 +226,7 @@
           <input name="attr_walking_speed" title="@{walking_speed}" type="number" value=""/>
         </label>
       </div>
-      <div class="speed">
+      <div class="perception">
         <h1 data-i18n="passive perception"></h1>
         <label data-i18n-title="enter passive perception" title="enter passive perception">
           <input name="attr_passive_perception" title="@{passive_perception}" type="number" value=""/>
@@ -552,9 +552,30 @@
       </div>
       <div class="proficiencies border">
         <h1 data-i18n="proficiencies"></h1>
-        <label data-i18n-title="enter passive erception" title="enter passive erception">
-          <input name="attr_passive_erception" title="@{passive_erception}" type="number" value=""/>
+        <label data-i18n-title="enter proficiency bonus" title="enter proficiency bonus">
+          <input name="attr_proficiency_bonus" title="@{proficiency_bonus}" type="number" value=""/>
         </label>
+        <h2 data-i18n="name"></h2>
+        <h2 data-i18n="ability"></h2>
+        <h2 data-i18n="type"></h2>
+        <h2 data-i18n="bon"></h2>
+        <fieldset class="repeating_proficiency">
+          <select name="attr_undefined_ability_modifier" title="@{undefined_ability_modifier}">
+            <option data-i18n="strength" value="strength_modifier"></option>
+            <option data-i18n="dexterity" value="dexterity_modifier"></option>
+            <option data-i18n="constitution" value="constitution_modifier"></option>
+            <option data-i18n="intelligence" value="intelligence_modifier"></option>
+            <option data-i18n="wisdom" value="wisdom_modifier"></option>
+            <option data-i18n="charisma" value="charisma_modifier"></option>
+          </select>
+          <select name="attr_type" title="@{repeating_proficiencytype}">
+            <option data-i18n="armor" value="armor"></option>
+            <option data-i18n="language" value="language"></option>
+            <option data-i18n="tool" value="tool"></option>
+            <option data-i18n="other" value="other"></option>
+            <option data-i18n="weapon" value="weapon"></option>
+          </select>
+        </fieldset>
       </div>
     </div>
     <div class="column background">

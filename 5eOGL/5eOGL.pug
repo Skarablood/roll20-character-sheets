@@ -37,7 +37,7 @@ include src/pug/_mixins.pug
   .inspiration-row.grid.background
     .inspiration.border
       h1(data-i18n='inspiration')
-      +checkboxInput(`inspiration`, )
+      +checkboxInput(`inspiration`)
     .initiative.border
       +rollButton('initiative')
       +textInput('initiative')
@@ -62,7 +62,7 @@ include src/pug/_mixins.pug
       +numberInput('hit dice')
       span(data-i18n='current')
       span /
-       +numberInput('hit dice max')
+      +numberInput('hit dice max')
       span(data-i18n='max')
     .death-saves.border
       +rollButton('death saves')
@@ -72,9 +72,65 @@ include src/pug/_mixins.pug
         +deathSaves('fail')
 
   .body
+    .ability.column.background(data-i18n-list="abilitiy-list")
+      each val in abilitiesScores
+        .border(class=val data-i18n-list=val)
+          +rollButton(`${val}`)
+          +textInput(`${val} modifier`)
+          +numberInput(`${val} score`)
+          +checkboxInput(`${val} saving throw proficiency`)
+          +numberInput(`${val} saving throw modifier`)
+
+      fieldset(class='repeating_ability')
+
+
+    .column.background
+      .speed
+        h1(data-i18n='walking speed')
+        +numberInput('walking speed')
+
+      .perception
+        h1(data-i18n='passive perception')
+        +numberInput('passive perception')
+
+      .skills.border
+        h1.bottom-border(data-i18n='skills')
+
+        .skill-headers
+          h2(data-i18n='Prof/Exp')
+          h2(data-i18n='skill')
+          h2(data-i18n='ability')
+          h2(data-i18n='bon')
+        //- Used to order list alphabetically for other languages
+        .skills-list(data-i18n-list="skills-list")
+          each val in skillsList
+            - const attrName = val.replace(/ /g, '_');
+            .grid.skill-row(class=`${val}` data-i18n-list-item=attrName)
+              +checkboxInput(`${val} proficiency`)
+              +rollButton(`${val}`)
+              +abilitySelect(`${val}`)
+              +textInput(`${val} modifier`)
+
+          fieldset(class='repeating_skill')
+
+      .proficiencies.border
+        h1(data-i18n='proficiencies')
+        +numberInput('proficiency bonus')
+        h2(data-i18n='name')
+        h2(data-i18n='ability')
+        h2(data-i18n='type')
+        h2(data-i18n='bon')
+        fieldset(class='repeating_proficiency')
+          //-+rollButton()
+          +abilitySelect(`${val}`)
+          select(name=`attr_type` title=`@{repeating_proficiencytype}`)
+            each val in proficiencyTypes
+              option(data-i18n=val value=`${val}`)
+
 
     .column.background
       EVERYTHING ELSE
+
 
 
 
