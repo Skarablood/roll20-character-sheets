@@ -48,8 +48,8 @@
                 right              : 0.02em solid hsl(0, 0%, 20%);
                 style              : outset;
             }
-            margin: 0em;
-            padding: 0.1em !important;
+            margin: 0em !important;
+            padding: 0.1em;
             width: 100%;
         }
     }
@@ -84,8 +84,8 @@
     input {
         &[type="text"],
         &[type="number"] {
-            background-color: transparent;
-            border-bottom: 0.15em solid $black;
+            //-background-color: transparent;
+            background-color: $accent3; //-temproary color
 
             border: {
                 left  : 0em;
@@ -223,6 +223,7 @@ div.sheet-character-info {
 
 div.sheet-inspiration-row {
     grid-template-columns: 1fr 2fr 2fr 5fr 3fr 4fr;
+    margin-bottom: 1%;
 
     h1 {
         font-size: 1em;
@@ -328,21 +329,70 @@ div.sheet-inspiration-row {
     }
 }
 
-div.sheet-body {
+div.sheet-main-body {
     div.sheet-column {
         display: inline-block;
         vertical-align: top;
 
+        //- ABILITY SCORE COLUMN
         &:nth-of-type(1) {
-            width: 20%;
+            width: 15%;
         }
 
+        //- SKILLS COLUMN
         &:nth-of-type(2) {
             width: 38%;
         }
 
+
+        //- EVERYTHING ELSE
         &:nth-of-type(3) {
             width: 30%;
+        }
+    }
+
+    div.sheet-ability {
+        div.sheet-border {
+            grid-template-columns: 1fr 3fr 2fr;
+            margin-bottom: 2%;
+
+            div.sheet-score {
+                grid-template-columns: 1fr 2fr;
+
+                input {
+                    text-align: center;
+                }
+
+                label[data-i18n-title*='score'] {
+                    grid-area:  2 / 1 / 2 / 2;
+
+                    position: relative;
+                    z-index: 2;
+                    height: 30px;
+                    width: 35px;
+
+                    & > input {
+                        border-radius: 30px;
+                        border: 2px solid $black;
+                        font-size: 1em;
+                        min-height: 30px;
+                        min-width: 30px;
+                    }
+                }
+
+                label[data-i18n-title*='modifier'] {
+                    grid-area:  1 / 1 / 3 / 3;
+
+                    & >  input {
+                        min-height: 80px;
+                        font-size: 2em;
+                    }
+                }
+            }
+
+            div.sheet-saves {
+                 grid-template-columns: 1fr 3fr 2fr;
+            }
         }
     }
 }

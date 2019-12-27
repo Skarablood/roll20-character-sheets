@@ -11,7 +11,7 @@ mixin deathSaves(type)
 mixin textInput(name)
 	- const attrName = name.replace(/ /g, '_');
 	label(data-i18n-title=`enter ${name}` title=`enter ${name}`)
-		input(data-i18n-placeholder=attrName name=`attr_${attrName}` placeholder=name title=`@{${attrName}}` type='text' value='')
+		input(data-i18n-placeholder=name name=`attr_${attrName}` placeholder=name title=`@{${attrName}}` type='text' value='')
 
 mixin numberInput(name)
 	- const attrName = name.replace(/ /g, '_');
@@ -26,6 +26,10 @@ mixin checkboxInput(name)
 mixin rollButton(name)
 	- const attrName = name.replace(/ /g, '-');
 	button(data-i18n=name name=`roll_${attrName}` type='roll' value='')
+
+mixin saveButton(name)
+	- const attrName = name.replace(/ /g, '-');
+	button(data-i18n='save' name=`roll_${attrName}` type='roll' value='')
 
 mixin abilitySelect(name)
 	- const attrName = name.replace(/ /g, '_');
