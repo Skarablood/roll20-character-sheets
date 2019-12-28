@@ -291,13 +291,11 @@
       <fieldset class="repeating_ability"></fieldset>
     </div>
     <div class="column background">
-      <div class="speed">
+      <div class="speed-perception grid">
         <h1 data-i18n="walking speed"></h1>
         <label data-i18n-title="enter walking speed" title="enter walking speed">
           <input name="attr_walking_speed" title="@{walking_speed}" type="number" value=""/>
         </label>
-      </div>
-      <div class="perception">
         <h1 data-i18n="passive perception"></h1>
         <label data-i18n-title="enter passive perception" title="enter passive perception">
           <input name="attr_passive_perception" title="@{passive_perception}" type="number" value=""/>
@@ -305,14 +303,14 @@
       </div>
       <div class="skills border">
         <h1 class="border-bottom" data-i18n="skills"></h1>
-        <div class="skill-headers">
-          <h2 data-i18n="Prof/Exp"></h2>
+        <div class="headers grid">
+          <h2 data-i18n="prof"></h2>
           <h2 data-i18n="skill"></h2>
           <h2 data-i18n="ability"></h2>
           <h2 data-i18n="bon"></h2>
         </div>
-        <div class="skills-list" data-i18n-list="skills-list">
-          <div class="grid skill-row acrobatics" data-i18n-list-item="acrobatics">
+        <div class="list" data-i18n-list="skills-list">
+          <div class="grid rows acrobatics" data-i18n-list-item="acrobatics">
             <label data-i18n-title="toggle acrobatics proficiency" title="enter acrobatics proficiency">
               <input name="attr_acrobatics_proficiency" title="@{acrobatics_proficiency}" type="checkbox" value="acrobatics proficiency"/>
             </label>
@@ -329,7 +327,7 @@
               <input data-i18n-placeholder="acrobatics modifier" name="attr_acrobatics_modifier" placeholder="acrobatics modifier" title="@{acrobatics_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row animal handling" data-i18n-list-item="animal_handling">
+          <div class="grid rows animal handling" data-i18n-list-item="animal_handling">
             <label data-i18n-title="toggle animal handling proficiency" title="enter animal handling proficiency">
               <input name="attr_animal_handling_proficiency" title="@{animal_handling_proficiency}" type="checkbox" value="animal handling proficiency"/>
             </label>
@@ -346,7 +344,7 @@
               <input data-i18n-placeholder="animal handling modifier" name="attr_animal_handling_modifier" placeholder="animal handling modifier" title="@{animal_handling_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row arcana" data-i18n-list-item="arcana">
+          <div class="grid rows arcana" data-i18n-list-item="arcana">
             <label data-i18n-title="toggle arcana proficiency" title="enter arcana proficiency">
               <input name="attr_arcana_proficiency" title="@{arcana_proficiency}" type="checkbox" value="arcana proficiency"/>
             </label>
@@ -363,7 +361,7 @@
               <input data-i18n-placeholder="arcana modifier" name="attr_arcana_modifier" placeholder="arcana modifier" title="@{arcana_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row athletics" data-i18n-list-item="athletics">
+          <div class="grid rows athletics" data-i18n-list-item="athletics">
             <label data-i18n-title="toggle athletics proficiency" title="enter athletics proficiency">
               <input name="attr_athletics_proficiency" title="@{athletics_proficiency}" type="checkbox" value="athletics proficiency"/>
             </label>
@@ -380,7 +378,7 @@
               <input data-i18n-placeholder="athletics modifier" name="attr_athletics_modifier" placeholder="athletics modifier" title="@{athletics_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row deception" data-i18n-list-item="deception">
+          <div class="grid rows deception" data-i18n-list-item="deception">
             <label data-i18n-title="toggle deception proficiency" title="enter deception proficiency">
               <input name="attr_deception_proficiency" title="@{deception_proficiency}" type="checkbox" value="deception proficiency"/>
             </label>
@@ -397,7 +395,7 @@
               <input data-i18n-placeholder="deception modifier" name="attr_deception_modifier" placeholder="deception modifier" title="@{deception_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row history" data-i18n-list-item="history">
+          <div class="grid rows history" data-i18n-list-item="history">
             <label data-i18n-title="toggle history proficiency" title="enter history proficiency">
               <input name="attr_history_proficiency" title="@{history_proficiency}" type="checkbox" value="history proficiency"/>
             </label>
@@ -414,7 +412,7 @@
               <input data-i18n-placeholder="history modifier" name="attr_history_modifier" placeholder="history modifier" title="@{history_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row insight" data-i18n-list-item="insight">
+          <div class="grid rows insight" data-i18n-list-item="insight">
             <label data-i18n-title="toggle insight proficiency" title="enter insight proficiency">
               <input name="attr_insight_proficiency" title="@{insight_proficiency}" type="checkbox" value="insight proficiency"/>
             </label>
@@ -431,7 +429,7 @@
               <input data-i18n-placeholder="insight modifier" name="attr_insight_modifier" placeholder="insight modifier" title="@{insight_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row intimidation" data-i18n-list-item="intimidation">
+          <div class="grid rows intimidation" data-i18n-list-item="intimidation">
             <label data-i18n-title="toggle intimidation proficiency" title="enter intimidation proficiency">
               <input name="attr_intimidation_proficiency" title="@{intimidation_proficiency}" type="checkbox" value="intimidation proficiency"/>
             </label>
@@ -448,7 +446,7 @@
               <input data-i18n-placeholder="intimidation modifier" name="attr_intimidation_modifier" placeholder="intimidation modifier" title="@{intimidation_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row investigation" data-i18n-list-item="investigation">
+          <div class="grid rows investigation" data-i18n-list-item="investigation">
             <label data-i18n-title="toggle investigation proficiency" title="enter investigation proficiency">
               <input name="attr_investigation_proficiency" title="@{investigation_proficiency}" type="checkbox" value="investigation proficiency"/>
             </label>
@@ -465,7 +463,7 @@
               <input data-i18n-placeholder="investigation modifier" name="attr_investigation_modifier" placeholder="investigation modifier" title="@{investigation_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row medicine" data-i18n-list-item="medicine">
+          <div class="grid rows medicine" data-i18n-list-item="medicine">
             <label data-i18n-title="toggle medicine proficiency" title="enter medicine proficiency">
               <input name="attr_medicine_proficiency" title="@{medicine_proficiency}" type="checkbox" value="medicine proficiency"/>
             </label>
@@ -482,7 +480,7 @@
               <input data-i18n-placeholder="medicine modifier" name="attr_medicine_modifier" placeholder="medicine modifier" title="@{medicine_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row nature" data-i18n-list-item="nature">
+          <div class="grid rows nature" data-i18n-list-item="nature">
             <label data-i18n-title="toggle nature proficiency" title="enter nature proficiency">
               <input name="attr_nature_proficiency" title="@{nature_proficiency}" type="checkbox" value="nature proficiency"/>
             </label>
@@ -499,7 +497,7 @@
               <input data-i18n-placeholder="nature modifier" name="attr_nature_modifier" placeholder="nature modifier" title="@{nature_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row perception" data-i18n-list-item="perception">
+          <div class="grid rows perception" data-i18n-list-item="perception">
             <label data-i18n-title="toggle perception proficiency" title="enter perception proficiency">
               <input name="attr_perception_proficiency" title="@{perception_proficiency}" type="checkbox" value="perception proficiency"/>
             </label>
@@ -516,7 +514,7 @@
               <input data-i18n-placeholder="perception modifier" name="attr_perception_modifier" placeholder="perception modifier" title="@{perception_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row performance" data-i18n-list-item="performance">
+          <div class="grid rows performance" data-i18n-list-item="performance">
             <label data-i18n-title="toggle performance proficiency" title="enter performance proficiency">
               <input name="attr_performance_proficiency" title="@{performance_proficiency}" type="checkbox" value="performance proficiency"/>
             </label>
@@ -533,7 +531,7 @@
               <input data-i18n-placeholder="performance modifier" name="attr_performance_modifier" placeholder="performance modifier" title="@{performance_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row persuasion" data-i18n-list-item="persuasion">
+          <div class="grid rows persuasion" data-i18n-list-item="persuasion">
             <label data-i18n-title="toggle persuasion proficiency" title="enter persuasion proficiency">
               <input name="attr_persuasion_proficiency" title="@{persuasion_proficiency}" type="checkbox" value="persuasion proficiency"/>
             </label>
@@ -550,7 +548,7 @@
               <input data-i18n-placeholder="persuasion modifier" name="attr_persuasion_modifier" placeholder="persuasion modifier" title="@{persuasion_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row religion" data-i18n-list-item="religion">
+          <div class="grid rows religion" data-i18n-list-item="religion">
             <label data-i18n-title="toggle religion proficiency" title="enter religion proficiency">
               <input name="attr_religion_proficiency" title="@{religion_proficiency}" type="checkbox" value="religion proficiency"/>
             </label>
@@ -567,7 +565,7 @@
               <input data-i18n-placeholder="religion modifier" name="attr_religion_modifier" placeholder="religion modifier" title="@{religion_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row sleight of hand" data-i18n-list-item="sleight_of_hand">
+          <div class="grid rows sleight of hand" data-i18n-list-item="sleight_of_hand">
             <label data-i18n-title="toggle sleight of hand proficiency" title="enter sleight of hand proficiency">
               <input name="attr_sleight_of_hand_proficiency" title="@{sleight_of_hand_proficiency}" type="checkbox" value="sleight of hand proficiency"/>
             </label>
@@ -584,7 +582,7 @@
               <input data-i18n-placeholder="sleight of hand modifier" name="attr_sleight_of_hand_modifier" placeholder="sleight of hand modifier" title="@{sleight_of_hand_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row stealth" data-i18n-list-item="stealth">
+          <div class="grid rows stealth" data-i18n-list-item="stealth">
             <label data-i18n-title="toggle stealth proficiency" title="enter stealth proficiency">
               <input name="attr_stealth_proficiency" title="@{stealth_proficiency}" type="checkbox" value="stealth proficiency"/>
             </label>
@@ -601,7 +599,7 @@
               <input data-i18n-placeholder="stealth modifier" name="attr_stealth_modifier" placeholder="stealth modifier" title="@{stealth_modifier}" type="text" value=""/>
             </label>
           </div>
-          <div class="grid skill-row survival" data-i18n-list-item="survival">
+          <div class="grid rows survival" data-i18n-list-item="survival">
             <label data-i18n-title="toggle survival proficiency" title="enter survival proficiency">
               <input name="attr_survival_proficiency" title="@{survival_proficiency}" type="checkbox" value="survival proficiency"/>
             </label>

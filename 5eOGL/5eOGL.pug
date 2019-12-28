@@ -100,27 +100,25 @@ include src/pug/_mixins.pug
 
 
     .column.background
-      .speed
+      .speed-perception.grid
         h1(data-i18n='walking speed')
         +numberInput('walking speed')
-
-      .perception
         h1(data-i18n='passive perception')
         +numberInput('passive perception')
 
       .skills.border
         h1.border-bottom(data-i18n='skills')
 
-        .skill-headers
-          h2(data-i18n='Prof/Exp')
+        .headers.grid
+          h2(data-i18n='prof')
           h2(data-i18n='skill')
           h2(data-i18n='ability')
           h2(data-i18n='bon')
         //- Used to order list alphabetically for other languages
-        .skills-list(data-i18n-list="skills-list")
+        .list(data-i18n-list="skills-list")
           each val in skillsList
             - const attrName = val.replace(/ /g, '_');
-            .grid.skill-row(class=`${val}` data-i18n-list-item=attrName)
+            .grid.rows(class=`${val}` data-i18n-list-item=attrName)
               +checkboxInput(`${val} proficiency`)
               +rollButton(`${val}`)
               +abilitySelect(`${val}`)

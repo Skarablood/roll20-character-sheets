@@ -93,8 +93,8 @@
                 right : 0em;
                 top   : 0em;
             };
-            height       : 2.1em;
-            width: 100% !important;
+            height: 2.1em;
+            width: 100%;
         }
         &::placeholder {
             background-color: $accent2;
@@ -341,7 +341,7 @@ div.sheet-main-body {
 
         //- SKILLS COLUMN
         &:nth-of-type(2) {
-            width: 38%;
+            width: 40%;
         }
 
 
@@ -392,6 +392,63 @@ div.sheet-main-body {
 
             div.sheet-saves {
                  grid-template-columns: 1fr 3fr 2fr;
+            }
+        }
+    }
+
+    div.sheet-speed-perception {
+        grid-template-columns: 13% 1fr 13% 1fr;
+
+        h1 {
+            font-size: 1em;
+
+            &[data-i18n='walking speed'] {
+               grid-area: 1 / 2 / 1 / 3;  
+            }
+
+            &[data-i18n='passive perception'] {
+               grid-area: 1 / 4 / 1 / 4;  
+            }
+        }
+
+        label {
+            input {
+                border: 2px solid $black;
+                border-radius: 3.5em;
+                height: 3.5em;
+                width: 3.5em;
+            }
+
+            &[data-i18n='walking speed'] {
+               grid-area: 1 / 1 / 1 / 2;  
+            }
+
+            &[data-i18n='passive perception'] {
+               grid-area: 1 / 2 / 1 / 3;  
+            }
+        }
+    }
+
+    div.sheet-skills {
+        button {
+            text-align: left;
+        }
+        
+        div.sheet-headers {
+            grid-template-columns: 2em 60% 3fr 2fr;
+
+            h2 {
+                text-transform: capitalize;
+            }
+        }
+
+        div.sheet-list {
+            div.sheet-rows {
+                grid-template-columns: 2em 60% 3fr 2fr;
+            }
+
+            input {
+                text-align: center;
             }
         }
     }

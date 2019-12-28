@@ -71,7 +71,6 @@
 	,"class & level": "class & level"
 	,"passive perception":"passive perception"
 	,"walking speed":"walking speed"
-	,"Prof/Exp":"Prof/Exp"
 	,"enter strength modifier":"enter strength modifier"
 	,"enter strength score":"enter strength score"
 	,"toggle strength saving throw proficiency":"toggle strength saving throw proficiency"
@@ -87,4 +86,6 @@
 	,"toggle inspiration":"toggle inspiration"
 	,"enter hit points":"enter hit points"
 	,"save":"save"
+	,"name":"name"
+	,"type":"type"
 }
