@@ -2,7 +2,8 @@
 //  ============================= *
     $primary  : hsl(355, 83%, 21%);
     $secondary  : hsl(72, 6%, 33%);
-    $light  : hsl(42, 39%, 60%);
+    $third  : hsl(42, 39%, 60%);
+    $light  : hsl(51, 12%, 78%);
     $dark    : hsl(0, 6%, 0%);
     $dark-font: #000;
     $gray     : #4c4c4c;
@@ -30,7 +31,7 @@
    ============================= */ 
     div.sheet-grid {
         display: inline-grid;
-        grid-column-gap: 1%;
+        grid-column-gap: 0.5%;
         grid-row-gap: 0.5%;
     }
 
@@ -67,6 +68,75 @@
         background: linear-gradient(to bottom,  $light 0%,$secondary 50%,$light 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$light', endColorstr='$light',GradientType=0 ); /* IE6-9 */
     }
+
+/*  PC
+    ============================= */
+div.sheet-pc {
+    border: 0.8em solid $gray;
+    background-color: hsl(27, 20%, 91%);
+    padding: 2% 1%;
+
+   -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+    zoom: 1;
+
+    div.sheet-info {
+        h1 {
+            font-size: 1em;
+            color: $dark;
+        }
+        div.sheet-archetype {
+            grid-template-columns: auto 1fr auto 3em auto 1fr;
+        }
+    }
+
+    div.sheet-characteristics {
+        div.sheet-10column {
+            grid-template-columns: 1.25fr 1.25fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        h3 {
+            font-size: 1em;
+        }
+    }
+
+    div.sheet-skill-talents-traits {
+        div.sheet-headers {
+            grid-template-columns: 70% 29%;
+        }
+
+        div.sheet-skill-list {
+            div.sheet-row {
+                grid-template-columns: 60% 1fr 1fr 1fr 1fr;
+
+                h2 {
+                    display: inline-block;
+                    width: fit-content;
+
+                    &[data-i18n='trained'] { grid-column: 2;  }
+                    &[data-i18n='10+'] { grid-column: 3; }
+                    &[data-i18n='20+'] { grid-column: 4; }
+                    &[data-i18n='30+'] { grid-column: 5; }
+                }
+            }
+        }
+
+        div.sheet-left-col {
+            display: inline-block;
+            width: 35%;
+        }
+
+        div.sheet-right-col {
+            display: inline-block;
+            widows: 40%;
+        }
+    }
+
+}
 
 /*  SWITCH
     ============================= */

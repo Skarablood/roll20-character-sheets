@@ -17,3 +17,14 @@ mixin checkboxInput(name)
 mixin rollButton(name)
 	- const attrName = name.replace(/ /g, '-');
 	button.text-capitalize(data-i18n=name name=`roll_${attrName}` type='roll' value='&{template:rolls} {{header=^{${name}}}} {{dice=[[1d20[Roll]]]}}')
+
+
+mixin skillColumns(name, abbreviation)
+	.row.grid
+		.col
+			h2(data-i18n=name)
+			h2(data-i18n=abbreviation)
+		+checkboxInput(`${name} trained`)
+		+checkboxInput(`${name} 10`)
+		+checkboxInput(`${name} 20`)
+		+checkboxInput(`${name} 30`)

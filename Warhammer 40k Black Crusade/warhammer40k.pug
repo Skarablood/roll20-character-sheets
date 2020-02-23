@@ -1,96 +1,124 @@
 input(name='attr_version' type='hidden' value='1')
 
 //- INCLUDES
-  =============================
+	=============================
 include src/pug/mixins.pug
 
+//- VARIABLES
+	=============================
+- const characteristics = {'weapon skill':'(ws)', 'ballistic skill':'(bs)', 'strength':'(s)', 'toughness':'(t)', 'agility':'(ag)', 'intelligence':'(int)', 'perception': '(per)', 'willpower':'(wp)', 'fellowship':'(fel)', 'infamy':'(inf)'};
+- const skillsLeft = {'acrobatics':'(ag)','athletics':'(s)','awareness':'(per)', 'charm':'(fel)', 'command':'(fel)', 'commerce':'(int)', 'common lore':'', 'deceive':'(fel)','dodge':'(ag)', 'forbidden lore':'(int)','inquiry':'(fel)','intimidate':'(wp)','linguistics':'(int)', 'logic':'(int)'};
+- const skillsRight = {'medicae':'(int)','navigation (surface)':'(int)','navigation (stellar)':'(int)', 'navigation (warp)':'(int)', 'operate (aeronautica)': '(ag)', 'operate (voidship)': '(ag)', 'parry':'(ws)','psyniscience':'(per)', 'scholastic lore': '(int)','scrutiny':'(per)','security':'(int)', 'sleight of hand':'(ag)', 'stealth': '(ag)', 'tech-use': '(int)', 'tracking':'(int)', 'trade':'(int)'};
+- const repeatingSkills = ['common lore', 'forbidden lore', 'linguistics', 'scholastic lore', 'trade'];
+
 //- TABS
-  =============================
+	=============================
 input.type(name='attr_sheet_type' type='hidden' value='character')
 input.display_string(name='attr_character_settings' type='hidden' value='')
 
 //- TABS & LOGO
-  =============================
+	=============================
 .tabs
-  .flex
-    // PUT LOGO HERE. UPDATE ALT TEXT
-    img(alt='Emerald Productions logo' src='https://raw.githubusercontent.com/clevett/SheetTemplate/master/src/imgs/EProd_Title_Gloss.png')
-  .flex.info-flex
-    .grid.grid-tab-inputs
-      // INFO INPUTS
-      h1(data-i18n='character') character
-      +textInput('character_name')
-      h1(data-i18n='player') player
-      +textInput('player_name')
-      h1(data-i18n='notes') notes
-      +textInput('character_notes')
-    .grid.grid-tab-buttons
-      // Buttons to toggle on GM whisper
-      input.whisper-toggle(name='attr_gm_toggle' type='hidden' value=' ')
-      button(name='act_whisper' data-i18n-title='gm-whisper' title='gm whisper' type='action') q
-      // CHARACTER SHEETS
-      button(data-i18n='pc' data-i18n-title='' name='act_toggle_character' title='player character button' type='action') pc
-      button(data-i18n='notes' data-i18n-title='' name='act_toggle_notes' title='notes button' type='action') notes
-      button(data-i18n='npc' data-i18n-title='' name='act_toggle_npc' title='non player character' type='action') npc
 
 //-NPC SHEET
-  =============================
+	=============================
 .npc
-  .box.npc-flex
-    p NPC STUFF
-  .box.npc-flex
-    p MORE NPC STUFF 
+	.box.npc-flex
+		p NPC STUFF
+	.box.npc-flex
+		p MORE NPC STUFF 
 
 //-PC SHEET
-  =============================
+	=============================
 .pc
-  .flex.pc-flex
-    .grid.grid-header
-      button.pictos(data-i18n-title='', name='act_toggle_attributes', title='player character attributes', type='action') y
-      h1(data-i18n='attributes', data-i18-title='attributes', title='attributes') attributes
-    .grid.grid-pc-attributes
-      // STRENGHT
-      button(name='roll_strength', type='roll', value='@{gm_toggle} &{template:rolls}{{header=^{strength}}}{{base=^{attributes}}}{{dice=[[(@{strength}+(@{attribute_roll})+@{wound_toggle}+@{modifier_toggle}+@{edge_toggle})d6>5@{explode_toggle}]]}}{{mod=[[@{modifier_toggle}]]}}{{wound=[[@{wound_toggle}]]}}{{edge=[[@{edge_toggle}]]}}')
-        h2(data-i18n='strength') strength
-      label(data-i18n-title='strenght-input', title='strength input')
-        input(data-i18n-placeholder='', name='attr_strength', placeholder='10', title='@{strength}', type='number', value='')
-  .flex.pc-flex
-    h1(data-i18n='h1', data-i18-title='h1', title='header 1') Header 1
-    h2(data-i18n='h2', data-i18-title='h2', title='header 2') Header 2
-    h3(data-i18n='h3', data-i18-title='h3', title='header 3') Header 3
+	.container.grid.info
+		.row.grid.4autocolumn
+			each val in ['character name', 'player name']
+				h1(data-i18n=val)
+				+textInput(val)
+		.row.grid.archetype
+			each val in ['archetype', 'rank', 'warband name']
+				h1(data-i18n=val)
+				+textInput(val)
+		.row.grid.4autocolumn
+			each val in ['pride', 'disgrace']
+				h1(data-i18n=val)
+				+textInput(val)
+		each val in ['motivation', 'description']
+			.row.grid.2autocolumn
+					h1(data-i18n=val)
+					+textInput(val)
+
+	.container.grid.characteristics
+		.row.text-center
+			h1(data-i18n='characteristics')
+		.row.grid.10column
+			each val, key in characteristics
+				.col.grid
+					.row.text-center
+						h2.small-caps(data-i18n=key)
+					.row.text-center
+						h3.small-caps(data-i18n=val)
+		.row.grid.10column
+			each val, key in characteristics
+				.col
+					+numberInput(key)
+
+	.container.skill-talents-traits
+		.row.grid.headers
+			.col
+				h1.text-center(data-i18n='skills')
+			.col
+				h1.text-center(data-i18n='talents & traits')
+		.row.skill-list
+			.col.left-col
+				.row.grid
+					each val in ['trained', '+10', '+20', '+30']
+						h2(data-i18n=val)
+				each val, key in skillsLeft
+					+skillColumns(key, val)
+			.col.left-col
+				.row.grid
+					each val in ['trained', '+10', '+20', '+30']
+						h2(data-i18n=val)
+				each val, key in skillsRight
+					+skillColumns(key, val)
+			.col.right-col
+
+
 //- NOTES SHEET
-  =============================
+	=============================
 .notes
 
 //-OPTIONS SHEET
-  =============================
+	=============================
 .options
 
 //-FOOTER
-  =============================
+	=============================
 footer
-  span Version 
-  span(name='attr_version')
+	span Version 
+	span(name='attr_version')
 
 //-ROLL TEMPLATE
-  =============================
+	=============================
 .rolltemplates
-  rolltemplate.sheet-rolltemplate-rolls
-    // - Display a header on the template -
-    .sheet-template-header
-      | {{#header}}{{header}}{{/header}}
-    // - Display the dice roll in the template -
-    .sheet-template-body
-      | {{#dice}}
-      .sheet-template-row {{dice}}
-      | {/dice}}
-      // - Display a description. This is great for text included with a roll -
-      | {{#desc}}
-      .sheet-template-row
-        span.sheet-template-desc
-      | {{/desc}}
+	rolltemplate.sheet-rolltemplate-rolls
+		// - Display a header on the template -
+		.sheet-template-header
+			| {{#header}}{{header}}{{/header}}
+		// - Display the dice roll in the template -
+		.sheet-template-body
+			| {{#dice}}
+			.sheet-template-row {{dice}}
+			| {/dice}}
+			// - Display a description. This is great for text included with a roll -
+			| {{#desc}}
+			.sheet-template-row
+				span.sheet-template-desc
+			| {{/desc}}
 
 //- SCRIPTS
 script(type="text/worker")
-  include src/js/scripts.js
+	include src/js/scripts.js
 

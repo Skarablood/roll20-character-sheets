@@ -2,37 +2,7 @@
 <input name="attr_version" type="hidden" value="1"/>
 <input class="type" name="attr_sheet_type" type="hidden" value="character"/>
 <input class="display_string" name="attr_character_settings" type="hidden" value=""/>
-<div class="tabs">
-  <div class="flex">
-    <!-- PUT LOGO HERE. UPDATE ALT TEXT--><img alt="Emerald Productions logo" src="https://raw.githubusercontent.com/clevett/SheetTemplate/master/src/imgs/EProd_Title_Gloss.png"/>
-  </div>
-  <div class="flex info-flex">
-    <div class="grid grid-tab-inputs">
-      <!-- INFO INPUTS-->
-      <h1 data-i18n="character">character</h1>
-      <label data-i18n-title="enter character_name" title="enter character_name">
-        <input data-i18n-placeholder="character_name" name="attr_character_name" placeholder="character_name" title="@{character_name}" type="text" value=""/>
-      </label>
-      <h1 data-i18n="player">player</h1>
-      <label data-i18n-title="enter player_name" title="enter player_name">
-        <input data-i18n-placeholder="player_name" name="attr_player_name" placeholder="player_name" title="@{player_name}" type="text" value=""/>
-      </label>
-      <h1 data-i18n="notes">notes</h1>
-      <label data-i18n-title="enter character_notes" title="enter character_notes">
-        <input data-i18n-placeholder="character_notes" name="attr_character_notes" placeholder="character_notes" title="@{character_notes}" type="text" value=""/>
-      </label>
-    </div>
-    <div class="grid grid-tab-buttons">
-      <!-- Buttons to toggle on GM whisper-->
-      <input class="whisper-toggle" name="attr_gm_toggle" type="hidden" value=" "/>
-      <button name="act_whisper" data-i18n-title="gm-whisper" title="gm whisper" type="action">q</button>
-      <!-- CHARACTER SHEETS-->
-      <button data-i18n="pc" data-i18n-title="" name="act_toggle_character" title="player character button" type="action">pc</button>
-      <button data-i18n="notes" data-i18n-title="" name="act_toggle_notes" title="notes button" type="action">notes</button>
-      <button data-i18n="npc" data-i18n-title="" name="act_toggle_npc" title="non player character" type="action">npc</button>
-    </div>
-  </div>
-</div>
+<div class="tabs"></div>
 <div class="npc">
   <div class="box npc-flex">
     <p>NPC STUFF</p>
@@ -42,25 +12,761 @@
   </div>
 </div>
 <div class="pc">
-  <div class="flex pc-flex">
-    <div class="grid grid-header">
-      <button class="pictos" data-i18n-title="" name="act_toggle_attributes" title="player character attributes" type="action">y</button>
-      <h1 data-i18n="attributes" data-i18-title="attributes" title="attributes">attributes</h1>
+  <div class="container grid info">
+    <div class="row grid 4autocolumn">
+      <h1 data-i18n="character name"></h1>
+      <label data-i18n-title="enter character name" title="enter character name">
+        <input data-i18n-placeholder="character name" name="attr_character_name" placeholder="character name" title="@{character_name}" type="text" value=""/>
+      </label>
+      <h1 data-i18n="player name"></h1>
+      <label data-i18n-title="enter player name" title="enter player name">
+        <input data-i18n-placeholder="player name" name="attr_player_name" placeholder="player name" title="@{player_name}" type="text" value=""/>
+      </label>
     </div>
-    <div class="grid grid-pc-attributes">
-      <!-- STRENGHT-->
-      <button name="roll_strength" type="roll" value="@{gm_toggle} &amp;{template:rolls}{{header=^{strength}}}{{base=^{attributes}}}{{dice=[[(@{strength}+(@{attribute_roll})+@{wound_toggle}+@{modifier_toggle}+@{edge_toggle})d6&gt;5@{explode_toggle}]]}}{{mod=[[@{modifier_toggle}]]}}{{wound=[[@{wound_toggle}]]}}{{edge=[[@{edge_toggle}]]}}">
-        <h2 data-i18n="strength">strength</h2>
-      </button>
-      <label data-i18n-title="strenght-input" title="strength input">
-        <input data-i18n-placeholder="" name="attr_strength" placeholder="10" title="@{strength}" type="number" value=""/>
+    <div class="row grid archetype">
+      <h1 data-i18n="archetype"></h1>
+      <label data-i18n-title="enter archetype" title="enter archetype">
+        <input data-i18n-placeholder="archetype" name="attr_archetype" placeholder="archetype" title="@{archetype}" type="text" value=""/>
+      </label>
+      <h1 data-i18n="rank"></h1>
+      <label data-i18n-title="enter rank" title="enter rank">
+        <input data-i18n-placeholder="rank" name="attr_rank" placeholder="rank" title="@{rank}" type="text" value=""/>
+      </label>
+      <h1 data-i18n="warband name"></h1>
+      <label data-i18n-title="enter warband name" title="enter warband name">
+        <input data-i18n-placeholder="warband name" name="attr_warband_name" placeholder="warband name" title="@{warband_name}" type="text" value=""/>
+      </label>
+    </div>
+    <div class="row grid 4autocolumn">
+      <h1 data-i18n="pride"></h1>
+      <label data-i18n-title="enter pride" title="enter pride">
+        <input data-i18n-placeholder="pride" name="attr_pride" placeholder="pride" title="@{pride}" type="text" value=""/>
+      </label>
+      <h1 data-i18n="disgrace"></h1>
+      <label data-i18n-title="enter disgrace" title="enter disgrace">
+        <input data-i18n-placeholder="disgrace" name="attr_disgrace" placeholder="disgrace" title="@{disgrace}" type="text" value=""/>
+      </label>
+    </div>
+    <div class="row grid 2autocolumn">
+      <h1 data-i18n="motivation"></h1>
+      <label data-i18n-title="enter motivation" title="enter motivation">
+        <input data-i18n-placeholder="motivation" name="attr_motivation" placeholder="motivation" title="@{motivation}" type="text" value=""/>
+      </label>
+    </div>
+    <div class="row grid 2autocolumn">
+      <h1 data-i18n="description"></h1>
+      <label data-i18n-title="enter description" title="enter description">
+        <input data-i18n-placeholder="description" name="attr_description" placeholder="description" title="@{description}" type="text" value=""/>
       </label>
     </div>
   </div>
-  <div class="flex pc-flex">
-    <h1 data-i18n="h1" data-i18-title="h1" title="header 1">Header 1</h1>
-    <h2 data-i18n="h2" data-i18-title="h2" title="header 2">Header 2</h2>
-    <h3 data-i18n="h3" data-i18-title="h3" title="header 3">Header 3</h3>
+  <div class="container grid characteristics">
+    <div class="row text-center">
+      <h1 data-i18n="characteristics"></h1>
+    </div>
+    <div class="row grid 10column">
+      <div class="col grid">
+        <div class="row text-center">
+          <h2 class="small-caps" data-i18n="weapon skill"></h2>
+        </div>
+        <div class="row text-center">
+          <h3 class="small-caps" data-i18n="(ws)"></h3>
+        </div>
+      </div>
+      <div class="col grid">
+        <div class="row text-center">
+          <h2 class="small-caps" data-i18n="ballistic skill"></h2>
+        </div>
+        <div class="row text-center">
+          <h3 class="small-caps" data-i18n="(bs)"></h3>
+        </div>
+      </div>
+      <div class="col grid">
+        <div class="row text-center">
+          <h2 class="small-caps" data-i18n="strength"></h2>
+        </div>
+        <div class="row text-center">
+          <h3 class="small-caps" data-i18n="(s)"></h3>
+        </div>
+      </div>
+      <div class="col grid">
+        <div class="row text-center">
+          <h2 class="small-caps" data-i18n="toughness"></h2>
+        </div>
+        <div class="row text-center">
+          <h3 class="small-caps" data-i18n="(t)"></h3>
+        </div>
+      </div>
+      <div class="col grid">
+        <div class="row text-center">
+          <h2 class="small-caps" data-i18n="agility"></h2>
+        </div>
+        <div class="row text-center">
+          <h3 class="small-caps" data-i18n="(ag)"></h3>
+        </div>
+      </div>
+      <div class="col grid">
+        <div class="row text-center">
+          <h2 class="small-caps" data-i18n="intelligence"></h2>
+        </div>
+        <div class="row text-center">
+          <h3 class="small-caps" data-i18n="(int)"></h3>
+        </div>
+      </div>
+      <div class="col grid">
+        <div class="row text-center">
+          <h2 class="small-caps" data-i18n="perception"></h2>
+        </div>
+        <div class="row text-center">
+          <h3 class="small-caps" data-i18n="(per)"></h3>
+        </div>
+      </div>
+      <div class="col grid">
+        <div class="row text-center">
+          <h2 class="small-caps" data-i18n="willpower"></h2>
+        </div>
+        <div class="row text-center">
+          <h3 class="small-caps" data-i18n="(wp)"></h3>
+        </div>
+      </div>
+      <div class="col grid">
+        <div class="row text-center">
+          <h2 class="small-caps" data-i18n="fellowship"></h2>
+        </div>
+        <div class="row text-center">
+          <h3 class="small-caps" data-i18n="(fel)"></h3>
+        </div>
+      </div>
+      <div class="col grid">
+        <div class="row text-center">
+          <h2 class="small-caps" data-i18n="infamy"></h2>
+        </div>
+        <div class="row text-center">
+          <h3 class="small-caps" data-i18n="(inf)"></h3>
+        </div>
+      </div>
+    </div>
+    <div class="row grid 10column">
+      <div class="col">
+        <label data-i18n-title="enter weapon skill" title="enter weapon skill">
+          <input name="attr_weapon_skill" title="@{weapon_skill}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="col">
+        <label data-i18n-title="enter ballistic skill" title="enter ballistic skill">
+          <input name="attr_ballistic_skill" title="@{ballistic_skill}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="col">
+        <label data-i18n-title="enter strength" title="enter strength">
+          <input name="attr_strength" title="@{strength}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="col">
+        <label data-i18n-title="enter toughness" title="enter toughness">
+          <input name="attr_toughness" title="@{toughness}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="col">
+        <label data-i18n-title="enter agility" title="enter agility">
+          <input name="attr_agility" title="@{agility}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="col">
+        <label data-i18n-title="enter intelligence" title="enter intelligence">
+          <input name="attr_intelligence" title="@{intelligence}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="col">
+        <label data-i18n-title="enter perception" title="enter perception">
+          <input name="attr_perception" title="@{perception}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="col">
+        <label data-i18n-title="enter willpower" title="enter willpower">
+          <input name="attr_willpower" title="@{willpower}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="col">
+        <label data-i18n-title="enter fellowship" title="enter fellowship">
+          <input name="attr_fellowship" title="@{fellowship}" type="number" value=""/>
+        </label>
+      </div>
+      <div class="col">
+        <label data-i18n-title="enter infamy" title="enter infamy">
+          <input name="attr_infamy" title="@{infamy}" type="number" value=""/>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="container skill-talents-traits">
+    <div class="row grid headers">
+      <div class="col">
+        <h1 class="text-center" data-i18n="skills"></h1>
+      </div>
+      <div class="col">
+        <h1 class="text-center" data-i18n="talents &amp; traits"></h1>
+      </div>
+    </div>
+    <div class="row skill-list">
+      <div class="col left-col">
+        <div class="row grid">
+          <h2 data-i18n="trained"></h2>
+          <h2 data-i18n="+10"></h2>
+          <h2 data-i18n="+20"></h2>
+          <h2 data-i18n="+30"></h2>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="acrobatics"></h2>
+            <h2 data-i18n="(ag)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle acrobatics trained" title="enter acrobatics trained">
+            <input name="attr_acrobatics_trained" title="@{acrobatics_trained}" type="checkbox" value="acrobatics trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle acrobatics 10" title="enter acrobatics 10">
+            <input name="attr_acrobatics_10" title="@{acrobatics_10}" type="checkbox" value="acrobatics 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle acrobatics 20" title="enter acrobatics 20">
+            <input name="attr_acrobatics_20" title="@{acrobatics_20}" type="checkbox" value="acrobatics 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle acrobatics 30" title="enter acrobatics 30">
+            <input name="attr_acrobatics_30" title="@{acrobatics_30}" type="checkbox" value="acrobatics 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="athletics"></h2>
+            <h2 data-i18n="(s)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle athletics trained" title="enter athletics trained">
+            <input name="attr_athletics_trained" title="@{athletics_trained}" type="checkbox" value="athletics trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle athletics 10" title="enter athletics 10">
+            <input name="attr_athletics_10" title="@{athletics_10}" type="checkbox" value="athletics 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle athletics 20" title="enter athletics 20">
+            <input name="attr_athletics_20" title="@{athletics_20}" type="checkbox" value="athletics 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle athletics 30" title="enter athletics 30">
+            <input name="attr_athletics_30" title="@{athletics_30}" type="checkbox" value="athletics 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="awareness"></h2>
+            <h2 data-i18n="(per)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle awareness trained" title="enter awareness trained">
+            <input name="attr_awareness_trained" title="@{awareness_trained}" type="checkbox" value="awareness trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle awareness 10" title="enter awareness 10">
+            <input name="attr_awareness_10" title="@{awareness_10}" type="checkbox" value="awareness 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle awareness 20" title="enter awareness 20">
+            <input name="attr_awareness_20" title="@{awareness_20}" type="checkbox" value="awareness 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle awareness 30" title="enter awareness 30">
+            <input name="attr_awareness_30" title="@{awareness_30}" type="checkbox" value="awareness 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="charm"></h2>
+            <h2 data-i18n="(fel)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle charm trained" title="enter charm trained">
+            <input name="attr_charm_trained" title="@{charm_trained}" type="checkbox" value="charm trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle charm 10" title="enter charm 10">
+            <input name="attr_charm_10" title="@{charm_10}" type="checkbox" value="charm 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle charm 20" title="enter charm 20">
+            <input name="attr_charm_20" title="@{charm_20}" type="checkbox" value="charm 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle charm 30" title="enter charm 30">
+            <input name="attr_charm_30" title="@{charm_30}" type="checkbox" value="charm 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="command"></h2>
+            <h2 data-i18n="(fel)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle command trained" title="enter command trained">
+            <input name="attr_command_trained" title="@{command_trained}" type="checkbox" value="command trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle command 10" title="enter command 10">
+            <input name="attr_command_10" title="@{command_10}" type="checkbox" value="command 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle command 20" title="enter command 20">
+            <input name="attr_command_20" title="@{command_20}" type="checkbox" value="command 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle command 30" title="enter command 30">
+            <input name="attr_command_30" title="@{command_30}" type="checkbox" value="command 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="commerce"></h2>
+            <h2 data-i18n="(int)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle commerce trained" title="enter commerce trained">
+            <input name="attr_commerce_trained" title="@{commerce_trained}" type="checkbox" value="commerce trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle commerce 10" title="enter commerce 10">
+            <input name="attr_commerce_10" title="@{commerce_10}" type="checkbox" value="commerce 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle commerce 20" title="enter commerce 20">
+            <input name="attr_commerce_20" title="@{commerce_20}" type="checkbox" value="commerce 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle commerce 30" title="enter commerce 30">
+            <input name="attr_commerce_30" title="@{commerce_30}" type="checkbox" value="commerce 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="common lore"></h2>
+            <h2 data-i18n=""></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle common lore trained" title="enter common lore trained">
+            <input name="attr_common_lore_trained" title="@{common_lore_trained}" type="checkbox" value="common lore trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle common lore 10" title="enter common lore 10">
+            <input name="attr_common_lore_10" title="@{common_lore_10}" type="checkbox" value="common lore 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle common lore 20" title="enter common lore 20">
+            <input name="attr_common_lore_20" title="@{common_lore_20}" type="checkbox" value="common lore 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle common lore 30" title="enter common lore 30">
+            <input name="attr_common_lore_30" title="@{common_lore_30}" type="checkbox" value="common lore 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="deceive"></h2>
+            <h2 data-i18n="(fel)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle deceive trained" title="enter deceive trained">
+            <input name="attr_deceive_trained" title="@{deceive_trained}" type="checkbox" value="deceive trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle deceive 10" title="enter deceive 10">
+            <input name="attr_deceive_10" title="@{deceive_10}" type="checkbox" value="deceive 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle deceive 20" title="enter deceive 20">
+            <input name="attr_deceive_20" title="@{deceive_20}" type="checkbox" value="deceive 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle deceive 30" title="enter deceive 30">
+            <input name="attr_deceive_30" title="@{deceive_30}" type="checkbox" value="deceive 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="dodge"></h2>
+            <h2 data-i18n="(ag)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle dodge trained" title="enter dodge trained">
+            <input name="attr_dodge_trained" title="@{dodge_trained}" type="checkbox" value="dodge trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle dodge 10" title="enter dodge 10">
+            <input name="attr_dodge_10" title="@{dodge_10}" type="checkbox" value="dodge 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle dodge 20" title="enter dodge 20">
+            <input name="attr_dodge_20" title="@{dodge_20}" type="checkbox" value="dodge 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle dodge 30" title="enter dodge 30">
+            <input name="attr_dodge_30" title="@{dodge_30}" type="checkbox" value="dodge 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="forbidden lore"></h2>
+            <h2 data-i18n="(int)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle forbidden lore trained" title="enter forbidden lore trained">
+            <input name="attr_forbidden_lore_trained" title="@{forbidden_lore_trained}" type="checkbox" value="forbidden lore trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle forbidden lore 10" title="enter forbidden lore 10">
+            <input name="attr_forbidden_lore_10" title="@{forbidden_lore_10}" type="checkbox" value="forbidden lore 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle forbidden lore 20" title="enter forbidden lore 20">
+            <input name="attr_forbidden_lore_20" title="@{forbidden_lore_20}" type="checkbox" value="forbidden lore 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle forbidden lore 30" title="enter forbidden lore 30">
+            <input name="attr_forbidden_lore_30" title="@{forbidden_lore_30}" type="checkbox" value="forbidden lore 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="inquiry"></h2>
+            <h2 data-i18n="(fel)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle inquiry trained" title="enter inquiry trained">
+            <input name="attr_inquiry_trained" title="@{inquiry_trained}" type="checkbox" value="inquiry trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle inquiry 10" title="enter inquiry 10">
+            <input name="attr_inquiry_10" title="@{inquiry_10}" type="checkbox" value="inquiry 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle inquiry 20" title="enter inquiry 20">
+            <input name="attr_inquiry_20" title="@{inquiry_20}" type="checkbox" value="inquiry 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle inquiry 30" title="enter inquiry 30">
+            <input name="attr_inquiry_30" title="@{inquiry_30}" type="checkbox" value="inquiry 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="intimidate"></h2>
+            <h2 data-i18n="(wp)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle intimidate trained" title="enter intimidate trained">
+            <input name="attr_intimidate_trained" title="@{intimidate_trained}" type="checkbox" value="intimidate trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle intimidate 10" title="enter intimidate 10">
+            <input name="attr_intimidate_10" title="@{intimidate_10}" type="checkbox" value="intimidate 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle intimidate 20" title="enter intimidate 20">
+            <input name="attr_intimidate_20" title="@{intimidate_20}" type="checkbox" value="intimidate 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle intimidate 30" title="enter intimidate 30">
+            <input name="attr_intimidate_30" title="@{intimidate_30}" type="checkbox" value="intimidate 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="linguistics"></h2>
+            <h2 data-i18n="(int)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle linguistics trained" title="enter linguistics trained">
+            <input name="attr_linguistics_trained" title="@{linguistics_trained}" type="checkbox" value="linguistics trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle linguistics 10" title="enter linguistics 10">
+            <input name="attr_linguistics_10" title="@{linguistics_10}" type="checkbox" value="linguistics 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle linguistics 20" title="enter linguistics 20">
+            <input name="attr_linguistics_20" title="@{linguistics_20}" type="checkbox" value="linguistics 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle linguistics 30" title="enter linguistics 30">
+            <input name="attr_linguistics_30" title="@{linguistics_30}" type="checkbox" value="linguistics 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="logic"></h2>
+            <h2 data-i18n="(int)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle logic trained" title="enter logic trained">
+            <input name="attr_logic_trained" title="@{logic_trained}" type="checkbox" value="logic trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle logic 10" title="enter logic 10">
+            <input name="attr_logic_10" title="@{logic_10}" type="checkbox" value="logic 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle logic 20" title="enter logic 20">
+            <input name="attr_logic_20" title="@{logic_20}" type="checkbox" value="logic 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle logic 30" title="enter logic 30">
+            <input name="attr_logic_30" title="@{logic_30}" type="checkbox" value="logic 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+      </div>
+      <div class="col left-col">
+        <div class="row grid">
+          <h2 data-i18n="trained"></h2>
+          <h2 data-i18n="+10"></h2>
+          <h2 data-i18n="+20"></h2>
+          <h2 data-i18n="+30"></h2>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="medicae"></h2>
+            <h2 data-i18n="(int)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle medicae trained" title="enter medicae trained">
+            <input name="attr_medicae_trained" title="@{medicae_trained}" type="checkbox" value="medicae trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle medicae 10" title="enter medicae 10">
+            <input name="attr_medicae_10" title="@{medicae_10}" type="checkbox" value="medicae 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle medicae 20" title="enter medicae 20">
+            <input name="attr_medicae_20" title="@{medicae_20}" type="checkbox" value="medicae 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle medicae 30" title="enter medicae 30">
+            <input name="attr_medicae_30" title="@{medicae_30}" type="checkbox" value="medicae 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="navigation (surface)"></h2>
+            <h2 data-i18n="(int)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle navigation (surface) trained" title="enter navigation (surface) trained">
+            <input name="attr_navigation_(surface)_trained" title="@{navigation_(surface)_trained}" type="checkbox" value="navigation (surface) trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle navigation (surface) 10" title="enter navigation (surface) 10">
+            <input name="attr_navigation_(surface)_10" title="@{navigation_(surface)_10}" type="checkbox" value="navigation (surface) 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle navigation (surface) 20" title="enter navigation (surface) 20">
+            <input name="attr_navigation_(surface)_20" title="@{navigation_(surface)_20}" type="checkbox" value="navigation (surface) 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle navigation (surface) 30" title="enter navigation (surface) 30">
+            <input name="attr_navigation_(surface)_30" title="@{navigation_(surface)_30}" type="checkbox" value="navigation (surface) 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="navigation (stellar)"></h2>
+            <h2 data-i18n="(int)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle navigation (stellar) trained" title="enter navigation (stellar) trained">
+            <input name="attr_navigation_(stellar)_trained" title="@{navigation_(stellar)_trained}" type="checkbox" value="navigation (stellar) trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle navigation (stellar) 10" title="enter navigation (stellar) 10">
+            <input name="attr_navigation_(stellar)_10" title="@{navigation_(stellar)_10}" type="checkbox" value="navigation (stellar) 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle navigation (stellar) 20" title="enter navigation (stellar) 20">
+            <input name="attr_navigation_(stellar)_20" title="@{navigation_(stellar)_20}" type="checkbox" value="navigation (stellar) 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle navigation (stellar) 30" title="enter navigation (stellar) 30">
+            <input name="attr_navigation_(stellar)_30" title="@{navigation_(stellar)_30}" type="checkbox" value="navigation (stellar) 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="navigation (warp)"></h2>
+            <h2 data-i18n="(int)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle navigation (warp) trained" title="enter navigation (warp) trained">
+            <input name="attr_navigation_(warp)_trained" title="@{navigation_(warp)_trained}" type="checkbox" value="navigation (warp) trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle navigation (warp) 10" title="enter navigation (warp) 10">
+            <input name="attr_navigation_(warp)_10" title="@{navigation_(warp)_10}" type="checkbox" value="navigation (warp) 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle navigation (warp) 20" title="enter navigation (warp) 20">
+            <input name="attr_navigation_(warp)_20" title="@{navigation_(warp)_20}" type="checkbox" value="navigation (warp) 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle navigation (warp) 30" title="enter navigation (warp) 30">
+            <input name="attr_navigation_(warp)_30" title="@{navigation_(warp)_30}" type="checkbox" value="navigation (warp) 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="operate (aeronautica)"></h2>
+            <h2 data-i18n="(ag)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle operate (aeronautica) trained" title="enter operate (aeronautica) trained">
+            <input name="attr_operate_(aeronautica)_trained" title="@{operate_(aeronautica)_trained}" type="checkbox" value="operate (aeronautica) trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle operate (aeronautica) 10" title="enter operate (aeronautica) 10">
+            <input name="attr_operate_(aeronautica)_10" title="@{operate_(aeronautica)_10}" type="checkbox" value="operate (aeronautica) 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle operate (aeronautica) 20" title="enter operate (aeronautica) 20">
+            <input name="attr_operate_(aeronautica)_20" title="@{operate_(aeronautica)_20}" type="checkbox" value="operate (aeronautica) 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle operate (aeronautica) 30" title="enter operate (aeronautica) 30">
+            <input name="attr_operate_(aeronautica)_30" title="@{operate_(aeronautica)_30}" type="checkbox" value="operate (aeronautica) 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="operate (voidship)"></h2>
+            <h2 data-i18n="(ag)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle operate (voidship) trained" title="enter operate (voidship) trained">
+            <input name="attr_operate_(voidship)_trained" title="@{operate_(voidship)_trained}" type="checkbox" value="operate (voidship) trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle operate (voidship) 10" title="enter operate (voidship) 10">
+            <input name="attr_operate_(voidship)_10" title="@{operate_(voidship)_10}" type="checkbox" value="operate (voidship) 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle operate (voidship) 20" title="enter operate (voidship) 20">
+            <input name="attr_operate_(voidship)_20" title="@{operate_(voidship)_20}" type="checkbox" value="operate (voidship) 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle operate (voidship) 30" title="enter operate (voidship) 30">
+            <input name="attr_operate_(voidship)_30" title="@{operate_(voidship)_30}" type="checkbox" value="operate (voidship) 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="parry"></h2>
+            <h2 data-i18n="(ws)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle parry trained" title="enter parry trained">
+            <input name="attr_parry_trained" title="@{parry_trained}" type="checkbox" value="parry trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle parry 10" title="enter parry 10">
+            <input name="attr_parry_10" title="@{parry_10}" type="checkbox" value="parry 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle parry 20" title="enter parry 20">
+            <input name="attr_parry_20" title="@{parry_20}" type="checkbox" value="parry 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle parry 30" title="enter parry 30">
+            <input name="attr_parry_30" title="@{parry_30}" type="checkbox" value="parry 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="psyniscience"></h2>
+            <h2 data-i18n="(per)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle psyniscience trained" title="enter psyniscience trained">
+            <input name="attr_psyniscience_trained" title="@{psyniscience_trained}" type="checkbox" value="psyniscience trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle psyniscience 10" title="enter psyniscience 10">
+            <input name="attr_psyniscience_10" title="@{psyniscience_10}" type="checkbox" value="psyniscience 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle psyniscience 20" title="enter psyniscience 20">
+            <input name="attr_psyniscience_20" title="@{psyniscience_20}" type="checkbox" value="psyniscience 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle psyniscience 30" title="enter psyniscience 30">
+            <input name="attr_psyniscience_30" title="@{psyniscience_30}" type="checkbox" value="psyniscience 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="scholastic lore"></h2>
+            <h2 data-i18n="(int)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle scholastic lore trained" title="enter scholastic lore trained">
+            <input name="attr_scholastic_lore_trained" title="@{scholastic_lore_trained}" type="checkbox" value="scholastic lore trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle scholastic lore 10" title="enter scholastic lore 10">
+            <input name="attr_scholastic_lore_10" title="@{scholastic_lore_10}" type="checkbox" value="scholastic lore 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle scholastic lore 20" title="enter scholastic lore 20">
+            <input name="attr_scholastic_lore_20" title="@{scholastic_lore_20}" type="checkbox" value="scholastic lore 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle scholastic lore 30" title="enter scholastic lore 30">
+            <input name="attr_scholastic_lore_30" title="@{scholastic_lore_30}" type="checkbox" value="scholastic lore 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="scrutiny"></h2>
+            <h2 data-i18n="(per)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle scrutiny trained" title="enter scrutiny trained">
+            <input name="attr_scrutiny_trained" title="@{scrutiny_trained}" type="checkbox" value="scrutiny trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle scrutiny 10" title="enter scrutiny 10">
+            <input name="attr_scrutiny_10" title="@{scrutiny_10}" type="checkbox" value="scrutiny 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle scrutiny 20" title="enter scrutiny 20">
+            <input name="attr_scrutiny_20" title="@{scrutiny_20}" type="checkbox" value="scrutiny 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle scrutiny 30" title="enter scrutiny 30">
+            <input name="attr_scrutiny_30" title="@{scrutiny_30}" type="checkbox" value="scrutiny 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="security"></h2>
+            <h2 data-i18n="(int)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle security trained" title="enter security trained">
+            <input name="attr_security_trained" title="@{security_trained}" type="checkbox" value="security trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle security 10" title="enter security 10">
+            <input name="attr_security_10" title="@{security_10}" type="checkbox" value="security 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle security 20" title="enter security 20">
+            <input name="attr_security_20" title="@{security_20}" type="checkbox" value="security 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle security 30" title="enter security 30">
+            <input name="attr_security_30" title="@{security_30}" type="checkbox" value="security 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="sleight of hand"></h2>
+            <h2 data-i18n="(ag)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle sleight of hand trained" title="enter sleight of hand trained">
+            <input name="attr_sleight_of_hand_trained" title="@{sleight_of_hand_trained}" type="checkbox" value="sleight of hand trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle sleight of hand 10" title="enter sleight of hand 10">
+            <input name="attr_sleight_of_hand_10" title="@{sleight_of_hand_10}" type="checkbox" value="sleight of hand 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle sleight of hand 20" title="enter sleight of hand 20">
+            <input name="attr_sleight_of_hand_20" title="@{sleight_of_hand_20}" type="checkbox" value="sleight of hand 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle sleight of hand 30" title="enter sleight of hand 30">
+            <input name="attr_sleight_of_hand_30" title="@{sleight_of_hand_30}" type="checkbox" value="sleight of hand 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="stealth"></h2>
+            <h2 data-i18n="(ag)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle stealth trained" title="enter stealth trained">
+            <input name="attr_stealth_trained" title="@{stealth_trained}" type="checkbox" value="stealth trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle stealth 10" title="enter stealth 10">
+            <input name="attr_stealth_10" title="@{stealth_10}" type="checkbox" value="stealth 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle stealth 20" title="enter stealth 20">
+            <input name="attr_stealth_20" title="@{stealth_20}" type="checkbox" value="stealth 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle stealth 30" title="enter stealth 30">
+            <input name="attr_stealth_30" title="@{stealth_30}" type="checkbox" value="stealth 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="tech-use"></h2>
+            <h2 data-i18n="(int)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle tech-use trained" title="enter tech-use trained">
+            <input name="attr_tech-use_trained" title="@{tech-use_trained}" type="checkbox" value="tech-use trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle tech-use 10" title="enter tech-use 10">
+            <input name="attr_tech-use_10" title="@{tech-use_10}" type="checkbox" value="tech-use 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle tech-use 20" title="enter tech-use 20">
+            <input name="attr_tech-use_20" title="@{tech-use_20}" type="checkbox" value="tech-use 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle tech-use 30" title="enter tech-use 30">
+            <input name="attr_tech-use_30" title="@{tech-use_30}" type="checkbox" value="tech-use 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="tracking"></h2>
+            <h2 data-i18n="(int)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle tracking trained" title="enter tracking trained">
+            <input name="attr_tracking_trained" title="@{tracking_trained}" type="checkbox" value="tracking trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle tracking 10" title="enter tracking 10">
+            <input name="attr_tracking_10" title="@{tracking_10}" type="checkbox" value="tracking 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle tracking 20" title="enter tracking 20">
+            <input name="attr_tracking_20" title="@{tracking_20}" type="checkbox" value="tracking 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle tracking 30" title="enter tracking 30">
+            <input name="attr_tracking_30" title="@{tracking_30}" type="checkbox" value="tracking 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+        <div class="row grid">
+          <div class="col">
+            <h2 data-i18n="trade"></h2>
+            <h2 data-i18n="(int)"></h2>
+          </div>
+          <label class="styled-checkbox grid" data-i18n-title="toggle trade trained" title="enter trade trained">
+            <input name="attr_trade_trained" title="@{trade_trained}" type="checkbox" value="trade trained"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle trade 10" title="enter trade 10">
+            <input name="attr_trade_10" title="@{trade_10}" type="checkbox" value="trade 10"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle trade 20" title="enter trade 20">
+            <input name="attr_trade_20" title="@{trade_20}" type="checkbox" value="trade 20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="toggle trade 30" title="enter trade 30">
+            <input name="attr_trade_30" title="@{trade_30}" type="checkbox" value="trade 30"/><span class="pictos">3</span>
+          </label>
+        </div>
+      </div>
+      <div class="col right-col"></div>
+    </div>
   </div>
 </div>
 <div class="notes"></div>
