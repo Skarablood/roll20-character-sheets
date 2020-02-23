@@ -1,0 +1,81 @@
+
+<input name="attr_version" type="hidden" value="1"/>
+<input class="type" name="attr_sheet_type" type="hidden" value="character"/>
+<input class="display_string" name="attr_character_settings" type="hidden" value=""/>
+<div class="tabs">
+  <div class="flex">
+    <!-- PUT LOGO HERE. UPDATE ALT TEXT--><img alt="Emerald Productions logo" src="https://raw.githubusercontent.com/clevett/SheetTemplate/master/src/imgs/EProd_Title_Gloss.png"/>
+  </div>
+  <div class="flex info-flex">
+    <div class="grid grid-tab-inputs">
+      <!-- INFO INPUTS-->
+      <h1 data-i18n="character">character</h1>
+      <label data-i18n-title="enter character_name" title="enter character_name">
+        <input data-i18n-placeholder="character_name" name="attr_character_name" placeholder="character_name" title="@{character_name}" type="text" value=""/>
+      </label>
+      <h1 data-i18n="player">player</h1>
+      <label data-i18n-title="enter player_name" title="enter player_name">
+        <input data-i18n-placeholder="player_name" name="attr_player_name" placeholder="player_name" title="@{player_name}" type="text" value=""/>
+      </label>
+      <h1 data-i18n="notes">notes</h1>
+      <label data-i18n-title="enter character_notes" title="enter character_notes">
+        <input data-i18n-placeholder="character_notes" name="attr_character_notes" placeholder="character_notes" title="@{character_notes}" type="text" value=""/>
+      </label>
+    </div>
+    <div class="grid grid-tab-buttons">
+      <!-- Buttons to toggle on GM whisper-->
+      <input class="whisper-toggle" name="attr_gm_toggle" type="hidden" value=" "/>
+      <button name="act_whisper" data-i18n-title="gm-whisper" title="gm whisper" type="action">q</button>
+      <!-- CHARACTER SHEETS-->
+      <button data-i18n="pc" data-i18n-title="" name="act_toggle_character" title="player character button" type="action">pc</button>
+      <button data-i18n="notes" data-i18n-title="" name="act_toggle_notes" title="notes button" type="action">notes</button>
+      <button data-i18n="npc" data-i18n-title="" name="act_toggle_npc" title="non player character" type="action">npc</button>
+    </div>
+  </div>
+</div>
+<div class="npc">
+  <div class="box npc-flex">
+    <p>NPC STUFF</p>
+  </div>
+  <div class="box npc-flex">
+    <p>MORE NPC STUFF </p>
+  </div>
+</div>
+<div class="pc">
+  <div class="flex pc-flex">
+    <div class="grid grid-header">
+      <button class="pictos" data-i18n-title="" name="act_toggle_attributes" title="player character attributes" type="action">y</button>
+      <h1 data-i18n="attributes" data-i18-title="attributes" title="attributes">attributes</h1>
+    </div>
+    <div class="grid grid-pc-attributes">
+      <!-- STRENGHT-->
+      <button name="roll_strength" type="roll" value="@{gm_toggle} &amp;{template:rolls}{{header=^{strength}}}{{base=^{attributes}}}{{dice=[[(@{strength}+(@{attribute_roll})+@{wound_toggle}+@{modifier_toggle}+@{edge_toggle})d6&gt;5@{explode_toggle}]]}}{{mod=[[@{modifier_toggle}]]}}{{wound=[[@{wound_toggle}]]}}{{edge=[[@{edge_toggle}]]}}">
+        <h2 data-i18n="strength">strength</h2>
+      </button>
+      <label data-i18n-title="strenght-input" title="strength input">
+        <input data-i18n-placeholder="" name="attr_strength" placeholder="10" title="@{strength}" type="number" value=""/>
+      </label>
+    </div>
+  </div>
+  <div class="flex pc-flex">
+    <h1 data-i18n="h1" data-i18-title="h1" title="header 1">Header 1</h1>
+    <h2 data-i18n="h2" data-i18-title="h2" title="header 2">Header 2</h2>
+    <h3 data-i18n="h3" data-i18-title="h3" title="header 3">Header 3</h3>
+  </div>
+</div>
+<div class="notes"></div>
+<div class="options"></div>
+<footer><span>Version </span><span name="attr_version"></span></footer>
+<div class="rolltemplates">
+  <rolltemplate class="sheet-rolltemplate-rolls">
+    <!-- - Display a header on the template --->
+    <div class="sheet-template-header">{{#header}}{{header}}{{/header}}</div>
+    <!-- - Display the dice roll in the template --->
+    <div class="sheet-template-body">{{#dice}}
+      <div class="sheet-template-row">{{dice}}</div>{/dice}}
+      <!-- - Display a description. This is great for text included with a roll --->{{#desc}}
+      <div class="sheet-template-row"><span class="sheet-template-desc"></span></div>{{/desc}}
+    </div>
+  </rolltemplate>
+</div>
+<script type="text/worker"></script>
