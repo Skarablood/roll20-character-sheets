@@ -7,7 +7,7 @@ include src/pug/mixins.pug
 //- VARIABLES
 	=============================
 - const characteristics = {'weapon skill':'(ws)', 'ballistic skill':'(bs)', 'strength':'(s)', 'toughness':'(t)', 'agility':'(ag)', 'intelligence':'(int)', 'perception': '(per)', 'willpower':'(wp)', 'fellowship':'(fel)', 'infamy':'(inf)'};
-- const skillsLeft = {'acrobatics':'(ag)','athletics':'(s)','awareness':'(per)', 'charm':'(fel)', 'command':'(fel)', 'commerce':'(int)', 'common lore':'', 'deceive':'(fel)','dodge':'(ag)', 'forbidden lore':'(int)','inquiry':'(fel)','intimidate':'(wp)','linguistics':'(int)', 'logic':'(int)'};
+- const skillsLeft = {'acrobatics':'(ag)','athletics':'(s)','awareness':'(per)', 'charm':'(fel)', 'command':'(fel)', 'commerce':'(int)', 'common lore':false, 'deceive':'(fel)','dodge':'(ag)', 'forbidden lore':'(int)','inquiry':'(fel)','intimidate':'(wp)','linguistics':'(int)', 'logic':'(int)'};
 - const skillsRight = {'medicae':'(int)','navigation (surface)':'(int)','navigation (stellar)':'(int)', 'navigation (warp)':'(int)', 'operate (aeronautica)': '(ag)', 'operate (voidship)': '(ag)', 'parry':'(ws)','psyniscience':'(per)', 'scholastic lore': '(int)','scrutiny':'(per)','security':'(int)', 'sleight of hand':'(ag)', 'stealth': '(ag)', 'tech-use': '(int)', 'tracking':'(int)', 'trade':'(int)'};
 - const repeatingSkills = ['common lore', 'forbidden lore', 'linguistics', 'scholastic lore', 'trade'];
 
@@ -32,59 +32,66 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 	=============================
 .pc
 	.container.grid.info
-		.row.grid.4autocolumn
+		.rowx.grid.4autocolumn
 			each val in ['character name', 'player name']
 				h1(data-i18n=val)
 				+textInput(val)
-		.row.grid.archetype
+		.rowx.grid.archetype
 			each val in ['archetype', 'rank', 'warband name']
 				h1(data-i18n=val)
 				+textInput(val)
-		.row.grid.4autocolumn
+		.rowx.grid.4autocolumn
 			each val in ['pride', 'disgrace']
 				h1(data-i18n=val)
 				+textInput(val)
 		each val in ['motivation', 'description']
-			.row.grid.2autocolumn
+			.rowx.grid.2autocolumn
 					h1(data-i18n=val)
 					+textInput(val)
 
 	.container.grid.characteristics
-		.row.text-center
+		.rowx.text-center
 			h1(data-i18n='characteristics')
-		.row.grid.10column
+		.rowx.grid.10column
 			each val, key in characteristics
 				.col.grid
-					.row.text-center
+					.rowx.text-center
 						h2.small-caps(data-i18n=key)
-					.row.text-center
+					.rowx.text-center
 						h3.small-caps(data-i18n=val)
-		.row.grid.10column
+		.rowx.grid.10column
 			each val, key in characteristics
 				.col
 					+numberInput(key)
 
 	.container.skill-talents-traits
-		.row.grid.headers
+		.rowx.grid.headers
 			.col
 				h1.text-center(data-i18n='skills')
 			.col
 				h1.text-center(data-i18n='talents & traits')
-		.row.skill-list
-			.col.left-col
-				.row.grid
-					each val in ['trained', '+10', '+20', '+30']
-						h2(data-i18n=val)
-				each val, key in skillsLeft
-					+skillColumns(key, val)
-			.col.left-col
-				.row.grid
-					each val in ['trained', '+10', '+20', '+30']
-						h2(data-i18n=val)
-				each val, key in skillsRight
-					+skillColumns(key, val)
-			.col.right-col
-
+		.rowx.skill-list
+			each skillList in [skillsLeft, skillsRight]
+				.col.left-col
+					.rowx.grid
+						each val in ['trained', '+10', '+20', '+30']
+							h2.text-vertical(data-i18n=val)
+					each val, key in skillList
+						+skillColumns(key, val)
+						if repeatingSkills.includes(key)
+							+repeatingSkills(key)
+			.col.right-col.repeating-container
+				fieldset(class=`repeating_talents-traits`)
+					.rowx.grid
+						span.eclipse.font-weight-bold(name='attr_name')
+						button.pictos.text-lowercase w
+						+checkboxSymbol('collapse', 'i')
+						+checkboxSymbol('settings', 'x')
+						.rowx.collapse
+							span.collapse(name='attr_description')
+						.rowx.settings
+							+textInput(`name`)
+							+textarea('description')
 
 //- NOTES SHEET
 	=============================

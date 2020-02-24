@@ -1,0 +1,19 @@
+/***** SETTINGS *****/
+%display-none {  
+	display: none; 
+}			
+
+%displayInlineGrid { 
+	display: inline-grid;
+}
+
+div.sheet-collapse,
+.sheet-settings { 
+	@extend %display-none; 
+}
+
+
+input[name='attr_collapse']:checked ~ div.sheet-collapse,
+input[name='attr_settings']:checked ~ div.sheet-settings {
+    display: block;
+}

@@ -1,29 +1,48 @@
 mixin textInput(name)
 	- const attrName = name.replace(/ /g, '_');
-	label(data-i18n-title=`enter ${name}` title=`enter ${name}`)
+	label(data-i18n-title=name)
 		input(data-i18n-placeholder=name name=`attr_${attrName}` placeholder=name title=`@{${attrName}}` type='text' value='')
 
 mixin numberInput(name)
 	- const attrName = name.replace(/ /g, '_');
-	label(data-i18n-title=`enter ${name}` title=`enter ${name}`)
+	label(data-i18n-title=name)
 		input(name=`attr_${attrName}` title=`@{${attrName}}` type='number' value='')
 
 mixin checkboxInput(name)
 	- const attrName = name.replace(/ /g, '_');
-	label.styled-checkbox.grid(data-i18n-title=`toggle ${name}` title=`enter ${name}`)
+	label.styled-checkbox.grid(data-i18n-title=name)
 		input(name=`attr_${attrName}` title=`@{${attrName}}` type='checkbox' value=name)
 		span.pictos 3
 
+mixin checkboxSymbol (name, symbol)
+	- const attrName = name.replace(/ /g, '_');
+	input.toggles(name=`attr_${name}` title=`@{${name}}` type='checkbox' value=name)
+	span.toggles.pictos #{symbol}
+
+mixin textarea(name)
+	textarea(name=`attr_${name}` placeholder=name)
+
 mixin rollButton(name)
 	- const attrName = name.replace(/ /g, '-');
-	button.text-capitalize(data-i18n=name name=`roll_${attrName}` type='roll' value='&{template:rolls} {{header=^{${name}}}} {{dice=[[1d20[Roll]]]}}')
+	button.text-capitalize(data-i18n=name name=`roll_${attrName}` type='roll' value!=`&{template:rolls} {{header=^{${name}}}} {{dice=[[1d20[Roll]]]}}`)
 
+mixin repeatingSkills(name)
+	- const attrName = name.replace(/ /g, '-');
+	fieldset(class=`repeating_${attrName}`)
+		.rowx.grid
+			+textInput(`name`)
+			+checkboxInput(`trained`)
+			+checkboxInput(`10`)
+			+checkboxInput(`20`)
+			+checkboxInput(`30`)
 
 mixin skillColumns(name, abbreviation)
-	.row.grid
+	- const repeating = repeatingSkills.includes(name) ? true : false;
+	.rowx.grid
 		.col
 			h2(data-i18n=name)
-			h2(data-i18n=abbreviation)
+			if abbreviation
+				h2(data-i18n=abbreviation)
 		+checkboxInput(`${name} trained`)
 		+checkboxInput(`${name} 10`)
 		+checkboxInput(`${name} 20`)

@@ -47,6 +47,7 @@
 
     h1 {
         color: $primary;
+        font-size: 2em;
         text-transform: capitalize;
         font-family: serif;
     }
@@ -135,5 +136,9 @@
     }
 
     .charsheet {
-        width: 825px;
+        width: 850px;
+
+        div.sheet-row {
+            display: inline-grid;
+        }
     }

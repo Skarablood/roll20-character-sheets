@@ -24,6 +24,12 @@
         font-family: "dicefontd20";
     }
 
+    .sheet-eclipse {
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        white-space: nowrap;  
+    }
+
     .sheet-text-center {
         text-align: center;
     }
@@ -40,8 +46,17 @@
         color: $primary;
     }
 
+    .sheet-text-vertical {
+        transform: rotate(180deg);
+        writing-mode: vertical-lr;
+    }
+
     .sheet-text-uppercase {
         text-transform: uppercase;
+    }
+
+    .sheet-text-lowercase {
+        text-transform: lowercase;
     }
 
     .sheet-text-capitalize {
