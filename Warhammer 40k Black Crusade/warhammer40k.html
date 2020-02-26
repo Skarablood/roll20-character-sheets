@@ -887,7 +887,7 @@
       </div>
       <div class="col right-col repeating-container">
         <fieldset class="repeating_talents-traits">
-          <div class="rowx grid descriptor">
+          <div class="rowx grid">
             <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
             <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
             <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
@@ -917,15 +917,25 @@
         </div>
         <div class="repeating-container">
           <fieldset class="repeating_advancement">
-            <div class="rowx grid descriptor">
-              <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
+            <div class="rowx grid">
+              <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button><span class="text-center" name="attr_cost"></span><span class="text-center text-capitalize" name="attr_alignment"></span>
               <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
               <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
               <div class="rowx collapse"><span class="collapse" name="attr_description"></span></div>
-              <div class="rowx settings">
+              <div class="rowx grid settings">
                 <label data-i18n-title="name">
                   <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
                 </label>
+                <label data-i18n-title="cost">
+                  <input name="attr_cost" title="@{cost}" type="number" value=""/>
+                </label>
+                <select name="attr_alignment" value="unaligned">
+                  <option data-i18n="khorne" value="khorne"></option>
+                  <option data-i18n="slaanesh" value="slaanesh"></option>
+                  <option data-i18n="nurgle" value="nurgle"></option>
+                  <option data-i18n="tzeentch" value="tzeentch"></option>
+                  <option data-i18n="unaligned" value="unaligned" selected="selected"></option>
+                </select>
                 <textarea name="attr_description" placeholder="description"></textarea>
               </div>
             </div>

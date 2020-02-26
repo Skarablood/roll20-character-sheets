@@ -11,6 +11,7 @@ include src/pug/mixins.pug
 - const skillsRight = {'medicae':'(int)','navigation (surface)':'(int)','navigation (stellar)':'(int)', 'navigation (warp)':'(int)', 'operate (aeronautica)': '(ag)', 'operate (voidship)': '(ag)', 'parry':'(ws)','psyniscience':'(per)', 'scholastic lore': '(int)','scrutiny':'(per)','security':'(int)', 'sleight of hand':'(ag)', 'stealth': '(ag)', 'tech-use': '(int)', 'tracking':'(int)', 'trade':'(int)'};
 - const repeatingSkills = ['common lore', 'forbidden lore', 'linguistics', 'scholastic lore', 'trade'];
 - const skillRanks = ['trained', '+10', '+20', '+30'];
+- const darkGods = ['khorne', 'slaanesh', 'nurgle', 'tzeentch', 'unaligned'];
 
 //- TABS
 	=============================
@@ -92,7 +93,17 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 						if repeatingSkills.includes(key)
 							+repeatingSkills(key)
 			.col.right-col.repeating-container
-				+repeatingText('talents traits')
+				fieldset(class=`repeating_talents-traits`)
+					.rowx.grid
+						button.text-left.eclipse.font-weight-bold
+							span(name='attr_name')
+						+checkboxSymbol('collapse', 'i')
+						+checkboxSymbol('settings', 'x')
+						.rowx.collapse
+							span.collapse(name='attr_description')
+						.rowx.settings
+							+textInput(`name`)
+							+textarea('description')
 
 	.container.arms
 
@@ -105,7 +116,26 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 						each val in ['advancement', 'cost', 'alignment']
 							h2.text-center(data-i18n=val)
 					.repeating-container
-						+repeatingText('advancement')
+						fieldset(class=`repeating_advancement`)
+							.rowx.grid
+								button.text-left.eclipse.font-weight-bold
+									span(name='attr_name')
+								span.text-center(name='attr_cost')
+								span.text-center.text-capitalize(name='attr_alignment')
+								+checkboxSymbol('collapse', 'i')
+								+checkboxSymbol('settings', 'x')
+								.rowx.collapse
+									span.collapse(name='attr_description')
+								.rowx.grid.settings
+									+textInput(`name`)
+									+numberInput(`cost`)
+									select(name='attr_alignment' value='unaligned')
+										each val in darkGods
+											if val === 'unaligned'
+												option(data-i18n=val value=val selected)
+											else
+												option(data-i18n=val value=val)
+									+textarea('description')
 				.col.right-col
 					.rowx.headers
 						h2.text-center(data-i18n='experience')
@@ -115,7 +145,7 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 							+numberInput(val)
 					.rowx.headers
 						h2.text-center(data-i18n='total alignment advances')
-					each val in ['khorne', 'slaanesh', 'nurgle', 'tzeentch', 'unaligned']
+					each val in darkGods
 						.rowx.grid
 							h3(data-i18n=val)
 							+numberInput(val)
