@@ -10,10 +10,11 @@ include src/pug/mixins.pug
 - const skillsLeft = {'acrobatics':'(ag)','athletics':'(s)','awareness':'(per)', 'charm':'(fel)', 'command':'(fel)', 'commerce':'(int)', 'common lore':false, 'deceive':'(fel)','dodge':'(ag)', 'forbidden lore':'(int)','inquiry':'(fel)','intimidate':'(wp)','linguistics':'(int)', 'logic':'(int)'};
 - const skillsRight = {'medicae':'(int)','navigation (surface)':'(int)','navigation (stellar)':'(int)', 'navigation (warp)':'(int)', 'operate (aeronautica)': '(ag)', 'operate (voidship)': '(ag)', 'parry':'(ws)','psyniscience':'(per)', 'scholastic lore': '(int)','scrutiny':'(per)','security':'(int)', 'sleight of hand':'(ag)', 'stealth': '(ag)', 'tech-use': '(int)', 'tracking':'(int)', 'trade':'(int)'};
 - const repeatingSkills = ['common lore', 'forbidden lore', 'linguistics', 'scholastic lore', 'trade'];
+- const skillRanks = ['trained', '+10', '+20', '+30'];
 
 //- TABS
 	=============================
-input.type(name='attr_sheet_type' type='hidden' value='character')
+input.type(name='attr_sheet_type' type='hidden' value='core')
 input.display_string(name='attr_character_settings' type='hidden' value='')
 
 //- TABS & LOGO
@@ -31,6 +32,16 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 //-PC SHEET
 	=============================
 .pc
+	.container.grid.navigation
+		img(alt='Black Crusade' src='https://raw.githubusercontent.com/clevett/roll20-character-sheets/blackcrusade/Warhammer%2040k%20Black%20Crusade/src/imgs/black-crusade-logo.png')
+		each val in ['core', 'arms', 'advancement']
+			label.pseudo-button(data-i18n-title=`sheet type: ${val}`)
+				if val === 'core'
+					input(name=`attr_sheet_type` title=`@{sheet_type}` type='radio' value=val selected)
+				else
+					input(name=`attr_sheet_type` title=`@{sheet_type}` type='radio' value=val)
+				span.eclipse #{val}
+
 	.container.grid.info
 		.rowx.grid.4autocolumn
 			each val in ['character name', 'player name']
@@ -70,28 +81,50 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 				h1.text-center(data-i18n='skills')
 			.col
 				h1.text-center(data-i18n='talents & traits')
-		.rowx.skill-list
+		.rowx
 			each skillList in [skillsLeft, skillsRight]
-				.col.left-col
+				.col.left-col.skill-list
 					.rowx.grid
-						each val in ['trained', '+10', '+20', '+30']
+						each val in skillRanks
 							h2.text-vertical(data-i18n=val)
 					each val, key in skillList
 						+skillColumns(key, val)
 						if repeatingSkills.includes(key)
 							+repeatingSkills(key)
 			.col.right-col.repeating-container
-				fieldset(class=`repeating_talents-traits`)
-					.rowx.grid
-						span.eclipse.font-weight-bold(name='attr_name')
-						button.pictos.text-lowercase w
-						+checkboxSymbol('collapse', 'i')
-						+checkboxSymbol('settings', 'x')
-						.rowx.collapse
-							span.collapse(name='attr_description')
-						.rowx.settings
-							+textInput(`name`)
-							+textarea('description')
+				+repeatingText('talents traits')
+
+	.container.arms
+
+	.container.advancement
+			.rowx.text-center
+				h1(data-i18n='advancements and alignment')
+			.rowx
+				.col.left-col
+					.rowx.grid.headers
+						each val in ['advancement', 'cost', 'alignment']
+							h2.text-center(data-i18n=val)
+					.repeating-container
+						+repeatingText('advancement')
+				.col.right-col
+					.rowx.headers
+						h2.text-center(data-i18n='experience')
+					each val in ['total xp earned', 'total xp spent', 'unspent xp']
+						.rowx.grid
+							h3(data-i18n=val)
+							+numberInput(val)
+					.rowx.headers
+						h2.text-center(data-i18n='total alignment advances')
+					each val in ['knorne', 'slaanesh', 'nurgle', 'tzeentch', 'unaligned']
+						.rowx.grid
+							h3(data-i18n=val)
+							+numberInput(val)
+					.rowx.headers
+						h2.text-center(data-i18n='current alignment')
+					.rowx
+						+textInput('current alignment')
+
+
 
 //- NOTES SHEET
 	=============================

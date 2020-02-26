@@ -1,10 +1,23 @@
 /***** SETTINGS *****/
+%display-block {
+    display: block;
+}
+
 %display-none {  
 	display: none; 
 }			
 
-%displayInlineGrid { 
-	display: inline-grid;
+
+input.sheet-type:not([value="npc"]) ~  div.sheet-npc {
+    @extend %display-none;
+}
+
+input[name='attr_sheet_type']:not([value='core']) ~ div.sheet-pc div.sheet-info,
+input[name='attr_sheet_type']:not([value='core']) ~ div.sheet-pc div.sheet-skill-talents-traits,
+input[name='attr_sheet_type']:not([value='arms']) ~ div.sheet-pc div.sheet-arms,
+input[name='attr_sheet_type']:not([value='advancement']) ~ div.sheet-pc div.sheet-advancement,
+input[name='attr_sheet_type'][value='advancement'] ~ div.sheet-pc div.sheet-characteristics {
+   @extend %display-none;
 }
 
 div.sheet-collapse,
@@ -12,8 +25,7 @@ div.sheet-collapse,
 	@extend %display-none; 
 }
 
-
 input[name='attr_collapse']:checked ~ div.sheet-collapse,
 input[name='attr_settings']:checked ~ div.sheet-settings {
-    display: block;
+    @extend %display-block;
 }

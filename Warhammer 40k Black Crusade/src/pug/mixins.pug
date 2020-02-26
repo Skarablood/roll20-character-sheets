@@ -14,10 +14,18 @@ mixin checkboxInput(name)
 		input(name=`attr_${attrName}` title=`@{${attrName}}` type='checkbox' value=name)
 		span.pictos 3
 
+mixin checkboxSkills(name)
+	- const attrName = name.replace(/ /g, '_');
+	each val in skillRanks
+		- const value = val === 'trained' ? 0 : val.slice(1);
+		label.styled-checkbox.grid(data-i18n-title=name)
+			input(name=`attr_${attrName}` title=`@{${attrName}}` type='checkbox' value=value)
+			span.pictos 3
+
 mixin checkboxSymbol (name, symbol)
 	- const attrName = name.replace(/ /g, '_');
-	input.toggles(name=`attr_${name}` title=`@{${name}}` type='checkbox' value=name)
-	span.toggles.pictos #{symbol}
+	input.toggles.text-center(name=`attr_${attrName}` title=`@{${attrName}}` type='checkbox' value=name)
+	span.toggles.text-center.pictos #{symbol}
 
 mixin textarea(name)
 	textarea(name=`attr_${name}` placeholder=name)
@@ -26,15 +34,28 @@ mixin rollButton(name)
 	- const attrName = name.replace(/ /g, '-');
 	button.text-capitalize(data-i18n=name name=`roll_${attrName}` type='roll' value!=`&{template:rolls} {{header=^{${name}}}} {{dice=[[1d20[Roll]]]}}`)
 
-mixin repeatingSkills(name)
+mixin repeatingText(name)
 	- const attrName = name.replace(/ /g, '-');
 	fieldset(class=`repeating_${attrName}`)
-		.rowx.grid
-			+textInput(`name`)
-			+checkboxInput(`trained`)
-			+checkboxInput(`10`)
-			+checkboxInput(`20`)
-			+checkboxInput(`30`)
+		.rowx.grid.descriptor
+			button.text-left.eclipse.font-weight-bold
+				span(name='attr_name')
+			+checkboxSymbol('collapse', 'i')
+			+checkboxSymbol('settings', 'x')
+			.rowx.collapse
+				span.collapse(name='attr_description')
+			.rowx.settings
+				+textInput(`name`)
+				+textarea('description')
+
+mixin repeatingSkills(name)
+	- const attrName = name.replace(/ /g, '-');
+	.repeating-container
+		fieldset(class=`repeating_${attrName}`)
+			.rowx.grid
+				button.d20 y
+				+textInput(`name`)
+				+checkboxSkills(name)
 
 mixin skillColumns(name, abbreviation)
 	- const repeating = repeatingSkills.includes(name) ? true : false;
@@ -43,7 +64,4 @@ mixin skillColumns(name, abbreviation)
 			h2(data-i18n=name)
 			if abbreviation
 				h2(data-i18n=abbreviation)
-		+checkboxInput(`${name} trained`)
-		+checkboxInput(`${name} 10`)
-		+checkboxInput(`${name} 20`)
-		+checkboxInput(`${name} 30`)
+		+checkboxSkills(name)

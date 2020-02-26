@@ -15,18 +15,6 @@
     =============================  */
     @import 'src/scss/_globals';
 
-/* HIDE DIFFERENT SHEET TYPES BY DEFAULT
-   ============================= */ 
-    div.sheet-npc,
-    div.sheet-pc {
-        display: none;
-    }   
-
-    input.sheet-type[value="npc"] ~  div.sheet-npc,
-    input.sheet-type[value="character"] ~  div.sheet-pc {
-        display: block;
-    }   
-
 /* GRID
    ============================= */ 
     div.sheet-grid {
@@ -54,6 +42,7 @@
     input.sheet-toggles {
         position: relative;
         opacity: 0;
+        width: 100%;
         z-index: 2;
 
         &:checked + span {
@@ -89,6 +78,51 @@ div.sheet-pc {
     -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
     zoom: 1;
 
+    div.sheet-navigation {
+        grid-template-columns: 1fr minmax(auto, 100px) minmax(auto, 100px) minmax(auto, 100px);
+        
+        img {
+            max-height: 8em;
+        }
+
+        label.sheet-pseudo-button {
+            display: grid;
+
+            input {
+                min-height: 25px;
+                max-height: 25px;
+                position: relative;
+                opacity: 0;
+                width: 100%;
+                z-index: 2;
+
+                &, & + span {
+                    grid-area: 1 / 1 / 1 / 1;
+                }
+
+                &:checked + span {
+                    background-color: $light;
+                    color: $dark;
+                    margin-left: 5%;
+                }
+            }
+
+            span {
+                background-color: $primary;
+                border-radius: 10%;
+                border: 2px solid $primary;
+                color: $white;
+                cursor: pointer;
+                display: inline-block;
+                min-height: 25px;
+                max-height: 25px;
+                padding: 1% 3%;
+                text-transform: capitalize;
+                width: 80%;
+            }
+        }
+    }
+
     div.sheet-info {
         h1 {
             font-size: 1em;
@@ -100,8 +134,14 @@ div.sheet-pc {
     }
 
     div.sheet-characteristics {
+        margin-top: 2%;
+
         div.sheet-10column {
             grid-template-columns: 1.25fr 1.25fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        h2 {
+            font-size: 1.1em;
         }
 
         h3 {
@@ -110,8 +150,14 @@ div.sheet-pc {
     }
 
     div.sheet-skill-talents-traits {
+        margin-top: 2%;
+
         div.sheet-headers {
             grid-template-columns: 70% 29%;
+        }
+
+        h2 {
+            font-size: 1em;
         }
 
         div.sheet-skill-list {
@@ -120,11 +166,20 @@ div.sheet-pc {
 
                 h2 {
                     display: inline-block;
-
                     &[data-i18n='trained'] { grid-column: 2;  }
                     &[data-i18n='10+'] { grid-column: 3; }
                     &[data-i18n='20+'] { grid-column: 4; }
                     &[data-i18n='30+'] { grid-column: 5; }
+                }
+            }
+
+            div.sheet-repeating-container {
+                button {
+                    max-height: 25px;
+                }
+
+                div.sheet-rowx {
+                    grid-template-columns: 9% 55% 1fr 1fr 1fr 1fr;
                 }
             }
         }
@@ -138,24 +193,30 @@ div.sheet-pc {
         div.sheet-right-col {
             display: inline-block;
             width: 25%;
+        }
+    }
 
-            input[name='attr_collapse'],
-            input[name='attr_collapse'] + span {
-                grid-area: 1 / 3 / 1 / 3;
+    div.sheet-advancement {
+        div.sheet-left-col {
+            display: inline-block;
+            margin-right: 2%;
+            width: 55%;
+
+            div.sheet-headers {
+                grid-template-columns: auto auto auto;
+            }
+        }
+
+        div.sheet-right-col {
+            display: inline-block;
+            width: 42%;
+
+            div.sheet-headers {
+                margin-top: 10%;
             }
 
-            input[name='attr_settings'],
-            input[name='attr_settings'] + span {
-                grid-area: 1 / 4 / 1 / 4;
-            }
-
-            div.sheet-collapse,
-            div.sheet-settings {
-                grid-column: 1 / 5;
-            }
-
-            div.sheet-settings {
-                grid-template-columns: 1fr;
+            div.sheet-grid {
+                grid-template-columns: auto 1fr;
             }
         }
     }
@@ -171,6 +232,37 @@ div.sheet-pc {
 
         textarea {
             margin-top: 2%;
+        }
+
+        .repcontrol {
+            margin-top: 5%;
+        }
+
+        div.sheet-descriptor {
+            grid-template-columns: 1fr 1.5em 1.5em;
+
+            div.sheet-collapse {
+                padding-left: 5%;
+            }
+
+            input[name='attr_collapse'],
+            input[name='attr_collapse'] + span {
+                grid-area: 1 / 2 / 1 / 2;
+            }
+
+            input[name='attr_settings'],
+            input[name='attr_settings'] + span {
+                grid-area: 1 / 3 / 1 / 3;
+            }
+
+            div.sheet-collapse,
+            div.sheet-settings {
+                grid-column: 1 / 4;
+            }
+
+            div.sheet-settings {
+                grid-template-columns: 1fr;
+            }
         }
     }
 
