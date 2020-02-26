@@ -111,7 +111,7 @@ textarea {
    ============================= */
 div.sheet-grid {
   display: inline-grid;
-  grid-column-gap: 0.5%;
+  grid-column-gap: 1%;
   grid-row-gap: 0.5%; }
 
 /* GENERIC CLASSES
@@ -503,8 +503,7 @@ div.sheet-footer {
 /*  SHOW & HIDE SHEETS
     ============================= */
 /***** SETTINGS *****/
-input[name='attr_collapse']:checked ~ div.sheet-collapse,
-input[name='attr_settings']:checked ~ div.sheet-settings {
+input[name='attr_collapse']:checked ~ div.sheet-collapse, div.sheet-skill-talents-traits input[name='attr_settings']:checked ~ div.sheet-settings {
   display: block; }
 
 input.sheet-type:not([value="npc"]) ~ div.sheet-npc, input[name='attr_sheet_type']:not([value='core']) ~ div.sheet-pc div.sheet-info,
@@ -514,3 +513,9 @@ input[name='attr_sheet_type']:not([value='advancement']) ~ div.sheet-pc div.shee
 input[name='attr_sheet_type'][value='advancement'] ~ div.sheet-pc div.sheet-characteristics, div.sheet-collapse,
 .sheet-settings {
   display: none; }
+
+div.sheet-advancement input[name='attr_settings']:checked ~ div.sheet-settings {
+  display: inline-grid; }
+
+div.sheet-advancement input[name='attr_settings']:checked ~ div.sheet-settings {
+  grid-column-gap: 1%; }

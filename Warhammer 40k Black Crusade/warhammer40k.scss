@@ -19,7 +19,7 @@
    ============================= */ 
     div.sheet-grid {
         display: inline-grid;
-        grid-column-gap: 0.5%;
+        grid-column-gap: 1%;
         grid-row-gap: 0.5%;
     }
 
@@ -320,7 +320,6 @@ div.sheet-pc {
 /* ROLL TEMPLATE STYLE
 ----------------------------- */
     @import 'src/scss/_rolltemplate';
-
 
 /*  SHOW & HIDE SHEETS
     ============================= */
