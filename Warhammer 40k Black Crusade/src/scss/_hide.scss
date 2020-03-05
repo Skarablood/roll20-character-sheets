@@ -32,7 +32,8 @@ input[name='attr_collapse']:checked ~ div.sheet-collapse {
     @extend %display-block;
 }
 
-div.sheet-skill-talents-traits {
+div.sheet-skill-talents-traits,
+div.sheet-arms {
 	input[name='attr_settings']:checked ~ div.sheet-settings {
 	    @extend %display-block;
 	}	

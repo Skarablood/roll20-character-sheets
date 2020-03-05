@@ -94,7 +94,7 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 							+repeatingSkills(key)
 			.col.right-col.repeating-container
 				fieldset(class=`repeating_talents-traits`)
-					.rowx.grid
+					.rowx.grid.descriptor
 						button.text-left.eclipse.font-weight-bold
 							span(name='attr_name')
 						+checkboxSymbol('collapse', 'i')
@@ -106,53 +106,107 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 							+textarea('description')
 
 	.container.arms
+		.row
+			.col.left-col
+				.rowx.grid.headers
+					h1.text-center(data-i18n='weapons')
+				.repeating-container
+					fieldset(class=`repeating_weapons`)
+						.rowx.grid.descriptor
+							button.text-left.eclipse.font-weight-bold
+							+checkboxSymbol('collapse', 'i')
+							+checkboxSymbol('settings', 'x')
+							.rowx.collapse
+								.rowx.grid.8autocolumn
+									each val in ['class', 'damage', 'type', 'pen']
+										h2(data-i18n=val)
+										span.text-center(name=`attr_${val}`)
+								.rowx.grid.8autocolumn
+									each val in ['range', 'rof', 'clip', 'rld']
+										h2(data-i18n=val)
+										span.text-center(name=`attr_${val}`)
+								.rowx.grid.2autocolumn
+									h2(data-i18n='special rules')
+									span.collapse(name='attr_description')
+							.rowx.settings
+								.rowx.grid.2autocolumn
+									h2(data-i18n='name')
+									+textInput(`name`)
+								.rowx.grid.8autocolumn
+									each val in ['class', 'damage', 'type', 'pen']
+										h2(data-i18n=val)
+										+textInput(val)
+								.rowx.grid.8autocolumn
+									each val in ['range', 'rof', 'clip', 'rld']
+										h2(data-i18n=val)
+										+textInput(val)
+								.rowx.grid
+									h2(data-i18n='special rules')
+									+textarea('description')
+			.col.right-col
+				.rowx.grid.headers
+					h1.text-center(data-i18n='armour')
+				.rowx.grid.3column.head
+					+armorAreas('head','(1-10)')
+				.rowx.grid.3column.center
+					+armorAreas('right arm','(11-20)')
+					+armorAreas('body','(31-70)')
+					+armorAreas('left arm','(21-30)')
+				.rowx.grid.3column.legs
+					+armorAreas('right leg','(71-85)')
+					+armorAreas('left leg','(86-00)')
+				.rowx.grid.headers
+					h1.text-center(data-i18n='gear')
+				.rowx
+					.repeating-container
+						+repeatingText('gear')
 
 	.container.advancement
-			.rowx.text-center
-				h1(data-i18n='advancements and alignment')
-			.rowx
-				.col.left-col
-					.rowx.grid.headers
-						each val in ['advancement', 'cost', 'alignment']
-							h2.text-center(data-i18n=val)
-					.repeating-container
-						fieldset(class=`repeating_advancement`)
-							.rowx.grid
-								button.text-left.eclipse.font-weight-bold
-									span(name='attr_name')
-								span.text-center(name='attr_cost')
-								span.text-center.text-capitalize(name='attr_alignment')
-								+checkboxSymbol('collapse', 'i')
-								+checkboxSymbol('settings', 'x')
-								.rowx.collapse
-									span.collapse(name='attr_description')
-								.rowx.settings
-									+textInput(`name`)
-									+numberInput(`cost`)
-									select(name='attr_alignment' value='unaligned')
-										each val in darkGods
-											if val === 'unaligned'
-												option(data-i18n=val value=val selected)
-											else
-												option(data-i18n=val value=val)
-									+textarea('description')
-				.col.right-col
-					.rowx.headers
-						h2.text-center(data-i18n='experience')
-					each val in ['total xp earned', 'total xp spent', 'unspent xp']
+		.rowx.text-center
+			h1(data-i18n='advancements and alignment')
+		.rowx
+			.col.left-col
+				.rowx.grid.headers
+					each val in ['advancement', 'cost', 'alignment']
+						h2.text-center(data-i18n=val)
+				.repeating-container
+					fieldset(class=`repeating_advancement`)
 						.rowx.grid
-							h3(data-i18n=val)
-							+numberInput(val)
-					.rowx.headers
-						h2.text-center(data-i18n='total alignment advances')
-					each val in darkGods
-						.rowx.grid
-							h3(data-i18n=val)
-							+numberInput(val)
-					.rowx.headers
-						h2.text-center(data-i18n='current alignment')
-					.rowx
-						+textInput('current alignment')
+							button.text-left.eclipse.font-weight-bold
+								span(name='attr_name')
+							span.text-center(name='attr_cost')
+							span.text-center.text-capitalize(name='attr_alignment')
+							+checkboxSymbol('collapse', 'i')
+							+checkboxSymbol('settings', 'x')
+							.rowx.collapse
+								span.collapse(name='attr_description')
+							.rowx.settings
+								+textInput(`name`)
+								+numberInput(`cost`)
+								select(name='attr_alignment' value='unaligned')
+									each val in darkGods
+										if val === 'unaligned'
+											option(data-i18n=val value=val selected)
+										else
+											option(data-i18n=val value=val)
+								+textarea('description')
+			.col.right-col
+				.rowx.headers
+					h2.text-center(data-i18n='experience')
+				each val in ['total xp earned', 'total xp spent', 'unspent xp']
+					.rowx.grid
+						h3(data-i18n=val)
+						+numberInput(val)
+				.rowx.headers
+					h2.text-center(data-i18n='total alignment advances')
+				each val in darkGods
+					.rowx.grid
+						h3(data-i18n=val)
+						+numberInput(val)
+				.rowx.headers
+					h2.text-center(data-i18n='current alignment')
+				.rowx
+					+textInput('current alignment')
 
 
 

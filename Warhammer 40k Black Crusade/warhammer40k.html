@@ -887,7 +887,7 @@
       </div>
       <div class="col right-col repeating-container">
         <fieldset class="repeating_talents-traits">
-          <div class="rowx grid">
+          <div class="rowx grid descriptor">
             <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
             <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
             <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
@@ -903,7 +903,193 @@
       </div>
     </div>
   </div>
-  <div class="container arms"></div>
+  <div class="container arms">
+    <div class="row">
+      <div class="col left-col">
+        <div class="rowx grid headers">
+          <h1 class="text-center" data-i18n="weapons"></h1>
+        </div>
+        <div class="repeating-container">
+          <fieldset class="repeating_weapons">
+            <div class="rowx grid descriptor">
+              <button class="text-left eclipse font-weight-bold"></button>
+              <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
+              <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
+              <div class="rowx collapse">
+                <div class="rowx grid 8autocolumn">
+                  <h2 data-i18n="class"></h2><span class="text-center" name="attr_class"></span>
+                  <h2 data-i18n="damage"></h2><span class="text-center" name="attr_damage"></span>
+                  <h2 data-i18n="type"></h2><span class="text-center" name="attr_type"></span>
+                  <h2 data-i18n="pen"></h2><span class="text-center" name="attr_pen"></span>
+                </div>
+                <div class="rowx grid 8autocolumn">
+                  <h2 data-i18n="range"></h2><span class="text-center" name="attr_range"></span>
+                  <h2 data-i18n="rof"></h2><span class="text-center" name="attr_rof"></span>
+                  <h2 data-i18n="clip"></h2><span class="text-center" name="attr_clip"></span>
+                  <h2 data-i18n="rld"></h2><span class="text-center" name="attr_rld"></span>
+                </div>
+                <div class="rowx grid 2autocolumn">
+                  <h2 data-i18n="special rules"></h2><span class="collapse" name="attr_description"></span>
+                </div>
+              </div>
+              <div class="rowx settings">
+                <div class="rowx grid 2autocolumn">
+                  <h2 data-i18n="name"></h2>
+                  <label data-i18n-title="name">
+                    <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
+                  </label>
+                </div>
+                <div class="rowx grid 8autocolumn">
+                  <h2 data-i18n="class"></h2>
+                  <label data-i18n-title="class">
+                    <input data-i18n-placeholder="class" name="attr_class" placeholder="class" title="@{class}" type="text" value=""/>
+                  </label>
+                  <h2 data-i18n="damage"></h2>
+                  <label data-i18n-title="damage">
+                    <input data-i18n-placeholder="damage" name="attr_damage" placeholder="damage" title="@{damage}" type="text" value=""/>
+                  </label>
+                  <h2 data-i18n="type"></h2>
+                  <label data-i18n-title="type">
+                    <input data-i18n-placeholder="type" name="attr_type" placeholder="type" title="@{type}" type="text" value=""/>
+                  </label>
+                  <h2 data-i18n="pen"></h2>
+                  <label data-i18n-title="pen">
+                    <input data-i18n-placeholder="pen" name="attr_pen" placeholder="pen" title="@{pen}" type="text" value=""/>
+                  </label>
+                </div>
+                <div class="rowx grid 8autocolumn">
+                  <h2 data-i18n="range"></h2>
+                  <label data-i18n-title="range">
+                    <input data-i18n-placeholder="range" name="attr_range" placeholder="range" title="@{range}" type="text" value=""/>
+                  </label>
+                  <h2 data-i18n="rof"></h2>
+                  <label data-i18n-title="rof">
+                    <input data-i18n-placeholder="rof" name="attr_rof" placeholder="rof" title="@{rof}" type="text" value=""/>
+                  </label>
+                  <h2 data-i18n="clip"></h2>
+                  <label data-i18n-title="clip">
+                    <input data-i18n-placeholder="clip" name="attr_clip" placeholder="clip" title="@{clip}" type="text" value=""/>
+                  </label>
+                  <h2 data-i18n="rld"></h2>
+                  <label data-i18n-title="rld">
+                    <input data-i18n-placeholder="rld" name="attr_rld" placeholder="rld" title="@{rld}" type="text" value=""/>
+                  </label>
+                </div>
+                <div class="rowx grid">
+                  <h2 data-i18n="special rules"></h2>
+                  <textarea name="attr_description" placeholder="description"></textarea>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <div class="col right-col">
+        <div class="rowx grid headers">
+          <h1 class="text-center" data-i18n="armour"></h1>
+        </div>
+        <div class="rowx grid 3column head">
+          <div class="col border">
+            <div class="rowx">
+              <h2 class="text-center" data-i18n="head"></h2>
+            </div>
+            <div class="rowx text-center"><span data-i18n="(1-10)"></span></div>
+            <div class="rowx grid 2autocolumn">
+              <h3 class="text-center" data-i18n="type"></h3>
+              <label data-i18n-title="head">
+                <input data-i18n-placeholder="head" name="attr_head" placeholder="head" title="@{head}" type="text" value=""/>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="rowx grid 3column center">
+          <div class="col border">
+            <div class="rowx">
+              <h2 class="text-center" data-i18n="right arm"></h2>
+            </div>
+            <div class="rowx text-center"><span data-i18n="(11-20)"></span></div>
+            <div class="rowx grid 2autocolumn">
+              <h3 class="text-center" data-i18n="type"></h3>
+              <label data-i18n-title="right arm">
+                <input data-i18n-placeholder="right arm" name="attr_right_arm" placeholder="right arm" title="@{right_arm}" type="text" value=""/>
+              </label>
+            </div>
+          </div>
+          <div class="col border">
+            <div class="rowx">
+              <h2 class="text-center" data-i18n="body"></h2>
+            </div>
+            <div class="rowx text-center"><span data-i18n="(31-70)"></span></div>
+            <div class="rowx grid 2autocolumn">
+              <h3 class="text-center" data-i18n="type"></h3>
+              <label data-i18n-title="body">
+                <input data-i18n-placeholder="body" name="attr_body" placeholder="body" title="@{body}" type="text" value=""/>
+              </label>
+            </div>
+          </div>
+          <div class="col border">
+            <div class="rowx">
+              <h2 class="text-center" data-i18n="left arm"></h2>
+            </div>
+            <div class="rowx text-center"><span data-i18n="(21-30)"></span></div>
+            <div class="rowx grid 2autocolumn">
+              <h3 class="text-center" data-i18n="type"></h3>
+              <label data-i18n-title="left arm">
+                <input data-i18n-placeholder="left arm" name="attr_left_arm" placeholder="left arm" title="@{left_arm}" type="text" value=""/>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="rowx grid 3column legs">
+          <div class="col border">
+            <div class="rowx">
+              <h2 class="text-center" data-i18n="right leg"></h2>
+            </div>
+            <div class="rowx text-center"><span data-i18n="(71-85)"></span></div>
+            <div class="rowx grid 2autocolumn">
+              <h3 class="text-center" data-i18n="type"></h3>
+              <label data-i18n-title="right leg">
+                <input data-i18n-placeholder="right leg" name="attr_right_leg" placeholder="right leg" title="@{right_leg}" type="text" value=""/>
+              </label>
+            </div>
+          </div>
+          <div class="col border">
+            <div class="rowx">
+              <h2 class="text-center" data-i18n="left leg"></h2>
+            </div>
+            <div class="rowx text-center"><span data-i18n="(86-00)"></span></div>
+            <div class="rowx grid 2autocolumn">
+              <h3 class="text-center" data-i18n="type"></h3>
+              <label data-i18n-title="left leg">
+                <input data-i18n-placeholder="left leg" name="attr_left_leg" placeholder="left leg" title="@{left_leg}" type="text" value=""/>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="rowx grid headers">
+          <h1 class="text-center" data-i18n="gear"></h1>
+        </div>
+        <div class="rowx">
+          <div class="repeating-container">
+            <fieldset class="repeating_gear">
+              <div class="rowx grid descriptor">
+                <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
+                <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
+                <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
+                <div class="rowx collapse"><span class="collapse" name="attr_description"></span></div>
+                <div class="rowx settings">
+                  <label data-i18n-title="name">
+                    <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
+                  </label>
+                  <textarea name="attr_description" placeholder="description"></textarea>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container advancement">
     <div class="rowx text-center">
       <h1 data-i18n="advancements and alignment"></h1>

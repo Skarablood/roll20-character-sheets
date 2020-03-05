@@ -79,6 +79,10 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
+    div.sheet-5column {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
     div.sheet-6column {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     }
@@ -94,3 +98,8 @@
     div.sheet-4autocolumn {
         grid-template-columns: auto 1fr auto 1fr;
     }
+
+    div.sheet-8autocolumn {
+        grid-template-columns: auto 1fr auto 1fr auto 1fr auto 1fr;
+    }
+

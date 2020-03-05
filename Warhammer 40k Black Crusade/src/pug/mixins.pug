@@ -65,3 +65,14 @@ mixin skillColumns(name, abbreviation)
 			if abbreviation
 				h2(data-i18n=abbreviation)
 		+checkboxSkills(name)
+
+
+mixin armorAreas(name, range)
+	.col.border
+		.rowx
+			h2.text-center(data-i18n=name)
+		.rowx.text-center
+			span(data-i18n=range)
+		.rowx.grid.2autocolumn
+			h3.text-center(data-i18n='type')
+			+textInput(name)
