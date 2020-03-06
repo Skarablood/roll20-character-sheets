@@ -39,6 +39,13 @@ div.sheet-arms {
 	}	
 }
 
+div.sheet-characteristics {
+	input[name='attr_characteristics_settings']:checked ~ div.sheet-settings {
+	   @extend %display-inline-grid;
+	   grid-column-gap: 1%;
+	}
+}
+
 div.sheet-advancement {
 	input[name='attr_settings']:checked ~ div.sheet-settings {
 	    @extend %display-inline-grid;

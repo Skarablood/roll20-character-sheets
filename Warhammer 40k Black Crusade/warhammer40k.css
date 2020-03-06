@@ -282,8 +282,25 @@ div.sheet-pc {
     grid-template-columns: auto 1fr auto 3em auto 1fr; }
   div.sheet-pc div.sheet-characteristics {
     margin-top: 2%; }
+    div.sheet-pc div.sheet-characteristics div.sheet-border {
+      border: 0.1em solid black;
+      border-radius: 0.1em;
+      font-size: 3em;
+      min-height: 75px;
+      padding: 10% 2%;
+      text-align: center; }
+    div.sheet-pc div.sheet-characteristics input.sheet-toggles,
+    div.sheet-pc div.sheet-characteristics span.sheet-toggles {
+      grid-area: 1 / 10 / 1 / 10; }
+    div.sheet-pc div.sheet-characteristics div.sheet-settings {
+      grid-column: 1 / 11; }
     div.sheet-pc div.sheet-characteristics div.sheet-10column {
       grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; }
+    div.sheet-pc div.sheet-characteristics h1[data-i18n='characteristics'] {
+      grid-column: 1 / 10; }
+    div.sheet-pc div.sheet-characteristics h1[data-i18n='scores'],
+    div.sheet-pc div.sheet-characteristics h1[data-i18n='modifier'] {
+      grid-column: 1 / 11; }
     div.sheet-pc div.sheet-characteristics h2 {
       font-size: 1.1em; }
     div.sheet-pc div.sheet-characteristics h3 {
@@ -589,8 +606,11 @@ input[name='attr_sheet_type'][value='advancement'] ~ div.sheet-pc div.sheet-char
 .sheet-settings {
   display: none; }
 
-div.sheet-advancement input[name='attr_settings']:checked ~ div.sheet-settings {
+div.sheet-characteristics input[name='attr_characteristics_settings']:checked ~ div.sheet-settings, div.sheet-advancement input[name='attr_settings']:checked ~ div.sheet-settings {
   display: inline-grid; }
+
+div.sheet-characteristics input[name='attr_characteristics_settings']:checked ~ div.sheet-settings {
+  grid-column-gap: 1%; }
 
 div.sheet-advancement input[name='attr_settings']:checked ~ div.sheet-settings {
   grid-column-gap: 1%; }

@@ -72,10 +72,9 @@
     </div>
   </div>
   <div class="container grid characteristics">
-    <div class="rowx text-center">
-      <h1 data-i18n="characteristics"></h1>
-    </div>
     <div class="rowx grid 10column">
+      <h1 class="text-center" data-i18n="characteristics"></h1>
+      <input class="toggles text-center" name="attr_characteristics_settings" title="@{characteristics_settings}" type="checkbox" value="characteristics settings"/><span class="toggles text-center pictos">x</span>
       <div class="col grid">
         <div class="rowx text-center">
           <h2 class="small-caps" data-i18n="weapon skill"></h2>
@@ -156,57 +155,219 @@
           <h3 class="small-caps" data-i18n="(inf)"></h3>
         </div>
       </div>
-    </div>
-    <div class="rowx grid 10column">
-      <div class="col">
-        <label data-i18n-title="weapon skill">
-          <input name="attr_weapon_skill" title="@{weapon_skill}" type="number" value=""/>
-        </label>
-      </div>
-      <div class="col">
-        <label data-i18n-title="ballistic skill">
-          <input name="attr_ballistic_skill" title="@{ballistic_skill}" type="number" value=""/>
-        </label>
-      </div>
-      <div class="col">
-        <label data-i18n-title="strength">
-          <input name="attr_strength" title="@{strength}" type="number" value=""/>
-        </label>
-      </div>
-      <div class="col">
-        <label data-i18n-title="toughness">
-          <input name="attr_toughness" title="@{toughness}" type="number" value=""/>
-        </label>
-      </div>
-      <div class="col">
-        <label data-i18n-title="agility">
-          <input name="attr_agility" title="@{agility}" type="number" value=""/>
-        </label>
-      </div>
-      <div class="col">
-        <label data-i18n-title="intelligence">
-          <input name="attr_intelligence" title="@{intelligence}" type="number" value=""/>
-        </label>
-      </div>
-      <div class="col">
-        <label data-i18n-title="perception">
-          <input name="attr_perception" title="@{perception}" type="number" value=""/>
-        </label>
-      </div>
-      <div class="col">
-        <label data-i18n-title="willpower">
-          <input name="attr_willpower" title="@{willpower}" type="number" value=""/>
-        </label>
-      </div>
-      <div class="col">
-        <label data-i18n-title="fellowship">
-          <input name="attr_fellowship" title="@{fellowship}" type="number" value=""/>
-        </label>
-      </div>
-      <div class="col">
-        <label data-i18n-title="infamy">
-          <input name="attr_infamy" title="@{infamy}" type="number" value=""/>
-        </label>
+      <div class="col grid border"><span class="text-center" name="attr_weapon skill"></span></div>
+      <div class="col grid border"><span class="text-center" name="attr_ballistic skill"></span></div>
+      <div class="col grid border"><span class="text-center" name="attr_strength"></span></div>
+      <div class="col grid border"><span class="text-center" name="attr_toughness"></span></div>
+      <div class="col grid border"><span class="text-center" name="attr_agility"></span></div>
+      <div class="col grid border"><span class="text-center" name="attr_intelligence"></span></div>
+      <div class="col grid border"><span class="text-center" name="attr_perception"></span></div>
+      <div class="col grid border"><span class="text-center" name="attr_willpower"></span></div>
+      <div class="col grid border"><span class="text-center" name="attr_fellowship"></span></div>
+      <div class="col grid border"><span class="text-center" name="attr_infamy"></span></div>
+      <div class="rowx settings 10column">
+        <h1 class="text-center" data-i18n="scores"></h1>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="weapon skill"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="weapon skill">
+              <input name="attr_weapon_skill" title="@{weapon_skill}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="ballistic skill"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="ballistic skill">
+              <input name="attr_ballistic_skill" title="@{ballistic_skill}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="strength"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="strength">
+              <input name="attr_strength" title="@{strength}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="toughness"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="toughness">
+              <input name="attr_toughness" title="@{toughness}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="agility"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="agility">
+              <input name="attr_agility" title="@{agility}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="intelligence"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="intelligence">
+              <input name="attr_intelligence" title="@{intelligence}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="perception"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="perception">
+              <input name="attr_perception" title="@{perception}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="willpower"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="willpower">
+              <input name="attr_willpower" title="@{willpower}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="fellowship"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="fellowship">
+              <input name="attr_fellowship" title="@{fellowship}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="infamy"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="infamy">
+              <input name="attr_infamy" title="@{infamy}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <h1 class="text-center" data-i18n="modifier"></h1>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="weapon skill"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="weapon skill modifier">
+              <input name="attr_weapon_skill_modifier" title="@{weapon_skill_modifier}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="ballistic skill"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="ballistic skill modifier">
+              <input name="attr_ballistic_skill_modifier" title="@{ballistic_skill_modifier}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="strength"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="strength modifier">
+              <input name="attr_strength_modifier" title="@{strength_modifier}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="toughness"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="toughness modifier">
+              <input name="attr_toughness_modifier" title="@{toughness_modifier}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="agility"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="agility modifier">
+              <input name="attr_agility_modifier" title="@{agility_modifier}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="intelligence"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="intelligence modifier">
+              <input name="attr_intelligence_modifier" title="@{intelligence_modifier}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="perception"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="perception modifier">
+              <input name="attr_perception_modifier" title="@{perception_modifier}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="willpower"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="willpower modifier">
+              <input name="attr_willpower_modifier" title="@{willpower_modifier}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="fellowship"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="fellowship modifier">
+              <input name="attr_fellowship_modifier" title="@{fellowship_modifier}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="col grid">
+          <div class="rowx text-center">
+            <h2 class="small-caps" data-i18n="infamy"></h2>
+          </div>
+          <div class="rowx">
+            <label data-i18n-title="infamy modifier">
+              <input name="attr_infamy_modifier" title="@{infamy_modifier}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
       </div>
     </div>
   </div>

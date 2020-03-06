@@ -62,19 +62,33 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 					+textInput(val)
 
 	.container.grid.characteristics
-		.rowx.text-center
-			h1(data-i18n='characteristics')
 		.rowx.grid.10column
+			h1.text-center(data-i18n='characteristics')
+			+checkboxSymbol('characteristics settings', 'x')
 			each val, key in characteristics
 				.col.grid
 					.rowx.text-center
 						h2.small-caps(data-i18n=key)
 					.rowx.text-center
 						h3.small-caps(data-i18n=val)
-		.rowx.grid.10column
 			each val, key in characteristics
-				.col
-					+numberInput(key)
+				.col.grid.border
+					span.text-center(name=`attr_${key}`)
+			.rowx.settings.10column
+				h1.text-center(data-i18n='scores')
+				each val, key in characteristics
+					.col.grid
+						.rowx.text-center
+							h2.small-caps(data-i18n=key)
+						.rowx
+							+numberInput(`${key}`)
+				h1.text-center(data-i18n='modifier')
+				each val, key in characteristics
+					.col.grid
+						.rowx.text-center
+							h2.small-caps(data-i18n=key)
+						.rowx
+							+numberInput(`${key} modifier`)
 
 	.container.skill-talents-traits
 		.rowx.grid.headers
