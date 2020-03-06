@@ -983,6 +983,56 @@
             </div>
           </fieldset>
         </div>
+        <div class="rowx grid headers">
+          <h1 class="text-center" data-i18n="movement"></h1>
+        </div>
+        <div class="rowx grid 4column movement">
+          <input name="attr_movement_half" type="hidden"/>
+          <div class="col grid 2autocolumn">
+            <h2 class="text-center" data-i18n="half"></h2>
+            <div class="borders"><span class="text-center" name="attr_movement_half"></span></div>
+          </div>
+          <input name="attr_movement_full" type="hidden"/>
+          <div class="col grid 2autocolumn">
+            <h2 class="text-center" data-i18n="full"></h2>
+            <div class="borders"><span class="text-center" name="attr_movement_full"></span></div>
+          </div>
+          <input name="attr_movement_charge" type="hidden"/>
+          <div class="col grid 2autocolumn">
+            <h2 class="text-center" data-i18n="charge"></h2>
+            <div class="borders"><span class="text-center" name="attr_movement_charge"></span></div>
+          </div>
+          <input name="attr_movement_run" type="hidden"/>
+          <div class="col grid 2autocolumn">
+            <h2 class="text-center" data-i18n="run"></h2>
+            <div class="borders"><span class="text-center" name="attr_movement_run"></span></div>
+          </div>
+        </div>
+        <div class="rowx grid headers psychic">
+          <h1 class="text-center" data-i18n="pyschic powers"></h1>
+          <h2 class="text-center" data-i18n="psy rating"></h2>
+          <div class="borders">
+            <label data-i18n-title="psy rating">
+              <input name="attr_psy_rating" title="@{psy_rating}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="repeating-container">
+          <fieldset class="repeating_psychic-powers">
+            <div class="rowx grid descriptor">
+              <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
+              <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
+              <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
+              <div class="rowx collapse"><span class="collapse" name="attr_description"></span></div>
+              <div class="rowx settings">
+                <label data-i18n-title="name">
+                  <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
+                </label>
+                <textarea name="attr_description" placeholder="description"></textarea>
+              </div>
+            </div>
+          </fieldset>
+        </div>
       </div>
       <div class="col right-col">
         <div class="rowx grid headers">
@@ -1086,6 +1136,123 @@
               </div>
             </fieldset>
           </div>
+        </div>
+        <div class="rowx grid headers">
+          <h1 class="text-center" data-i18n="wounds"></h1>
+        </div>
+        <div class="rowx grid 3column movement">
+          <input name="attr_wounds_total" type="hidden"/>
+          <div class="col grid 2autocolumn">
+            <h2 class="text-center" data-i18n="total"></h2>
+            <div class="borders">
+              <label data-i18n-title="wounds total">
+                <input name="attr_wounds_total" title="@{wounds_total}" type="number" value=""/>
+              </label>
+            </div>
+          </div>
+          <input name="attr_wounds_current" type="hidden"/>
+          <div class="col grid 2autocolumn">
+            <h2 class="text-center" data-i18n="current"></h2>
+            <div class="borders">
+              <label data-i18n-title="wounds current">
+                <input name="attr_wounds_current" title="@{wounds_current}" type="number" value=""/>
+              </label>
+            </div>
+          </div>
+          <input name="attr_wounds_fatigue" type="hidden"/>
+          <div class="col grid 2autocolumn">
+            <h2 class="text-center" data-i18n="fatigue"></h2>
+            <div class="borders">
+              <label data-i18n-title="wounds fatigue">
+                <input name="attr_wounds_fatigue" title="@{wounds_fatigue}" type="number" value=""/>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="rowx grid headers">
+          <h1 class="text-center" data-i18n="critical damage"></h1>
+        </div>
+        <div class="rowx">
+          <div class="repeating-container">
+            <fieldset class="repeating_critical-damage">
+              <div class="rowx grid descriptor">
+                <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
+                <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
+                <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
+                <div class="rowx collapse"><span class="collapse" name="attr_description"></span></div>
+                <div class="rowx settings">
+                  <label data-i18n-title="name">
+                    <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
+                  </label>
+                  <textarea name="attr_description" placeholder="description"></textarea>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="rowx grid headers">
+          <h1 class="text-center" data-i18n="mental disorders"></h1>
+        </div>
+        <div class="rowx">
+          <div class="repeating-container">
+            <fieldset class="repeating_mental-disorders">
+              <div class="rowx grid descriptor">
+                <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
+                <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
+                <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
+                <div class="rowx collapse"><span class="collapse" name="attr_description"></span></div>
+                <div class="rowx settings">
+                  <label data-i18n-title="name">
+                    <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
+                  </label>
+                  <textarea name="attr_description" placeholder="description"></textarea>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="rowx grid headers infamy">
+          <h1 class="text-center" data-i18n="infamy points"></h1>
+          <h2 class="text-center" data-i18n="total"></h2>
+          <div class="borders">
+            <label data-i18n-title="infamy points total">
+              <input name="attr_infamy_points_total" title="@{infamy_points_total}" type="number" value=""/>
+            </label>
+          </div>
+          <h2 class="text-center" data-i18n="current"></h2>
+          <div class="borders">
+            <label data-i18n-title="infamy points current">
+              <input name="attr_infamy_points_current" title="@{infamy_points_current}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="rowx grid headers corruption">
+          <h1 class="text-center" data-i18n="corruption points"></h1>
+          <h2 class="text-center" data-i18n="total"></h2>
+          <div class="borders">
+            <label data-i18n-title="corruption total">
+              <input name="attr_corruption_total" title="@{corruption_total}" type="number" value=""/>
+            </label>
+          </div>
+        </div>
+        <div class="rowx grid headers">
+          <h1 class="text-center" data-i18n="gifts of the gods"></h1>
+        </div>
+        <div class="repeating-container">
+          <fieldset class="repeating_gifts">
+            <div class="rowx grid descriptor">
+              <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
+              <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
+              <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
+              <div class="rowx collapse"><span class="collapse" name="attr_description"></span></div>
+              <div class="rowx settings">
+                <label data-i18n-title="name">
+                  <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
+                </label>
+                <textarea name="attr_description" placeholder="description"></textarea>
+              </div>
+            </div>
+          </fieldset>
         </div>
       </div>
     </div>

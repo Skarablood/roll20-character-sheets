@@ -143,6 +143,22 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 								.rowx.grid
 									h2(data-i18n='special rules')
 									+textarea('description')
+				.rowx.grid.headers
+					h1.text-center(data-i18n='movement')
+				.rowx.grid.4column.movement
+					each val in ['half', 'full', 'charge', 'run']
+						input(name=`attr_movement_${val}` type='hidden')
+						.col.grid.2autocolumn
+							h2.text-center(data-i18n=val)
+							.borders
+								span.text-center(name=`attr_movement_${val}`)
+				.rowx.grid.headers.psychic
+					h1.text-center(data-i18n='pyschic powers')
+					h2.text-center(data-i18n='psy rating')
+					.borders
+						+numberInput(`psy rating`)
+				.repeating-container
+					+repeatingText('psychic powers')
 			.col.right-col
 				.rowx.grid.headers
 					h1.text-center(data-i18n='armour')
@@ -160,6 +176,42 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 				.rowx
 					.repeating-container
 						+repeatingText('gear')
+				.rowx.grid.headers
+					h1.text-center(data-i18n='wounds')
+				.rowx.grid.3column.movement
+					each val in ['total', 'current', 'fatigue']
+						input(name=`attr_wounds_${val}` type='hidden')
+						.col.grid.2autocolumn
+							h2.text-center(data-i18n=val)
+							.borders
+								+numberInput(`wounds ${val}`)
+				.rowx.grid.headers
+					h1.text-center(data-i18n='critical damage')
+				.rowx
+					.repeating-container
+						+repeatingText('critical damage')
+				.rowx.grid.headers
+					h1.text-center(data-i18n='mental disorders')
+				.rowx
+					.repeating-container
+						+repeatingText('mental disorders')
+				.rowx.grid.headers.infamy
+					h1.text-center(data-i18n='infamy points')
+					h2.text-center(data-i18n='total')
+					.borders
+						+numberInput(`infamy points total`)
+					h2.text-center(data-i18n='current')
+					.borders
+						+numberInput(`infamy points current`)
+				.rowx.grid.headers.corruption
+					h1.text-center(data-i18n='corruption points')
+					h2.text-center(data-i18n='total')
+					.borders
+						+numberInput(`corruption total`)
+				.rowx.grid.headers
+					h1.text-center(data-i18n='gifts of the gods')
+				.repeating-container
+					+repeatingText('gifts')
 
 	.container.advancement
 		.rowx.text-center

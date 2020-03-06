@@ -12,6 +12,14 @@
         border-bottom: 0.2em solid $dark;
     }
 
+    div.sheet-borders {
+        border-left: 0.2em solid $dark;
+        border-radius: 0.5em;
+        border-right: 0.2em solid $dark;
+        min-height: 20px;
+        padding: 0px 10%;
+    }
+
     .sheet-pictos {
        font-family: "pictos";
     }
