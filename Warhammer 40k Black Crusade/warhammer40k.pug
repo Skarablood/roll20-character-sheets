@@ -123,6 +123,15 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 							+textarea('description')
 
 	.container.arms
+		.rowx
+			h1.text-center(data-i18n='armour')
+		.rowx.grid.6column
+			+armorAreas('head','(1-10)')
+			+armorAreas('right arm','(11-20)')
+			+armorAreas('left arm','(21-30)')
+			+armorAreas('body','(31-70)')
+			+armorAreas('right leg','(71-85)')
+			+armorAreas('left leg','(86-00)')
 		.row
 			.col.left-col
 				.rowx.grid.headers
@@ -177,17 +186,6 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 				.repeating-container
 					+repeatingText('psychic powers')
 			.col.right-col
-				.rowx.grid.headers
-					h1.text-center(data-i18n='armour')
-				.rowx.grid.3column.head
-					+armorAreas('head','(1-10)')
-				.rowx.grid.3column.center
-					+armorAreas('right arm','(11-20)')
-					+armorAreas('body','(31-70)')
-					+armorAreas('left arm','(21-30)')
-				.rowx.grid.3column.legs
-					+armorAreas('right leg','(71-85)')
-					+armorAreas('left leg','(86-00)')
 				.rowx.grid.headers
 					h1.text-center(data-i18n='gear')
 				.rowx

@@ -11,7 +11,7 @@ describe('Global Attributes By Catagory', () => {
 	})
 
 	it('contains characteristics array', () => {
-		const expected = ['weapon skill', 'ballistic skill', 'strength', 'toughness', 'agility', 'intelligence', 'perception', 'willpower', 'fellowship', 'infamy']
+		const expected = ['weapon_skill', 'ballistic_skill', 'strength', 'toughness', 'agility', 'intelligence', 'perception', 'willpower', 'fellowship', 'infamy']
 
 		const actual = Globals.characteristics
 
