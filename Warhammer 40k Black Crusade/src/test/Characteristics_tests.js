@@ -18,12 +18,12 @@ describe('Characteristics handlers', () => {
 		assert.strictEqual(actual, expected)
 	});
 
-	it(`convert string object values into integers`, () => {
-		const expected = 6
+	it('returns the sum of the calculated modifier and bonus', () => {
+		const expected = 5;
 
-		const actual = Characteristics.calculateAttributes({newValue: '6', previousValue: '4'})
+		const actual = Characteristics.calculateAttributes({score: '31', bonus: '2'})
 
-		assert.strictEqual(actual.newValue, expected)
+		assert.strictEqual(actual, expected)
 	})
 })
 
