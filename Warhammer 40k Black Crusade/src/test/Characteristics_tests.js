@@ -2,14 +2,6 @@ const assert = require('assert')
 const Characteristics = require('../js/Characteristics');
 
 describe('Characteristics handlers', () => {
-	it('returns a number', () => {
-		const expected = 'number'
-
-		const actual = Characteristics.convertInteger('6')
-
-		assert.strictEqual(typeof actual, expected)
-	})
-
 	it(`divide the score by 10 rounded down`, () => {
 		const expected = 3
 

@@ -299,7 +299,7 @@ div.sheet-pc {
     div.sheet-pc div.sheet-characteristics h1[data-i18n='characteristics'] {
       grid-column: 1 / 10; }
     div.sheet-pc div.sheet-characteristics h1[data-i18n='scores'],
-    div.sheet-pc div.sheet-characteristics h1[data-i18n='modifier'] {
+    div.sheet-pc div.sheet-characteristics h1[data-i18n='modifier bonus'] {
       grid-column: 1 / 11; }
     div.sheet-pc div.sheet-characteristics h2 {
       font-size: 1.1em; }

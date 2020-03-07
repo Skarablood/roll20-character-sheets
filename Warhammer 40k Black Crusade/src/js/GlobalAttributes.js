@@ -1,5 +1,6 @@
 const globalAttributesByCatagory = {
-	characteristics: ['weapon skill', 'ballistic skill', 'strength', 'toughness', 'agility', 'intelligence', 'perception', 'willpower', 'fellowship', 'infamy']
+	characteristics: ['weapon_skill', 'ballistic_skill', 'strength', 'toughness', 'agility', 'intelligence', 'perception', 'willpower', 'fellowship', 'infamy']
 }
 
 module.exports = globalAttributesByCatagory;
+

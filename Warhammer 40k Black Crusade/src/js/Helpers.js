@@ -1,3 +1,4 @@
+
 const Helpers = {
 	parseIntegers(numbers) {
 		for (let [key, value] of Object.entries(numbers)) {
@@ -5,7 +6,8 @@ const Helpers = {
 		}
 		return numbers	
 	},
-	sumIntegers: numbers => numbers.reduce((a,b) => a + b, 0)
+	sumIntegers: numbers => numbers.reduce((a,b) => a + b, 0),
+	convertInteger: string => parseInt(string) || 0,
 }
 
 module.exports = Helpers;

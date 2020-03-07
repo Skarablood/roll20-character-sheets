@@ -72,8 +72,11 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 					.rowx.text-center
 						h3.small-caps(data-i18n=val)
 			each val, key in characteristics
+				- const attrName = key.replace(/ /g, '_');
+				+hiddenInput(`${key} modifier`, 0)
 				.col.grid.border
-					span.text-center(name=`attr_${key}`)
+					span.text-center(name=`attr_${attrName}`)
+					span.text-center(name=`attr_${attrName}_modifier`)
 			.rowx.settings.10column
 				h1.text-center(data-i18n='scores')
 				each val, key in characteristics
@@ -88,7 +91,7 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 						.rowx.text-center
 							h2.small-caps(data-i18n=key)
 						.rowx
-							+numberInput(`${key} modifier`)
+							+numberInput(`${key} modifier bonus`)
 
 	.container.skill-talents-traits
 		.rowx.grid.headers

@@ -8,6 +8,10 @@ mixin numberInput(name)
 	label(data-i18n-title=name)
 		input(name=`attr_${attrName}` title=`@{${attrName}}` type='number' value='')
 
+mixin hiddenInput(name, value)
+	- const attrName = name.replace(/ /g, '_');
+	input(name=`attr_${attrName}` type='hidden' value=value)
+
 mixin checkboxInput(name)
 	- const attrName = name.replace(/ /g, '_');
 	label.styled-checkbox.grid(data-i18n-title=name)

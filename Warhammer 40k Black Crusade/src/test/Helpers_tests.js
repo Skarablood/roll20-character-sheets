@@ -17,6 +17,14 @@ describe('Helper functions', () => {
 
 		assert.strictEqual(actual, expected)
 	})
+
+	it('converts a number', () => {
+		const expected = 'number'
+
+		const actual = Helpers.convertInteger('6')
+
+		assert.strictEqual(typeof actual, expected)
+	})
 })
 
 
