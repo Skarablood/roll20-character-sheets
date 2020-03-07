@@ -24,7 +24,7 @@
     </label>
   </div>
   <div class="container grid info">
-    <div class="rowx grid 4autocolumn">
+    <div class="rowx grid names">
       <h1 data-i18n="character name"></h1>
       <label data-i18n-title="character name">
         <input data-i18n-placeholder="character name" name="attr_character_name" placeholder="character name" title="@{character_name}" type="text" value=""/>
@@ -33,48 +33,76 @@
       <label data-i18n-title="player name">
         <input data-i18n-placeholder="player name" name="attr_player_name" placeholder="player name" title="@{player_name}" type="text" value=""/>
       </label>
-    </div>
-    <div class="rowx grid archetype">
-      <h1 data-i18n="archetype"></h1>
-      <label data-i18n-title="archetype">
-        <input data-i18n-placeholder="archetype" name="attr_archetype" placeholder="archetype" title="@{archetype}" type="text" value=""/>
-      </label>
-      <h1 data-i18n="rank"></h1>
-      <label data-i18n-title="rank">
-        <input data-i18n-placeholder="rank" name="attr_rank" placeholder="rank" title="@{rank}" type="text" value=""/>
-      </label>
-      <h1 data-i18n="warband name"></h1>
-      <label data-i18n-title="warband name">
-        <input data-i18n-placeholder="warband name" name="attr_warband_name" placeholder="warband name" title="@{warband_name}" type="text" value=""/>
-      </label>
-    </div>
-    <div class="rowx grid 4autocolumn">
-      <h1 data-i18n="pride"></h1>
-      <label data-i18n-title="pride">
-        <input data-i18n-placeholder="pride" name="attr_pride" placeholder="pride" title="@{pride}" type="text" value=""/>
-      </label>
-      <h1 data-i18n="disgrace"></h1>
-      <label data-i18n-title="disgrace">
-        <input data-i18n-placeholder="disgrace" name="attr_disgrace" placeholder="disgrace" title="@{disgrace}" type="text" value=""/>
-      </label>
-    </div>
-    <div class="rowx grid 2autocolumn">
-      <h1 data-i18n="motivation"></h1>
-      <label data-i18n-title="motivation">
-        <input data-i18n-placeholder="motivation" name="attr_motivation" placeholder="motivation" title="@{motivation}" type="text" value=""/>
-      </label>
-    </div>
-    <div class="rowx grid 2autocolumn">
-      <h1 data-i18n="description"></h1>
-      <label data-i18n-title="description">
-        <input data-i18n-placeholder="description" name="attr_description" placeholder="description" title="@{description}" type="text" value=""/>
-      </label>
+      <input class="toggles text-center" name="attr_info_collapse" title="@{info_collapse}" type="checkbox" value="info collapse"/><span class="toggles text-center pictos">i</span>
+      <input class="toggles text-center" name="attr_info_settings" title="@{info_settings}" type="checkbox" value="info settings"/><span class="toggles text-center pictos">p</span>
+      <div class="rowx collapse">
+        <div class="rowx grid archetype">
+          <h1 data-i18n="archetype"></h1>
+          <div class="bottom-border"><span name="attr_archetype"></span></div>
+          <h1 data-i18n="rank"></h1>
+          <div class="bottom-border text-center"><span name="attr_rank"></span></div>
+          <h1 data-i18n="warband name"></h1>
+          <div class="bottom-border"><span name="attr_warband_name"></span></div>
+        </div>
+        <div class="rowx grid 4autocolumn">
+          <h1 data-i18n="pride"></h1>
+          <div class="bottom-border"><span name="attr_pride"></span></div>
+          <h1 data-i18n="disgrace"></h1>
+          <div class="bottom-border"><span name="attr_disgrace"></span></div>
+        </div>
+        <div class="rowx grid 2autocolumn">
+          <h1 data-i18n="motivation"></h1>
+          <div class="bottom-border"><span class="description" name="attr_motivation"></span></div>
+        </div>
+        <div class="rowx grid 2autocolumn">
+          <h1 data-i18n="description"></h1>
+          <div class="bottom-border"><span class="description" name="attr_description"></span></div>
+        </div>
+      </div>
+      <div class="rowx settings">
+        <div class="rowx grid archetype">
+          <h1 data-i18n="archetype"></h1>
+          <label data-i18n-title="archetype">
+            <input data-i18n-placeholder="archetype" name="attr_archetype" placeholder="archetype" title="@{archetype}" type="text" value=""/>
+          </label>
+          <h1 data-i18n="rank"></h1>
+          <label data-i18n-title="rank">
+            <input data-i18n-placeholder="rank" name="attr_rank" placeholder="rank" title="@{rank}" type="text" value=""/>
+          </label>
+          <h1 data-i18n="warband name"></h1>
+          <label data-i18n-title="warband name">
+            <input data-i18n-placeholder="warband name" name="attr_warband_name" placeholder="warband name" title="@{warband_name}" type="text" value=""/>
+          </label>
+        </div>
+        <div class="rowx grid 4autocolumn">
+          <h1 data-i18n="pride"></h1>
+          <label data-i18n-title="pride">
+            <input data-i18n-placeholder="pride" name="attr_pride" placeholder="pride" title="@{pride}" type="text" value=""/>
+          </label>
+          <h1 data-i18n="disgrace"></h1>
+          <label data-i18n-title="disgrace">
+            <input data-i18n-placeholder="disgrace" name="attr_disgrace" placeholder="disgrace" title="@{disgrace}" type="text" value=""/>
+          </label>
+        </div>
+        <div class="rowx grid 2autocolumn">
+          <h1 data-i18n="motivation"></h1>
+          <label data-i18n-title="motivation">
+            <input data-i18n-placeholder="motivation" name="attr_motivation" placeholder="motivation" title="@{motivation}" type="text" value=""/>
+          </label>
+        </div>
+        <div class="rowx grid 2autocolumn">
+          <h1 data-i18n="description"></h1>
+          <label data-i18n-title="description">
+            <input data-i18n-placeholder="description" name="attr_description" placeholder="description" title="@{description}" type="text" value=""/>
+          </label>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container grid characteristics">
     <div class="rowx grid 10column">
       <h1 class="text-center" data-i18n="characteristics"></h1>
-      <input class="toggles text-center" name="attr_characteristics_settings" title="@{characteristics_settings}" type="checkbox" value="characteristics settings"/><span class="toggles text-center pictos">x</span>
+      <input class="toggles text-center" name="attr_characteristics_settings" title="@{characteristics_settings}" type="checkbox" value="characteristics settings"/><span class="toggles text-center pictos">p</span>
       <div class="col grid">
         <div class="rowx text-center">
           <h2 class="small-caps" data-i18n="weapon skill"></h2>
@@ -155,26 +183,56 @@
           <h3 class="small-caps" data-i18n="(inf)"></h3>
         </div>
       </div>
-      <input name="attr_weapon_skill_modifier" type="hidden" value="0"/>
-      <div class="col grid border"><span class="text-center" name="attr_weapon_skill"></span><span class="text-center" name="attr_weapon_skill_modifier"></span></div>
-      <input name="attr_ballistic_skill_modifier" type="hidden" value="0"/>
-      <div class="col grid border"><span class="text-center" name="attr_ballistic_skill"></span><span class="text-center" name="attr_ballistic_skill_modifier"></span></div>
-      <input name="attr_strength_modifier" type="hidden" value="0"/>
-      <div class="col grid border"><span class="text-center" name="attr_strength"></span><span class="text-center" name="attr_strength_modifier"></span></div>
-      <input name="attr_toughness_modifier" type="hidden" value="0"/>
-      <div class="col grid border"><span class="text-center" name="attr_toughness"></span><span class="text-center" name="attr_toughness_modifier"></span></div>
-      <input name="attr_agility_modifier" type="hidden" value="0"/>
-      <div class="col grid border"><span class="text-center" name="attr_agility"></span><span class="text-center" name="attr_agility_modifier"></span></div>
-      <input name="attr_intelligence_modifier" type="hidden" value="0"/>
-      <div class="col grid border"><span class="text-center" name="attr_intelligence"></span><span class="text-center" name="attr_intelligence_modifier"></span></div>
-      <input name="attr_perception_modifier" type="hidden" value="0"/>
-      <div class="col grid border"><span class="text-center" name="attr_perception"></span><span class="text-center" name="attr_perception_modifier"></span></div>
-      <input name="attr_willpower_modifier" type="hidden" value="0"/>
-      <div class="col grid border"><span class="text-center" name="attr_willpower"></span><span class="text-center" name="attr_willpower_modifier"></span></div>
-      <input name="attr_fellowship_modifier" type="hidden" value="0"/>
-      <div class="col grid border"><span class="text-center" name="attr_fellowship"></span><span class="text-center" name="attr_fellowship_modifier"></span></div>
-      <input name="attr_infamy_modifier" type="hidden" value="0"/>
-      <div class="col grid border"><span class="text-center" name="attr_infamy"></span><span class="text-center" name="attr_infamy_modifier"></span></div>
+      <input name="attr_weapon_skill_bonus" type="hidden" value="0"/>
+      <div class="grid border background-color">
+        <div class="score"><span class="text-center" name="attr_weapon_skill"></span></div>
+        <div class="bonus"><span class="text-center" name="attr_weapon_skill_bonus"></span></div>
+      </div>
+      <input name="attr_ballistic_skill_bonus" type="hidden" value="0"/>
+      <div class="grid border background-color">
+        <div class="score"><span class="text-center" name="attr_ballistic_skill"></span></div>
+        <div class="bonus"><span class="text-center" name="attr_ballistic_skill_bonus"></span></div>
+      </div>
+      <input name="attr_strength_bonus" type="hidden" value="0"/>
+      <div class="grid border background-color">
+        <div class="score"><span class="text-center" name="attr_strength"></span></div>
+        <div class="bonus"><span class="text-center" name="attr_strength_bonus"></span></div>
+      </div>
+      <input name="attr_toughness_bonus" type="hidden" value="0"/>
+      <div class="grid border background-color">
+        <div class="score"><span class="text-center" name="attr_toughness"></span></div>
+        <div class="bonus"><span class="text-center" name="attr_toughness_bonus"></span></div>
+      </div>
+      <input name="attr_agility_bonus" type="hidden" value="0"/>
+      <div class="grid border background-color">
+        <div class="score"><span class="text-center" name="attr_agility"></span></div>
+        <div class="bonus"><span class="text-center" name="attr_agility_bonus"></span></div>
+      </div>
+      <input name="attr_intelligence_bonus" type="hidden" value="0"/>
+      <div class="grid border background-color">
+        <div class="score"><span class="text-center" name="attr_intelligence"></span></div>
+        <div class="bonus"><span class="text-center" name="attr_intelligence_bonus"></span></div>
+      </div>
+      <input name="attr_perception_bonus" type="hidden" value="0"/>
+      <div class="grid border background-color">
+        <div class="score"><span class="text-center" name="attr_perception"></span></div>
+        <div class="bonus"><span class="text-center" name="attr_perception_bonus"></span></div>
+      </div>
+      <input name="attr_willpower_bonus" type="hidden" value="0"/>
+      <div class="grid border background-color">
+        <div class="score"><span class="text-center" name="attr_willpower"></span></div>
+        <div class="bonus"><span class="text-center" name="attr_willpower_bonus"></span></div>
+      </div>
+      <input name="attr_fellowship_bonus" type="hidden" value="0"/>
+      <div class="grid border background-color">
+        <div class="score"><span class="text-center" name="attr_fellowship"></span></div>
+        <div class="bonus"><span class="text-center" name="attr_fellowship_bonus"></span></div>
+      </div>
+      <input name="attr_infamy_bonus" type="hidden" value="0"/>
+      <div class="grid border background-color">
+        <div class="score"><span class="text-center" name="attr_infamy"></span></div>
+        <div class="bonus"><span class="text-center" name="attr_infamy_bonus"></span></div>
+      </div>
       <div class="rowx settings 10column">
         <h1 class="text-center" data-i18n="scores"></h1>
         <div class="col grid">
@@ -183,7 +241,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="weapon skill">
-              <input name="attr_weapon_skill" title="@{weapon_skill}" type="number" value=""/>
+              <input name="attr_weapon_skill" placeholder="0" title="@{weapon_skill}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -193,7 +251,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="ballistic skill">
-              <input name="attr_ballistic_skill" title="@{ballistic_skill}" type="number" value=""/>
+              <input name="attr_ballistic_skill" placeholder="0" title="@{ballistic_skill}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -203,7 +261,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="strength">
-              <input name="attr_strength" title="@{strength}" type="number" value=""/>
+              <input name="attr_strength" placeholder="0" title="@{strength}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -213,7 +271,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="toughness">
-              <input name="attr_toughness" title="@{toughness}" type="number" value=""/>
+              <input name="attr_toughness" placeholder="0" title="@{toughness}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -223,7 +281,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="agility">
-              <input name="attr_agility" title="@{agility}" type="number" value=""/>
+              <input name="attr_agility" placeholder="0" title="@{agility}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -233,7 +291,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="intelligence">
-              <input name="attr_intelligence" title="@{intelligence}" type="number" value=""/>
+              <input name="attr_intelligence" placeholder="0" title="@{intelligence}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -243,7 +301,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="perception">
-              <input name="attr_perception" title="@{perception}" type="number" value=""/>
+              <input name="attr_perception" placeholder="0" title="@{perception}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -253,7 +311,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="willpower">
-              <input name="attr_willpower" title="@{willpower}" type="number" value=""/>
+              <input name="attr_willpower" placeholder="0" title="@{willpower}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -263,7 +321,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="fellowship">
-              <input name="attr_fellowship" title="@{fellowship}" type="number" value=""/>
+              <input name="attr_fellowship" placeholder="0" title="@{fellowship}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -273,18 +331,18 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="infamy">
-              <input name="attr_infamy" title="@{infamy}" type="number" value=""/>
+              <input name="attr_infamy" placeholder="0" title="@{infamy}" type="number" value=""/>
             </label>
           </div>
         </div>
-        <h1 class="text-center" data-i18n="modifier bonus"></h1>
+        <h1 class="text-center" data-i18n="unnatural bonus"></h1>
         <div class="col grid">
           <div class="rowx text-center">
             <h2 class="small-caps" data-i18n="weapon skill"></h2>
           </div>
           <div class="rowx">
-            <label data-i18n-title="weapon skill modifier bonus">
-              <input name="attr_weapon_skill_modifier_bonus" title="@{weapon_skill_modifier_bonus}" type="number" value=""/>
+            <label data-i18n-title="weapon skill unnatural bonus">
+              <input name="attr_weapon_skill_unnatural_bonus" placeholder="0" title="@{weapon_skill_unnatural_bonus}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -293,8 +351,8 @@
             <h2 class="small-caps" data-i18n="ballistic skill"></h2>
           </div>
           <div class="rowx">
-            <label data-i18n-title="ballistic skill modifier bonus">
-              <input name="attr_ballistic_skill_modifier_bonus" title="@{ballistic_skill_modifier_bonus}" type="number" value=""/>
+            <label data-i18n-title="ballistic skill unnatural bonus">
+              <input name="attr_ballistic_skill_unnatural_bonus" placeholder="0" title="@{ballistic_skill_unnatural_bonus}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -303,8 +361,8 @@
             <h2 class="small-caps" data-i18n="strength"></h2>
           </div>
           <div class="rowx">
-            <label data-i18n-title="strength modifier bonus">
-              <input name="attr_strength_modifier_bonus" title="@{strength_modifier_bonus}" type="number" value=""/>
+            <label data-i18n-title="strength unnatural bonus">
+              <input name="attr_strength_unnatural_bonus" placeholder="0" title="@{strength_unnatural_bonus}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -313,8 +371,8 @@
             <h2 class="small-caps" data-i18n="toughness"></h2>
           </div>
           <div class="rowx">
-            <label data-i18n-title="toughness modifier bonus">
-              <input name="attr_toughness_modifier_bonus" title="@{toughness_modifier_bonus}" type="number" value=""/>
+            <label data-i18n-title="toughness unnatural bonus">
+              <input name="attr_toughness_unnatural_bonus" placeholder="0" title="@{toughness_unnatural_bonus}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -323,8 +381,8 @@
             <h2 class="small-caps" data-i18n="agility"></h2>
           </div>
           <div class="rowx">
-            <label data-i18n-title="agility modifier bonus">
-              <input name="attr_agility_modifier_bonus" title="@{agility_modifier_bonus}" type="number" value=""/>
+            <label data-i18n-title="agility unnatural bonus">
+              <input name="attr_agility_unnatural_bonus" placeholder="0" title="@{agility_unnatural_bonus}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -333,8 +391,8 @@
             <h2 class="small-caps" data-i18n="intelligence"></h2>
           </div>
           <div class="rowx">
-            <label data-i18n-title="intelligence modifier bonus">
-              <input name="attr_intelligence_modifier_bonus" title="@{intelligence_modifier_bonus}" type="number" value=""/>
+            <label data-i18n-title="intelligence unnatural bonus">
+              <input name="attr_intelligence_unnatural_bonus" placeholder="0" title="@{intelligence_unnatural_bonus}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -343,8 +401,8 @@
             <h2 class="small-caps" data-i18n="perception"></h2>
           </div>
           <div class="rowx">
-            <label data-i18n-title="perception modifier bonus">
-              <input name="attr_perception_modifier_bonus" title="@{perception_modifier_bonus}" type="number" value=""/>
+            <label data-i18n-title="perception unnatural bonus">
+              <input name="attr_perception_unnatural_bonus" placeholder="0" title="@{perception_unnatural_bonus}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -353,8 +411,8 @@
             <h2 class="small-caps" data-i18n="willpower"></h2>
           </div>
           <div class="rowx">
-            <label data-i18n-title="willpower modifier bonus">
-              <input name="attr_willpower_modifier_bonus" title="@{willpower_modifier_bonus}" type="number" value=""/>
+            <label data-i18n-title="willpower unnatural bonus">
+              <input name="attr_willpower_unnatural_bonus" placeholder="0" title="@{willpower_unnatural_bonus}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -363,8 +421,8 @@
             <h2 class="small-caps" data-i18n="fellowship"></h2>
           </div>
           <div class="rowx">
-            <label data-i18n-title="fellowship modifier bonus">
-              <input name="attr_fellowship_modifier_bonus" title="@{fellowship_modifier_bonus}" type="number" value=""/>
+            <label data-i18n-title="fellowship unnatural bonus">
+              <input name="attr_fellowship_unnatural_bonus" placeholder="0" title="@{fellowship_unnatural_bonus}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -373,8 +431,8 @@
             <h2 class="small-caps" data-i18n="infamy"></h2>
           </div>
           <div class="rowx">
-            <label data-i18n-title="infamy modifier bonus">
-              <input name="attr_infamy_modifier_bonus" title="@{infamy_modifier_bonus}" type="number" value=""/>
+            <label data-i18n-title="infamy unnatural bonus">
+              <input name="attr_infamy_unnatural_bonus" placeholder="0" title="@{infamy_unnatural_bonus}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -1061,8 +1119,8 @@
           <div class="rowx grid descriptor">
             <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
             <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
-            <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
-            <div class="rowx collapse"><span class="collapse" name="attr_description"></span></div>
+            <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
+            <div class="rowx collapse"><span class="collapse description" name="attr_description"></span></div>
             <div class="rowx settings">
               <label data-i18n-title="name">
                 <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
@@ -1162,7 +1220,7 @@
             <div class="rowx grid descriptor">
               <button class="text-left eclipse font-weight-bold"></button>
               <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
-              <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
+              <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
               <div class="rowx collapse">
                 <div class="rowx grid 8autocolumn">
                   <h2 data-i18n="class"></h2><span class="text-center" name="attr_class"></span>
@@ -1177,7 +1235,7 @@
                   <h2 data-i18n="rld"></h2><span class="text-center" name="attr_rld"></span>
                 </div>
                 <div class="rowx grid 2autocolumn">
-                  <h2 data-i18n="special rules"></h2><span class="collapse" name="attr_description"></span>
+                  <h2 data-i18n="special rules"></h2><span class="collapse description" name="attr_description"></span>
                 </div>
               </div>
               <div class="rowx settings">
@@ -1238,22 +1296,38 @@
           <input name="attr_movement_half" type="hidden"/>
           <div class="col grid 2autocolumn">
             <h2 class="text-center" data-i18n="half"></h2>
-            <div class="borders"><span class="text-center" name="attr_movement_half"></span></div>
+            <div class="borders">
+              <label data-i18n-title="movement half">
+                <input name="attr_movement_half" placeholder="0" title="@{movement_half}" type="number" value=""/>
+              </label>
+            </div>
           </div>
           <input name="attr_movement_full" type="hidden"/>
           <div class="col grid 2autocolumn">
             <h2 class="text-center" data-i18n="full"></h2>
-            <div class="borders"><span class="text-center" name="attr_movement_full"></span></div>
+            <div class="borders">
+              <label data-i18n-title="movement full">
+                <input name="attr_movement_full" placeholder="0" title="@{movement_full}" type="number" value=""/>
+              </label>
+            </div>
           </div>
           <input name="attr_movement_charge" type="hidden"/>
           <div class="col grid 2autocolumn">
             <h2 class="text-center" data-i18n="charge"></h2>
-            <div class="borders"><span class="text-center" name="attr_movement_charge"></span></div>
+            <div class="borders">
+              <label data-i18n-title="movement charge">
+                <input name="attr_movement_charge" placeholder="0" title="@{movement_charge}" type="number" value=""/>
+              </label>
+            </div>
           </div>
           <input name="attr_movement_run" type="hidden"/>
           <div class="col grid 2autocolumn">
             <h2 class="text-center" data-i18n="run"></h2>
-            <div class="borders"><span class="text-center" name="attr_movement_run"></span></div>
+            <div class="borders">
+              <label data-i18n-title="movement run">
+                <input name="attr_movement_run" placeholder="0" title="@{movement_run}" type="number" value=""/>
+              </label>
+            </div>
           </div>
         </div>
         <div class="rowx grid headers psychic">
@@ -1261,7 +1335,7 @@
           <h2 class="text-center" data-i18n="psy rating"></h2>
           <div class="borders">
             <label data-i18n-title="psy rating">
-              <input name="attr_psy_rating" title="@{psy_rating}" type="number" value=""/>
+              <input name="attr_psy_rating" placeholder="0" title="@{psy_rating}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -1270,8 +1344,8 @@
             <div class="rowx grid descriptor">
               <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
               <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
-              <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
-              <div class="rowx collapse"><span class="collapse" name="attr_description"></span></div>
+              <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
+              <div class="rowx collapse"><span class="collapse description" name="attr_description"></span></div>
               <div class="rowx settings">
                 <label data-i18n-title="name">
                   <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
@@ -1292,8 +1366,8 @@
               <div class="rowx grid descriptor">
                 <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
                 <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
-                <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
-                <div class="rowx collapse"><span class="collapse" name="attr_description"></span></div>
+                <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
+                <div class="rowx collapse"><span class="collapse description" name="attr_description"></span></div>
                 <div class="rowx settings">
                   <label data-i18n-title="name">
                     <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
@@ -1313,7 +1387,7 @@
             <h2 class="text-center" data-i18n="total"></h2>
             <div class="borders">
               <label data-i18n-title="wounds total">
-                <input name="attr_wounds_total" title="@{wounds_total}" type="number" value=""/>
+                <input name="attr_wounds_total" placeholder="0" title="@{wounds_total}" type="number" value=""/>
               </label>
             </div>
           </div>
@@ -1322,7 +1396,7 @@
             <h2 class="text-center" data-i18n="current"></h2>
             <div class="borders">
               <label data-i18n-title="wounds current">
-                <input name="attr_wounds_current" title="@{wounds_current}" type="number" value=""/>
+                <input name="attr_wounds_current" placeholder="0" title="@{wounds_current}" type="number" value=""/>
               </label>
             </div>
           </div>
@@ -1331,7 +1405,7 @@
             <h2 class="text-center" data-i18n="fatigue"></h2>
             <div class="borders">
               <label data-i18n-title="wounds fatigue">
-                <input name="attr_wounds_fatigue" title="@{wounds_fatigue}" type="number" value=""/>
+                <input name="attr_wounds_fatigue" placeholder="0" title="@{wounds_fatigue}" type="number" value=""/>
               </label>
             </div>
           </div>
@@ -1345,8 +1419,8 @@
               <div class="rowx grid descriptor">
                 <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
                 <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
-                <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
-                <div class="rowx collapse"><span class="collapse" name="attr_description"></span></div>
+                <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
+                <div class="rowx collapse"><span class="collapse description" name="attr_description"></span></div>
                 <div class="rowx settings">
                   <label data-i18n-title="name">
                     <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
@@ -1366,8 +1440,8 @@
               <div class="rowx grid descriptor">
                 <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
                 <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
-                <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
-                <div class="rowx collapse"><span class="collapse" name="attr_description"></span></div>
+                <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
+                <div class="rowx collapse"><span class="collapse description" name="attr_description"></span></div>
                 <div class="rowx settings">
                   <label data-i18n-title="name">
                     <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
@@ -1383,13 +1457,13 @@
           <h2 class="text-center" data-i18n="total"></h2>
           <div class="borders">
             <label data-i18n-title="infamy points total">
-              <input name="attr_infamy_points_total" title="@{infamy_points_total}" type="number" value=""/>
+              <input name="attr_infamy_points_total" placeholder="0" title="@{infamy_points_total}" type="number" value=""/>
             </label>
           </div>
           <h2 class="text-center" data-i18n="current"></h2>
           <div class="borders">
             <label data-i18n-title="infamy points current">
-              <input name="attr_infamy_points_current" title="@{infamy_points_current}" type="number" value=""/>
+              <input name="attr_infamy_points_current" placeholder="0" title="@{infamy_points_current}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -1398,7 +1472,7 @@
           <h2 class="text-center" data-i18n="total"></h2>
           <div class="borders">
             <label data-i18n-title="corruption total">
-              <input name="attr_corruption_total" title="@{corruption_total}" type="number" value=""/>
+              <input name="attr_corruption_total" placeholder="0" title="@{corruption_total}" type="number" value=""/>
             </label>
           </div>
         </div>
@@ -1410,8 +1484,8 @@
             <div class="rowx grid descriptor">
               <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
               <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
-              <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
-              <div class="rowx collapse"><span class="collapse" name="attr_description"></span></div>
+              <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
+              <div class="rowx collapse"><span class="collapse description" name="attr_description"></span></div>
               <div class="rowx settings">
                 <label data-i18n-title="name">
                   <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
@@ -1440,14 +1514,14 @@
             <div class="rowx grid">
               <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button><span class="text-center" name="attr_cost"></span><span class="text-center text-capitalize" name="attr_alignment"></span>
               <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
-              <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">x</span>
-              <div class="rowx collapse"><span class="collapse" name="attr_description"></span></div>
+              <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
+              <div class="rowx collapse"><span class="collapse description" name="attr_description"></span></div>
               <div class="rowx settings">
                 <label data-i18n-title="name">
                   <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
                 </label>
                 <label data-i18n-title="cost">
-                  <input name="attr_cost" title="@{cost}" type="number" value=""/>
+                  <input name="attr_cost" placeholder="0" title="@{cost}" type="number" value=""/>
                 </label>
                 <select name="attr_alignment" value="unaligned">
                   <option data-i18n="khorne" value="khorne"></option>
@@ -1469,20 +1543,20 @@
         <div class="rowx grid">
           <h3 data-i18n="total xp earned"></h3>
           <label data-i18n-title="total xp earned">
-            <input name="attr_total_xp_earned" title="@{total_xp_earned}" type="number" value=""/>
+            <input name="attr_total_xp_earned" placeholder="0" title="@{total_xp_earned}" type="number" value=""/>
           </label>
         </div>
         <div class="rowx grid">
           <h3 data-i18n="total xp spent"></h3>
-          <label data-i18n-title="total xp spent">
-            <input name="attr_total_xp_spent" title="@{total_xp_spent}" type="number" value=""/>
-          </label>
+          <div class="bottom-border text-center calculatedXp background-color">
+            <input name="attr_total_xp_spent" type="hidden" value="0"/><span name="attr_total_xp_spent"></span>
+          </div>
         </div>
         <div class="rowx grid">
           <h3 data-i18n="unspent xp"></h3>
-          <label data-i18n-title="unspent xp">
-            <input name="attr_unspent_xp" title="@{unspent_xp}" type="number" value=""/>
-          </label>
+          <div class="bottom-border text-center calculatedXp background-color">
+            <input name="attr_unspent_xp" type="hidden" value="0"/><span name="attr_unspent_xp"></span>
+          </div>
         </div>
         <div class="rowx headers">
           <h2 class="text-center" data-i18n="total alignment advances"></h2>
@@ -1490,31 +1564,31 @@
         <div class="rowx grid">
           <h3 data-i18n="khorne"></h3>
           <label data-i18n-title="khorne">
-            <input name="attr_khorne" title="@{khorne}" type="number" value=""/>
+            <input name="attr_khorne" placeholder="0" title="@{khorne}" type="number" value=""/>
           </label>
         </div>
         <div class="rowx grid">
           <h3 data-i18n="slaanesh"></h3>
           <label data-i18n-title="slaanesh">
-            <input name="attr_slaanesh" title="@{slaanesh}" type="number" value=""/>
+            <input name="attr_slaanesh" placeholder="0" title="@{slaanesh}" type="number" value=""/>
           </label>
         </div>
         <div class="rowx grid">
           <h3 data-i18n="nurgle"></h3>
           <label data-i18n-title="nurgle">
-            <input name="attr_nurgle" title="@{nurgle}" type="number" value=""/>
+            <input name="attr_nurgle" placeholder="0" title="@{nurgle}" type="number" value=""/>
           </label>
         </div>
         <div class="rowx grid">
           <h3 data-i18n="tzeentch"></h3>
           <label data-i18n-title="tzeentch">
-            <input name="attr_tzeentch" title="@{tzeentch}" type="number" value=""/>
+            <input name="attr_tzeentch" placeholder="0" title="@{tzeentch}" type="number" value=""/>
           </label>
         </div>
         <div class="rowx grid">
           <h3 data-i18n="unaligned"></h3>
           <label data-i18n-title="unaligned">
-            <input name="attr_unaligned" title="@{unaligned}" type="number" value=""/>
+            <input name="attr_unaligned" placeholder="0" title="@{unaligned}" type="number" value=""/>
           </label>
         </div>
         <div class="rowx headers">
@@ -1546,10 +1620,50 @@
 </div>
 <script type="text/worker">
   const globalAttributesByCatagory = {
-	characteristics: ['weapon_skill', 'ballistic_skill', 'strength', 'toughness', 'agility', 'intelligence', 'perception', 'willpower', 'fellowship', 'infamy']
+	characteristics: ['weapon_skill', 'ballistic_skill', 'strength', 'toughness', 'agility', 'intelligence', 'perception', 'willpower', 'fellowship', 'infamy'],
+	xp: ['total_xp_earned', 'total_xp_spent'],
 }
 
-module.exports = globalAttributesByCatagory;
+const functions = {
+	calculateAttributes: values => {
+		const integers = functions.parseIntegers(values)
+		const modifier = functions.divideByTen(integers.score) || 0
+		const bonus = integers.bonus || 0
+
+		return functions.sumIntegers([modifier, bonus])
+	},
+	calculateXP: values => {
+		const integers = functions.parseIntegers(values)
+		return functions.sumIntegers(Object.values(integers))
+	},
+	calculateXPCost: values => {
+		const integers = functions.parseIntegers(values)
+		const negativeNumbers = functions.convertIntegerNegative(values)
+		return functions.sumIntegers(Object.values(integers))
+	},
+	convertIntegerNegative: numbers => {
+		for (let [key, value] of Object.entries(numbers)) {
+			numbers[key] = value > 0 ? -Math.abs(value) : value;
+		}
+		return numbers
+	},
+	divideByTen: score => Math.floor(score/10),
+	getReprowid: trigger => {
+		const split = trigger.split('_');
+		return `${split[0]}_${split[1]}_${split[2]}`
+	},
+	parseIntegers(numbers) {
+		for (let [key, value] of Object.entries(numbers)) {
+		    numbers[key] = parseInt(value) || 0;
+		}
+		return numbers	
+	},
+	sumIntegers: numbers => numbers.reduce((a,b) => a + b, 0),
+	convertInteger: string => parseInt(string) || 0,
+}
+
+//for Mocha Unit Texting
+//module.exports = functions;
 
   // === SHARED FUNCTIONS
 const setAttributes = (update, silent) => { 
@@ -1562,39 +1676,31 @@ globalAttributesByCatagory.characteristics.forEach(characteristic => {
 	on(`change:${characteristic} change:${characteristic}_modifier_bonus`, () => {
 		getAttrs([`${characteristic}`, `${characteristic}_modifier_bonus`], values => {
 			values = {score: values[`${characteristic}`], bonus: values[`${characteristic}_modifier_bonus`]}
-			setAttributes({[`${characteristic}_modifier`]: Characteristics.calculateAttributes(values)});
+			setAttributes({[`${characteristic}_modifier`]: functions.calculateAttributes(values)});
 		})
 	});
 })
 
-  
-const Helpers = {
-	parseIntegers(numbers) {
-		for (let [key, value] of Object.entries(numbers)) {
-		    numbers[key] = parseInt(value) || 0;
-		}
-		return numbers	
-	},
-	sumIntegers: numbers => numbers.reduce((a,b) => a + b, 0),
-	convertInteger: string => parseInt(string) || 0,
-}
+globalAttributesByCatagory.xp.forEach(xp => {
+	on(`change:${xp}`, () => {
+		getAttrs(globalAttributesByCatagory.xp, values => {
+			values = {earned: values[`total_xp_earned`], spent: values[`total_xp_spent`]}
+			setAttributes({[`unspent_xp`]: functions.calculateXP(values)});
+		})
+	});
+})
 
-module.exports = Helpers;
+on(`change:repeating_advancement:cost`, eventinfo => {
+	const repeatingRow = functions.getReprowid(eventinfo.triggerName)
 
-  
-const Helpers = require('./Helpers');
+    getSectionIDs("advancement", idarray => {
+        let advancementArray = [];
+        idarray.forEach(id => advancementArray.push(`repeating_advancement_${id}_cost`));
+        getAttrs(advancementArray, values => {
+        	setAttributes({[`total_xp_spent`]: functions.calculateXPCost(values)});
+        });
+    });
+});
 
-const Characteristics = {
-	calculateAttributes: values => {
-		const integers = Helpers.parseIntegers(values)
-		const modifier = Characteristics.divideByTen(integers.score) || 0
-		const bonus = integers.bonus || 0
-
-		return Helpers.sumIntegers([modifier, bonus])
-	},
-	divideByTen: score => Math.floor(score/10)
-}
-
-module.exports = Characteristics;
 
 </script>

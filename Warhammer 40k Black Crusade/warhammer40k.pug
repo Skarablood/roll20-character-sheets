@@ -44,27 +44,51 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 				span.eclipse #{val}
 
 	.container.grid.info
-		.rowx.grid.4autocolumn
+		.rowx.grid.names
 			each val in ['character name', 'player name']
 				h1(data-i18n=val)
 				+textInput(val)
-		.rowx.grid.archetype
-			each val in ['archetype', 'rank', 'warband name']
-				h1(data-i18n=val)
-				+textInput(val)
-		.rowx.grid.4autocolumn
-			each val in ['pride', 'disgrace']
-				h1(data-i18n=val)
-				+textInput(val)
-		each val in ['motivation', 'description']
-			.rowx.grid.2autocolumn
-					h1(data-i18n=val)
-					+textInput(val)
+			+checkboxSymbol('info collapse', 'i')
+			+checkboxSymbol('info settings', 'p')
+			.rowx.collapse
+				.rowx.grid.archetype
+					each val in ['archetype', 'rank', 'warband name']
+						h1(data-i18n=val)
+						- val = val.replace(/ /g, '_');
+						if val === 'rank'
+							div.bottom-border.text-center
+								span(name=`attr_${val}`)
+						else
+							div.bottom-border
+								span(name=`attr_${val}`)
+				.rowx.grid.4autocolumn
+					each val in ['pride', 'disgrace']
+						h1(data-i18n=val)
+						div.bottom-border
+							span(name=`attr_${val}`)
+				each val in ['motivation', 'description']
+					.rowx.grid.2autocolumn
+						h1(data-i18n=val)
+						div.bottom-border
+							span.description(name=`attr_${val}`)
+			.rowx.settings
+				.rowx.grid.archetype
+					each val in ['archetype', 'rank', 'warband name']
+						h1(data-i18n=val)
+						+textInput(val)
+				.rowx.grid.4autocolumn
+					each val in ['pride', 'disgrace']
+						h1(data-i18n=val)
+						+textInput(val)
+				each val in ['motivation', 'description']
+					.rowx.grid.2autocolumn
+							h1(data-i18n=val)
+							+textInput(val)
 
 	.container.grid.characteristics
 		.rowx.grid.10column
 			h1.text-center(data-i18n='characteristics')
-			+checkboxSymbol('characteristics settings', 'x')
+			+checkboxSymbol('characteristics settings', 'p')
 			each val, key in characteristics
 				.col.grid
 					.rowx.text-center
@@ -73,10 +97,12 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 						h3.small-caps(data-i18n=val)
 			each val, key in characteristics
 				- const attrName = key.replace(/ /g, '_');
-				+hiddenInput(`${key} modifier`, 0)
-				.col.grid.border
-					span.text-center(name=`attr_${attrName}`)
-					span.text-center(name=`attr_${attrName}_modifier`)
+				+hiddenInput(`${key} bonus`, 0)
+				.grid.border.background-color
+					.score
+						span.text-center(name=`attr_${attrName}`)
+					.bonus
+						span.text-center(name=`attr_${attrName}_bonus`)
 			.rowx.settings.10column
 				h1.text-center(data-i18n='scores')
 				each val, key in characteristics
@@ -85,13 +111,13 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 							h2.small-caps(data-i18n=key)
 						.rowx
 							+numberInput(`${key}`)
-				h1.text-center(data-i18n='modifier bonus')
+				h1.text-center(data-i18n='unnatural bonus')
 				each val, key in characteristics
 					.col.grid
 						.rowx.text-center
 							h2.small-caps(data-i18n=key)
 						.rowx
-							+numberInput(`${key} modifier bonus`)
+							+numberInput(`${key} unnatural bonus`)
 
 	.container.skill-talents-traits
 		.rowx.grid.headers
@@ -115,9 +141,9 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 						button.text-left.eclipse.font-weight-bold
 							span(name='attr_name')
 						+checkboxSymbol('collapse', 'i')
-						+checkboxSymbol('settings', 'x')
+						+checkboxSymbol('settings', 'p')
 						.rowx.collapse
-							span.collapse(name='attr_description')
+							span.collapse.description(name='attr_description')
 						.rowx.settings
 							+textInput(`name`)
 							+textarea('description')
@@ -141,7 +167,7 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 						.rowx.grid.descriptor
 							button.text-left.eclipse.font-weight-bold
 							+checkboxSymbol('collapse', 'i')
-							+checkboxSymbol('settings', 'x')
+							+checkboxSymbol('settings', 'p')
 							.rowx.collapse
 								.rowx.grid.8autocolumn
 									each val in ['class', 'damage', 'type', 'pen']
@@ -153,7 +179,7 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 										span.text-center(name=`attr_${val}`)
 								.rowx.grid.2autocolumn
 									h2(data-i18n='special rules')
-									span.collapse(name='attr_description')
+									span.collapse.description(name='attr_description')
 							.rowx.settings
 								.rowx.grid.2autocolumn
 									h2(data-i18n='name')
@@ -177,7 +203,7 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 						.col.grid.2autocolumn
 							h2.text-center(data-i18n=val)
 							.borders
-								span.text-center(name=`attr_movement_${val}`)
+								+numberInput(`movement ${val}`)
 				.rowx.grid.headers.psychic
 					h1.text-center(data-i18n='pyschic powers')
 					h2.text-center(data-i18n='psy rating')
@@ -244,9 +270,9 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 							span.text-center(name='attr_cost')
 							span.text-center.text-capitalize(name='attr_alignment')
 							+checkboxSymbol('collapse', 'i')
-							+checkboxSymbol('settings', 'x')
+							+checkboxSymbol('settings', 'p')
 							.rowx.collapse
-								span.collapse(name='attr_description')
+								span.collapse.description(name='attr_description')
 							.rowx.settings
 								+textInput(`name`)
 								+numberInput(`cost`)
@@ -263,7 +289,13 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 				each val in ['total xp earned', 'total xp spent', 'unspent xp']
 					.rowx.grid
 						h3(data-i18n=val)
-						+numberInput(val)
+						if val === 'total xp earned'
+							+numberInput(val)
+						else
+							.bottom-border.text-center.calculatedXp.background-color
+								- val = val.replace(/ /g, '_');
+								+hiddenInput(val, 0)
+								span(name=`attr_${val}`)
 				.rowx.headers
 					h2.text-center(data-i18n='total alignment advances')
 				each val in darkGods
@@ -311,8 +343,6 @@ footer
 
 //- SCRIPTS
 script(type="text/worker")
-	include src/js/GlobalAttributes.js
+	include src/js/Scripts.js
 	include src/js/EventHandlers.js
-	include src/js/Helpers.js
-	include src/js/Characteristics.js
 

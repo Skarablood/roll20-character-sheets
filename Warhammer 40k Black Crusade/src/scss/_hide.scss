@@ -8,8 +8,9 @@
 }			
 
 %display-inline-grid {  
-	display: inline-grid; 
-}	
+	display: inline-grid;
+	grid-column-gap: 1%;
+}
 
 input.sheet-type:not([value="npc"]) ~  div.sheet-npc {
     @extend %display-none;
@@ -42,13 +43,18 @@ div.sheet-arms {
 div.sheet-characteristics {
 	input[name='attr_characteristics_settings']:checked ~ div.sheet-settings {
 	   @extend %display-inline-grid;
-	   grid-column-gap: 1%;
 	}
 }
 
 div.sheet-advancement {
 	input[name='attr_settings']:checked ~ div.sheet-settings {
 	    @extend %display-inline-grid;
-	    grid-column-gap: 1%;
 	}	
+}
+
+div.sheet-info {
+	input[name='attr_info_settings']:checked ~ div.sheet-settings,
+	input[name='attr_info_collapse']:checked ~ div.sheet-collapse {
+	   @extend %display-inline-grid;
+	}
 }

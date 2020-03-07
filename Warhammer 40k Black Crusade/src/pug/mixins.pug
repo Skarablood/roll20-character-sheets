@@ -6,7 +6,7 @@ mixin textInput(name)
 mixin numberInput(name)
 	- const attrName = name.replace(/ /g, '_');
 	label(data-i18n-title=name)
-		input(name=`attr_${attrName}` title=`@{${attrName}}` type='number' value='')
+		input(name=`attr_${attrName}` placeholder='0' title=`@{${attrName}}` type='number' value='')
 
 mixin hiddenInput(name, value)
 	- const attrName = name.replace(/ /g, '_');
@@ -45,9 +45,9 @@ mixin repeatingText(name)
 			button.text-left.eclipse.font-weight-bold
 				span(name='attr_name')
 			+checkboxSymbol('collapse', 'i')
-			+checkboxSymbol('settings', 'x')
+			+checkboxSymbol('settings', 'p')
 			.rowx.collapse
-				span.collapse(name='attr_description')
+				span.collapse.description(name='attr_description')
 			.rowx.settings
 				+textInput(`name`)
 				+textarea('description')
@@ -80,3 +80,4 @@ mixin armorAreas(name, range)
 		.rowx.grid.2autocolumn
 			h3.text-center(data-i18n='type')
 			+textInput(name)
+			
