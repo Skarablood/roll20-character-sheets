@@ -213,10 +213,6 @@ div.sheet-pc {
           grid-column: 1 / 11;
         }
 
-        div.sheet-10column {
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        }
-
         h1[data-i18n='characteristics'] {
           grid-column: 1 / 10;
         }
@@ -227,8 +223,7 @@ div.sheet-pc {
         }
 
         h2 {
-            font-size: 1.1em;
-            min-height: 40px;
+            font-size: 1em;
         }
 
         h3 {

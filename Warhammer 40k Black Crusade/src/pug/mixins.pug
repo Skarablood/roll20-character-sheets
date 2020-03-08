@@ -19,7 +19,7 @@ mixin checkboxInput(name)
 		span.pictos 3
 
 mixin checkboxSkills(name)
-	- const attrName = name.replace(/ /g, '_');
+	- const attrName = name.replace(/ /g, '_').replace('(', '').replace(')', '');
 	each val in skillRanks
 		- const value = val === 'trained' ? 0 : val.slice(1);
 		label.styled-checkbox.grid(data-i18n-title=name)
@@ -34,16 +34,18 @@ mixin checkboxSymbol (name, symbol)
 mixin textarea(name)
 	textarea(name=`attr_${name}` placeholder=name)
 
-mixin rollButton(name)
-	- const attrName = name.replace(/ /g, '-');
-	button.text-capitalize(data-i18n=name name=`roll_${attrName}` type='roll' value!=`&{template:rolls} {{header=^{${name}}}} {{dice=[[1d20[Roll]]]}}`)
+mixin repeatingButton()
+	button.text-left.eclipse.font-weight-bold(type='roll' value!=`${rollPrefix} ${repeatingEnding}`)
+		span(name='attr_name')
 
+- const rollPrefix = `@{gm_toggle} &{template:rolls}`;
+- const rollEnding = `@{modifiers_toggle}-[[d100]])/10)cs>0cf<0`;
+- const repeatingEnding = `{{header=@{name}}} {{desc=@{description}}}`;
 mixin repeatingText(name)
 	- const attrName = name.replace(/ /g, '-');
 	fieldset(class=`repeating_${attrName}`)
 		.rowx.grid.descriptor
-			button.text-left.eclipse.font-weight-bold
-				span(name='attr_name')
+			+repeatingButton()
 			+checkboxSymbol('collapse', 'i')
 			+checkboxSymbol('settings', 'p')
 			.rowx.collapse.background-color
@@ -52,25 +54,27 @@ mixin repeatingText(name)
 				+textInput(`name`)
 				+textarea('description')
 
-mixin repeatingSkills(name)
-	- const attrName = name.replace(/ /g, '-');
+mixin repeatingSkills(name, abbreviation)
+	- const sectionName = name.replace(/ /g, '-');
+	- const score = characteristics[`${abbreviation}`];
 	.repeating-container
-		fieldset(class=`repeating_${attrName}`)
+		fieldset(class=`repeating_${sectionName}`)
 			.rowx.grid
-				button.d20.text-center(name=`roll_${name}` type='roll') y
+				button.d20.text-center(name=`roll_${name}` type='roll' value!=`${rollPrefix} {{header=^{${name}}}} {{dice=[[ceil((@{skill}+@{${score}}+${rollEnding}]]}}`) y
 				+textInput(`name`)
-				+checkboxSkills(name)
+				+checkboxSkills('skill')
 
 mixin skillColumns(name, abbreviation)
 	- const repeating = repeatingSkills.includes(name) ? true : false;
+	- const score = characteristics[`${abbreviation}`];
+	- const skill = name.replace(/ /g, '_').replace('(', '').replace(')', '');
 	.rowx.grid
 		.col
-			button(name=`roll_${name}` type='roll' value='')
+			button(name=`roll_${name}` type='roll' value!=`${rollPrefix} {{header=^{${name}}}} {{dice=[[ceil((@{${skill}}+@{${score}}+${rollEnding}]]}}`)
 				h2(data-i18n=name)
 				if abbreviation
 					h2(data-i18n=abbreviation)
 		+checkboxSkills(name)
-
 
 mixin armorAreas(name, range)
 	.col.border

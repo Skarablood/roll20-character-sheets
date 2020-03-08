@@ -6,8 +6,8 @@ include src/pug/mixins.pug
 
 //- VARIABLES
 	=============================
-- const characteristics = {'weapon skill':'(ws)', 'ballistic skill':'(bs)', 'strength':'(s)', 'toughness':'(t)', 'agility':'(ag)', 'intelligence':'(int)', 'perception': '(per)', 'willpower':'(wp)', 'fellowship':'(fel)', 'infamy':'(inf)'};
-- const skillsLeft = {'acrobatics':'(ag)','athletics':'(s)','awareness':'(per)', 'charm':'(fel)', 'command':'(fel)', 'commerce':'(int)', 'common lore':false, 'deceive':'(fel)','dodge':'(ag)', 'forbidden lore':'(int)','inquiry':'(fel)','intimidate':'(wp)','linguistics':'(int)', 'logic':'(int)'};
+- const characteristics = {'(ws)':'weapon_skill', '(bs)':'ballistic_skill', '(s)':'strength', '(t)':'toughness', '(ag)':'agility', '(int)':'intelligence', '(per)':'perception', '(wp)':'willpower', '(fel)':'fellowship', '(inf)':'infamy'};
+- const skillsLeft = {'acrobatics':'(ag)','athletics':'(s)','awareness':'(per)', 'charm':'(fel)', 'command':'(fel)', 'commerce':'(int)', 'common lore': '(int)', 'deceive':'(fel)','dodge':'(ag)', 'forbidden lore':'(int)','inquiry':'(fel)','intimidate':'(wp)','linguistics':'(int)', 'logic':'(int)'};
 - const skillsRight = {'medicae':'(int)','navigation (surface)':'(int)','navigation (stellar)':'(int)', 'navigation (warp)':'(int)', 'operate (aeronautica)': '(ag)', 'operate (voidship)': '(ag)', 'parry':'(ws)','psyniscience':'(per)', 'scholastic lore': '(int)','scrutiny':'(per)','security':'(int)', 'sleight of hand':'(ag)', 'stealth': '(ag)', 'tech-use': '(int)', 'tracking':'(int)', 'trade':'(int)'};
 - const repeatingSkills = ['common lore', 'forbidden lore', 'linguistics', 'scholastic lore', 'trade'];
 - const skillRanks = ['trained', '+10', '+20', '+30'];
@@ -79,34 +79,38 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 			h1.text-center(data-i18n='characteristics')
 			+checkboxSymbol('characteristics settings', 'p')
 			each val, key in characteristics
+				- const nameSpaces = val.replace(/_/g, " ");
 				.col.grid
 					.rowx.text-center
-						h2.small-caps(data-i18n=key)
+						button(name=`roll_${key}` type='roll' value=`${rollPrefix} {{header=^{${nameSpaces}}}} {{dice=[[ceil((@{${val}}+${rollEnding}]]}}`)
+							h2.small-caps(data-i18n=nameSpaces)
 					.rowx.text-center
-						h3.small-caps(data-i18n=val)
+						h3.small-caps(data-i18n=key)
 			each val, key in characteristics
-				- const attrName = key.replace(/ /g, '_');
-				+hiddenInput(`${key} bonus`, 0)
+				- const nameSpaces = val.replace(/_/g, " ");
+				+hiddenInput(`${nameSpaces} bonus`, 0)
 				.grid.border.background-color
 					.score
-						span.text-center(name=`attr_${attrName}`)
+						span.text-center(name=`attr_${val}`)
 					.bonus
-						span.text-center(name=`attr_${attrName}_bonus`)
+						span.text-center(name=`attr_${val}_bonus`)
 			.rowx.settings.10column
 				h1.text-center(data-i18n='scores')
 				each val, key in characteristics
+					- const nameSpaces = val.replace(/_/g, " ");
 					.col.grid
 						.rowx.text-center
-							h2.small-caps(data-i18n=key)
+							h2.small-caps(data-i18n=nameSpaces)
 						.rowx
-							+numberInput(`${key}`)
+							+numberInput(`${nameSpaces}`)
 				h1.text-center(data-i18n='unnatural bonus')
 				each val, key in characteristics
+					- const nameSpaces = val.replace(/_/g, " ");
 					.col.grid
 						.rowx.text-center
-							h2.small-caps(data-i18n=key)
+							h2.small-caps(data-i18n=nameSpaces)
 						.rowx
-							+numberInput(`${key} unnatural bonus`)
+							+numberInput(`${nameSpaces} unnatural bonus`)
 
 	.container.skill-talents-traits
 		.rowx.grid.headers
@@ -123,19 +127,9 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 					each val, key in skillList
 						+skillColumns(key, val)
 						if repeatingSkills.includes(key)
-							+repeatingSkills(key)
+							+repeatingSkills(key, val)
 			.col.right-col.repeating-container
-				fieldset(class=`repeating_talents-traits`)
-					.rowx.grid.descriptor
-						button.text-left.eclipse.font-weight-bold
-							span(name='attr_name')
-						+checkboxSymbol('collapse', 'i')
-						+checkboxSymbol('settings', 'p')
-						.rowx.collapse.background-color
-							span.collapse.description(name='attr_description')
-						.rowx.settings
-							+textInput(`name`)
-							+textarea('description')
+				+repeatingText('talents traits')
 
 	.container.arms
 		.rowx
@@ -154,7 +148,7 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 				.repeating-container
 					fieldset(class=`repeating_weapons`)
 						.rowx.grid.descriptor
-							button.text-left.eclipse.font-weight-bold
+							+repeatingButton()
 							+checkboxSymbol('collapse', 'i')
 							+checkboxSymbol('settings', 'p')
 							.rowx.collapse.background-color
@@ -254,8 +248,7 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 				.repeating-container
 					fieldset(class=`repeating_advancement`)
 						.rowx.grid
-							button.text-left.eclipse.font-weight-bold
-								span(name='attr_name')
+							+repeatingButton()
 							span.text-center(name='attr_cost')
 							span.text-center.text-capitalize(name='attr_alignment')
 							+checkboxSymbol('collapse', 'i')
@@ -316,22 +309,37 @@ footer
 	=============================
 .rolltemplates
 	rolltemplate.sheet-rolltemplate-rolls
-		// - Display a header on the template -
-		.sheet-template-header
-			| {{#header}}{{header}}{{/header}}
-		// - Display the dice roll in the template -
-		.sheet-template-body
-			| {{#dice}}
-			.sheet-template-row {{dice}}
-			| {/dice}}
-			// - Display a description. This is great for text included with a roll -
-			| {{#desc}}
-			.sheet-template-row
-				span.sheet-template-desc
-			| {{/desc}}
+		.sheet-template-container
+			// - Display a header on the template -
+			.sheet-template-header
+				| {{#header}}{{header}}{{/header}}
+			.sheet-template-body
+				// - Display a header on the template -
+				| {{#rollGreater() dice 0}}
+				.sheet-template-row 
+					span {{dice}} degrees of success
+				| {{/rollGreater() dice 0}}
+
+				| {{#rollLess() dice 0}}
+				.sheet-template-row 
+					span {{dice}} degress of failures
+				| {{/rollLess() dice 0}}
+
+				| {{#rollTotal() dice 0}}
+				.sheet-template-row
+					span {{dice}}
+				| {{/rollTotal() dice 0}}
+
+				//- Display a description. This is great for text included with a roll -
+				| {{#desc}}
+				.sheet-template-row
+					span.sheet-template-desc {{desc}}
+				| {{/desc}}
 
 //- SCRIPTS
 script(type="text/worker")
 	include src/js/Scripts.js
 	include src/js/EventHandlers.js
+
+
 
