@@ -1,6 +1,8 @@
 const globalAttributesByCatagory = {
 	characteristics: ['weapon_skill', 'ballistic_skill', 'strength', 'toughness', 'agility', 'intelligence', 'perception', 'willpower', 'fellowship', 'infamy'],
 	xp: ['total_xp_earned', 'total_xp_spent'],
+	skills: {'acrobatics':'agility','athletics':'strength','awareness':'perception', 'charm':'fellowship', 'command':'fellowship', 'commerce':'intelligence', 'common lore': 'intelligence', 'deceive':'fellowship','dodge':'agility', 'forbidden lore':'intelligence','inquiry':'fellowship','intimidate':'willpower','linguistics':'intelligence', 'logic':'intelligence', 'medicae':'intelligence','navigation (surface)':'intelligence','navigation (stellar)':'intelligence', 'navigation (warp)':'intelligence', 'operate (aeronautica)': 'agility', 'operate (voidship)': 'agility', 'parry':'weapon_skill','psyniscience':'perception', 'scholastic lore': 'intelligence','scrutiny':'perception','security':'intelligence', 'sleight of hand':'agility', 'stealth': 'agility', 'tech-use': 'intelligence', 'tracking':'intelligence', 'trade':'intelligence'},
+	skillRanks: ['0', '10', '20', '30']
 }
 
 const functions = {
@@ -26,17 +28,21 @@ const functions = {
 		}
 		return numbers
 	},
+	determineSkillRank: newValue => {
+
+	},
 	divideByTen: score => Math.floor(score/10),
 	getReprowid: trigger => {
 		const split = trigger.split('_');
 		return `${split[0]}_${split[1]}_${split[2]}`
 	},
-	parseIntegers(numbers) {
+	parseIntegers: numbers => {
 		for (let [key, value] of Object.entries(numbers)) {
 		    numbers[key] = parseInt(value) || 0;
 		}
 		return numbers	
 	},
+	resetSkillRank: value => globalAttributesByCatagory.skillRanks.includes(value) ? true : false,
 	sumIntegers: numbers => numbers.reduce((a,b) => a + b, 0),
 	convertInteger: string => parseInt(string) || 0,
 }

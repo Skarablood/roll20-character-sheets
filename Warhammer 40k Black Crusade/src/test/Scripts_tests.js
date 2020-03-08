@@ -38,6 +38,13 @@ describe('Advancement handlers', () => {
 	})
 })
 
+describe['Skill handlers', () => {
+	it('check if skillRanks includes the value', () => {
+		const expected = false
+		const actual = Functions.resetSkillRank()
+	})
+}]
+
 describe('Helper functions', () => {
 	it('returns a number', () => {
 		const expected = 'number'

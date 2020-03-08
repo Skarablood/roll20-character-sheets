@@ -92,7 +92,7 @@
       <input class="toggles text-center" name="attr_characteristics_settings" title="@{characteristics_settings}" type="checkbox" value="characteristics settings"/><span class="toggles text-center pictos">p</span>
       <div class="col grid">
         <div class="rowx text-center">
-          <button name="roll_(ws)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{weapon skill}}} {{dice=[[ceil((@{weapon_skill}+@{modifiers_toggle}-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
+          <button name="roll_(ws)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{weapon skill}}} {{dice=[[ceil(((@{weapon_skill}+@{modifiers_toggle})-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
             <h2 class="small-caps" data-i18n="weapon skill"></h2>
           </button>
         </div>
@@ -102,7 +102,7 @@
       </div>
       <div class="col grid">
         <div class="rowx text-center">
-          <button name="roll_(bs)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{ballistic skill}}} {{dice=[[ceil((@{ballistic_skill}+@{modifiers_toggle}-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
+          <button name="roll_(bs)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{ballistic skill}}} {{dice=[[ceil(((@{ballistic_skill}+@{modifiers_toggle})-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
             <h2 class="small-caps" data-i18n="ballistic skill"></h2>
           </button>
         </div>
@@ -112,7 +112,7 @@
       </div>
       <div class="col grid">
         <div class="rowx text-center">
-          <button name="roll_(s)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{strength}}} {{dice=[[ceil((@{strength}+@{modifiers_toggle}-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
+          <button name="roll_(s)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{strength}}} {{dice=[[ceil(((@{strength}+@{modifiers_toggle})-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
             <h2 class="small-caps" data-i18n="strength"></h2>
           </button>
         </div>
@@ -122,7 +122,7 @@
       </div>
       <div class="col grid">
         <div class="rowx text-center">
-          <button name="roll_(t)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{toughness}}} {{dice=[[ceil((@{toughness}+@{modifiers_toggle}-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
+          <button name="roll_(t)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{toughness}}} {{dice=[[ceil(((@{toughness}+@{modifiers_toggle})-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
             <h2 class="small-caps" data-i18n="toughness"></h2>
           </button>
         </div>
@@ -132,7 +132,7 @@
       </div>
       <div class="col grid">
         <div class="rowx text-center">
-          <button name="roll_(ag)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{agility}}} {{dice=[[ceil((@{agility}+@{modifiers_toggle}-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
+          <button name="roll_(ag)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{agility}}} {{dice=[[ceil(((@{agility}+@{modifiers_toggle})-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
             <h2 class="small-caps" data-i18n="agility"></h2>
           </button>
         </div>
@@ -142,7 +142,7 @@
       </div>
       <div class="col grid">
         <div class="rowx text-center">
-          <button name="roll_(int)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{intelligence}}} {{dice=[[ceil((@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
+          <button name="roll_(int)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{intelligence}}} {{dice=[[ceil(((@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
             <h2 class="small-caps" data-i18n="intelligence"></h2>
           </button>
         </div>
@@ -152,7 +152,7 @@
       </div>
       <div class="col grid">
         <div class="rowx text-center">
-          <button name="roll_(per)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{perception}}} {{dice=[[ceil((@{perception}+@{modifiers_toggle}-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
+          <button name="roll_(per)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{perception}}} {{dice=[[ceil(((@{perception}+@{modifiers_toggle})-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
             <h2 class="small-caps" data-i18n="perception"></h2>
           </button>
         </div>
@@ -162,7 +162,7 @@
       </div>
       <div class="col grid">
         <div class="rowx text-center">
-          <button name="roll_(wp)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{willpower}}} {{dice=[[ceil((@{willpower}+@{modifiers_toggle}-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
+          <button name="roll_(wp)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{willpower}}} {{dice=[[ceil(((@{willpower}+@{modifiers_toggle})-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
             <h2 class="small-caps" data-i18n="willpower"></h2>
           </button>
         </div>
@@ -172,7 +172,7 @@
       </div>
       <div class="col grid">
         <div class="rowx text-center">
-          <button name="roll_(fel)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{fellowship}}} {{dice=[[ceil((@{fellowship}+@{modifiers_toggle}-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
+          <button name="roll_(fel)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{fellowship}}} {{dice=[[ceil(((@{fellowship}+@{modifiers_toggle})-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
             <h2 class="small-caps" data-i18n="fellowship"></h2>
           </button>
         </div>
@@ -182,7 +182,7 @@
       </div>
       <div class="col grid">
         <div class="rowx text-center">
-          <button name="roll_(inf)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{infamy}}} {{dice=[[ceil((@{infamy}+@{modifiers_toggle}-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
+          <button name="roll_(inf)" type="roll" value="@{gm_toggle} &amp;{template:rolls} {{header=^{infamy}}} {{dice=[[ceil(((@{infamy}+@{modifiers_toggle})-[[d100]])/10)cs&gt;0cf&lt;0]]}}">
             <h2 class="small-caps" data-i18n="infamy"></h2>
           </button>
         </div>
@@ -458,6 +458,7 @@
     <div class="rowx">
       <div class="col left-col skill-list">
         <div class="rowx grid">
+          <h2 class="text-vertical" data-i18n="untrained"></h2>
           <h2 class="text-vertical" data-i18n="trained"></h2>
           <h2 class="text-vertical" data-i18n="+10"></h2>
           <h2 class="text-vertical" data-i18n="+20"></h2>
@@ -465,353 +466,405 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_acrobatics" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{acrobatics}}} {{dice=[[ceil((@{acrobatics}+@{agility}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_acrobatics" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{acrobatics}}} {{dice=[[ceil(((@{acrobatics}+@{agility}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="acrobatics"></h2>
               <h2 data-i18n="(ag)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="acrobatics">
-            <input name="attr_acrobatics" title="@{acrobatics}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_acrobatics" title="@{acrobatics}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="acrobatics">
-            <input name="attr_acrobatics" title="@{acrobatics}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_acrobatics" title="@{acrobatics}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="acrobatics">
-            <input name="attr_acrobatics" title="@{acrobatics}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_acrobatics" title="@{acrobatics}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="acrobatics">
-            <input name="attr_acrobatics" title="@{acrobatics}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_acrobatics" title="@{acrobatics}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="acrobatics">
+            <input name="attr_acrobatics" title="@{acrobatics}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_athletics" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{athletics}}} {{dice=[[ceil((@{athletics}+@{strength}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_athletics" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{athletics}}} {{dice=[[ceil(((@{athletics}+@{strength}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="athletics"></h2>
               <h2 data-i18n="(s)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="athletics">
-            <input name="attr_athletics" title="@{athletics}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_athletics" title="@{athletics}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="athletics">
-            <input name="attr_athletics" title="@{athletics}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_athletics" title="@{athletics}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="athletics">
-            <input name="attr_athletics" title="@{athletics}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_athletics" title="@{athletics}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="athletics">
-            <input name="attr_athletics" title="@{athletics}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_athletics" title="@{athletics}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="athletics">
+            <input name="attr_athletics" title="@{athletics}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_awareness" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{awareness}}} {{dice=[[ceil((@{awareness}+@{perception}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_awareness" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{awareness}}} {{dice=[[ceil(((@{awareness}+@{perception}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="awareness"></h2>
               <h2 data-i18n="(per)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="awareness">
-            <input name="attr_awareness" title="@{awareness}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_awareness" title="@{awareness}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="awareness">
-            <input name="attr_awareness" title="@{awareness}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_awareness" title="@{awareness}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="awareness">
-            <input name="attr_awareness" title="@{awareness}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_awareness" title="@{awareness}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="awareness">
-            <input name="attr_awareness" title="@{awareness}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_awareness" title="@{awareness}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="awareness">
+            <input name="attr_awareness" title="@{awareness}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_charm" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{charm}}} {{dice=[[ceil((@{charm}+@{fellowship}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_charm" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{charm}}} {{dice=[[ceil(((@{charm}+@{fellowship}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="charm"></h2>
               <h2 data-i18n="(fel)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="charm">
-            <input name="attr_charm" title="@{charm}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_charm" title="@{charm}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="charm">
-            <input name="attr_charm" title="@{charm}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_charm" title="@{charm}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="charm">
-            <input name="attr_charm" title="@{charm}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_charm" title="@{charm}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="charm">
-            <input name="attr_charm" title="@{charm}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_charm" title="@{charm}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="charm">
+            <input name="attr_charm" title="@{charm}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_command" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{command}}} {{dice=[[ceil((@{command}+@{fellowship}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_command" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{command}}} {{dice=[[ceil(((@{command}+@{fellowship}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="command"></h2>
               <h2 data-i18n="(fel)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="command">
-            <input name="attr_command" title="@{command}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_command" title="@{command}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="command">
-            <input name="attr_command" title="@{command}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_command" title="@{command}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="command">
-            <input name="attr_command" title="@{command}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_command" title="@{command}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="command">
-            <input name="attr_command" title="@{command}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_command" title="@{command}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="command">
+            <input name="attr_command" title="@{command}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_commerce" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{commerce}}} {{dice=[[ceil((@{commerce}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_commerce" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{commerce}}} {{dice=[[ceil(((@{commerce}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="commerce"></h2>
               <h2 data-i18n="(int)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="commerce">
-            <input name="attr_commerce" title="@{commerce}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_commerce" title="@{commerce}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="commerce">
-            <input name="attr_commerce" title="@{commerce}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_commerce" title="@{commerce}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="commerce">
-            <input name="attr_commerce" title="@{commerce}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_commerce" title="@{commerce}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="commerce">
-            <input name="attr_commerce" title="@{commerce}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_commerce" title="@{commerce}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="commerce">
+            <input name="attr_commerce" title="@{commerce}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_common lore" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{common lore}}} {{dice=[[ceil((@{common_lore}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_common lore" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{common lore}}} {{dice=[[ceil(((@{common_lore}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="common lore"></h2>
               <h2 data-i18n="(int)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="common lore">
-            <input name="attr_common_lore" title="@{common_lore}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_common_lore" title="@{common_lore}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="common lore">
-            <input name="attr_common_lore" title="@{common_lore}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_common_lore" title="@{common_lore}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="common lore">
-            <input name="attr_common_lore" title="@{common_lore}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_common_lore" title="@{common_lore}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="common lore">
-            <input name="attr_common_lore" title="@{common_lore}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_common_lore" title="@{common_lore}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="common lore">
+            <input name="attr_common_lore" title="@{common_lore}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="repeating-container">
           <fieldset class="repeating_common-lore">
             <div class="rowx grid">
-              <button class="d20 text-center" name="roll_common lore" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{common lore}}} {{dice=[[ceil((@{skill}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">y</button>
+              <button class="d20 text-center" name="roll_common lore" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{common lore}}} {{dice=[[ceil(((@{skill}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">y</button>
               <label data-i18n-title="name">
                 <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="0"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="(-20)"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="10"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="0"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="20"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="10"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="30"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="20"/><span class="pictos">3</span>
+              </label>
+              <label class="styled-checkbox grid" data-i18n-title="skill">
+                <input name="attr_skill" title="@{skill}" type="radio" value="30"/><span class="pictos">3</span>
               </label>
             </div>
           </fieldset>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_deceive" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{deceive}}} {{dice=[[ceil((@{deceive}+@{fellowship}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_deceive" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{deceive}}} {{dice=[[ceil(((@{deceive}+@{fellowship}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="deceive"></h2>
               <h2 data-i18n="(fel)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="deceive">
-            <input name="attr_deceive" title="@{deceive}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_deceive" title="@{deceive}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="deceive">
-            <input name="attr_deceive" title="@{deceive}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_deceive" title="@{deceive}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="deceive">
-            <input name="attr_deceive" title="@{deceive}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_deceive" title="@{deceive}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="deceive">
-            <input name="attr_deceive" title="@{deceive}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_deceive" title="@{deceive}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="deceive">
+            <input name="attr_deceive" title="@{deceive}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_dodge" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{dodge}}} {{dice=[[ceil((@{dodge}+@{agility}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_dodge" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{dodge}}} {{dice=[[ceil(((@{dodge}+@{agility}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="dodge"></h2>
               <h2 data-i18n="(ag)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="dodge">
-            <input name="attr_dodge" title="@{dodge}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_dodge" title="@{dodge}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="dodge">
-            <input name="attr_dodge" title="@{dodge}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_dodge" title="@{dodge}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="dodge">
-            <input name="attr_dodge" title="@{dodge}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_dodge" title="@{dodge}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="dodge">
-            <input name="attr_dodge" title="@{dodge}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_dodge" title="@{dodge}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="dodge">
+            <input name="attr_dodge" title="@{dodge}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_forbidden lore" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{forbidden lore}}} {{dice=[[ceil((@{forbidden_lore}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_forbidden lore" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{forbidden lore}}} {{dice=[[ceil(((@{forbidden_lore}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="forbidden lore"></h2>
               <h2 data-i18n="(int)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="forbidden lore">
-            <input name="attr_forbidden_lore" title="@{forbidden_lore}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_forbidden_lore" title="@{forbidden_lore}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="forbidden lore">
-            <input name="attr_forbidden_lore" title="@{forbidden_lore}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_forbidden_lore" title="@{forbidden_lore}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="forbidden lore">
-            <input name="attr_forbidden_lore" title="@{forbidden_lore}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_forbidden_lore" title="@{forbidden_lore}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="forbidden lore">
-            <input name="attr_forbidden_lore" title="@{forbidden_lore}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_forbidden_lore" title="@{forbidden_lore}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="forbidden lore">
+            <input name="attr_forbidden_lore" title="@{forbidden_lore}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="repeating-container">
           <fieldset class="repeating_forbidden-lore">
             <div class="rowx grid">
-              <button class="d20 text-center" name="roll_forbidden lore" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{forbidden lore}}} {{dice=[[ceil((@{skill}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">y</button>
+              <button class="d20 text-center" name="roll_forbidden lore" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{forbidden lore}}} {{dice=[[ceil(((@{skill}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">y</button>
               <label data-i18n-title="name">
                 <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="0"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="(-20)"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="10"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="0"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="20"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="10"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="30"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="20"/><span class="pictos">3</span>
+              </label>
+              <label class="styled-checkbox grid" data-i18n-title="skill">
+                <input name="attr_skill" title="@{skill}" type="radio" value="30"/><span class="pictos">3</span>
               </label>
             </div>
           </fieldset>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_inquiry" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{inquiry}}} {{dice=[[ceil((@{inquiry}+@{fellowship}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_inquiry" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{inquiry}}} {{dice=[[ceil(((@{inquiry}+@{fellowship}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="inquiry"></h2>
               <h2 data-i18n="(fel)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="inquiry">
-            <input name="attr_inquiry" title="@{inquiry}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_inquiry" title="@{inquiry}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="inquiry">
-            <input name="attr_inquiry" title="@{inquiry}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_inquiry" title="@{inquiry}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="inquiry">
-            <input name="attr_inquiry" title="@{inquiry}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_inquiry" title="@{inquiry}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="inquiry">
-            <input name="attr_inquiry" title="@{inquiry}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_inquiry" title="@{inquiry}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="inquiry">
+            <input name="attr_inquiry" title="@{inquiry}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_intimidate" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{intimidate}}} {{dice=[[ceil((@{intimidate}+@{willpower}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_intimidate" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{intimidate}}} {{dice=[[ceil(((@{intimidate}+@{willpower}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="intimidate"></h2>
               <h2 data-i18n="(wp)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="intimidate">
-            <input name="attr_intimidate" title="@{intimidate}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_intimidate" title="@{intimidate}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="intimidate">
-            <input name="attr_intimidate" title="@{intimidate}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_intimidate" title="@{intimidate}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="intimidate">
-            <input name="attr_intimidate" title="@{intimidate}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_intimidate" title="@{intimidate}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="intimidate">
-            <input name="attr_intimidate" title="@{intimidate}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_intimidate" title="@{intimidate}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="intimidate">
+            <input name="attr_intimidate" title="@{intimidate}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_linguistics" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{linguistics}}} {{dice=[[ceil((@{linguistics}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_linguistics" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{linguistics}}} {{dice=[[ceil(((@{linguistics}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="linguistics"></h2>
               <h2 data-i18n="(int)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="linguistics">
-            <input name="attr_linguistics" title="@{linguistics}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_linguistics" title="@{linguistics}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="linguistics">
-            <input name="attr_linguistics" title="@{linguistics}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_linguistics" title="@{linguistics}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="linguistics">
-            <input name="attr_linguistics" title="@{linguistics}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_linguistics" title="@{linguistics}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="linguistics">
-            <input name="attr_linguistics" title="@{linguistics}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_linguistics" title="@{linguistics}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="linguistics">
+            <input name="attr_linguistics" title="@{linguistics}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="repeating-container">
           <fieldset class="repeating_linguistics">
             <div class="rowx grid">
-              <button class="d20 text-center" name="roll_linguistics" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{linguistics}}} {{dice=[[ceil((@{skill}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">y</button>
+              <button class="d20 text-center" name="roll_linguistics" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{linguistics}}} {{dice=[[ceil(((@{skill}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">y</button>
               <label data-i18n-title="name">
                 <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="0"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="(-20)"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="10"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="0"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="20"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="10"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="30"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="20"/><span class="pictos">3</span>
+              </label>
+              <label class="styled-checkbox grid" data-i18n-title="skill">
+                <input name="attr_skill" title="@{skill}" type="radio" value="30"/><span class="pictos">3</span>
               </label>
             </div>
           </fieldset>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_logic" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{logic}}} {{dice=[[ceil((@{logic}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_logic" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{logic}}} {{dice=[[ceil(((@{logic}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="logic"></h2>
               <h2 data-i18n="(int)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="logic">
-            <input name="attr_logic" title="@{logic}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_logic" title="@{logic}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="logic">
-            <input name="attr_logic" title="@{logic}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_logic" title="@{logic}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="logic">
-            <input name="attr_logic" title="@{logic}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_logic" title="@{logic}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="logic">
-            <input name="attr_logic" title="@{logic}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_logic" title="@{logic}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="logic">
+            <input name="attr_logic" title="@{logic}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
       </div>
       <div class="col left-col skill-list">
         <div class="rowx grid">
+          <h2 class="text-vertical" data-i18n="untrained"></h2>
           <h2 class="text-vertical" data-i18n="trained"></h2>
           <h2 class="text-vertical" data-i18n="+10"></h2>
           <h2 class="text-vertical" data-i18n="+20"></h2>
@@ -819,364 +872,418 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_medicae" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{medicae}}} {{dice=[[ceil((@{medicae}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_medicae" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{medicae}}} {{dice=[[ceil(((@{medicae}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="medicae"></h2>
               <h2 data-i18n="(int)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="medicae">
-            <input name="attr_medicae" title="@{medicae}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_medicae" title="@{medicae}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="medicae">
-            <input name="attr_medicae" title="@{medicae}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_medicae" title="@{medicae}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="medicae">
-            <input name="attr_medicae" title="@{medicae}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_medicae" title="@{medicae}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="medicae">
-            <input name="attr_medicae" title="@{medicae}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_medicae" title="@{medicae}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="medicae">
+            <input name="attr_medicae" title="@{medicae}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_navigation (surface)" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{navigation (surface)}}} {{dice=[[ceil((@{navigation_surface}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_navigation (surface)" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{navigation (surface)}}} {{dice=[[ceil(((@{navigation_surface}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="navigation (surface)"></h2>
               <h2 data-i18n="(int)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="navigation (surface)">
-            <input name="attr_navigation_surface" title="@{navigation_surface}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_navigation_surface" title="@{navigation_surface}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="navigation (surface)">
-            <input name="attr_navigation_surface" title="@{navigation_surface}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_navigation_surface" title="@{navigation_surface}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="navigation (surface)">
-            <input name="attr_navigation_surface" title="@{navigation_surface}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_navigation_surface" title="@{navigation_surface}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="navigation (surface)">
-            <input name="attr_navigation_surface" title="@{navigation_surface}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_navigation_surface" title="@{navigation_surface}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="navigation (surface)">
+            <input name="attr_navigation_surface" title="@{navigation_surface}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_navigation (stellar)" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{navigation (stellar)}}} {{dice=[[ceil((@{navigation_stellar}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_navigation (stellar)" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{navigation (stellar)}}} {{dice=[[ceil(((@{navigation_stellar}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="navigation (stellar)"></h2>
               <h2 data-i18n="(int)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="navigation (stellar)">
-            <input name="attr_navigation_stellar" title="@{navigation_stellar}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_navigation_stellar" title="@{navigation_stellar}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="navigation (stellar)">
-            <input name="attr_navigation_stellar" title="@{navigation_stellar}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_navigation_stellar" title="@{navigation_stellar}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="navigation (stellar)">
-            <input name="attr_navigation_stellar" title="@{navigation_stellar}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_navigation_stellar" title="@{navigation_stellar}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="navigation (stellar)">
-            <input name="attr_navigation_stellar" title="@{navigation_stellar}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_navigation_stellar" title="@{navigation_stellar}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="navigation (stellar)">
+            <input name="attr_navigation_stellar" title="@{navigation_stellar}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_navigation (warp)" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{navigation (warp)}}} {{dice=[[ceil((@{navigation_warp}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_navigation (warp)" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{navigation (warp)}}} {{dice=[[ceil(((@{navigation_warp}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="navigation (warp)"></h2>
               <h2 data-i18n="(int)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="navigation (warp)">
-            <input name="attr_navigation_warp" title="@{navigation_warp}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_navigation_warp" title="@{navigation_warp}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="navigation (warp)">
-            <input name="attr_navigation_warp" title="@{navigation_warp}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_navigation_warp" title="@{navigation_warp}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="navigation (warp)">
-            <input name="attr_navigation_warp" title="@{navigation_warp}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_navigation_warp" title="@{navigation_warp}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="navigation (warp)">
-            <input name="attr_navigation_warp" title="@{navigation_warp}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_navigation_warp" title="@{navigation_warp}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="navigation (warp)">
+            <input name="attr_navigation_warp" title="@{navigation_warp}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_operate (aeronautica)" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{operate (aeronautica)}}} {{dice=[[ceil((@{operate_aeronautica}+@{agility}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_operate (aeronautica)" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{operate (aeronautica)}}} {{dice=[[ceil(((@{operate_aeronautica}+@{agility}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="operate (aeronautica)"></h2>
               <h2 data-i18n="(ag)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="operate (aeronautica)">
-            <input name="attr_operate_aeronautica" title="@{operate_aeronautica}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_operate_aeronautica" title="@{operate_aeronautica}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="operate (aeronautica)">
-            <input name="attr_operate_aeronautica" title="@{operate_aeronautica}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_operate_aeronautica" title="@{operate_aeronautica}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="operate (aeronautica)">
-            <input name="attr_operate_aeronautica" title="@{operate_aeronautica}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_operate_aeronautica" title="@{operate_aeronautica}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="operate (aeronautica)">
-            <input name="attr_operate_aeronautica" title="@{operate_aeronautica}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_operate_aeronautica" title="@{operate_aeronautica}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="operate (aeronautica)">
+            <input name="attr_operate_aeronautica" title="@{operate_aeronautica}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_operate (voidship)" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{operate (voidship)}}} {{dice=[[ceil((@{operate_voidship}+@{agility}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_operate (voidship)" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{operate (voidship)}}} {{dice=[[ceil(((@{operate_voidship}+@{agility}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="operate (voidship)"></h2>
               <h2 data-i18n="(ag)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="operate (voidship)">
-            <input name="attr_operate_voidship" title="@{operate_voidship}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_operate_voidship" title="@{operate_voidship}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="operate (voidship)">
-            <input name="attr_operate_voidship" title="@{operate_voidship}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_operate_voidship" title="@{operate_voidship}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="operate (voidship)">
-            <input name="attr_operate_voidship" title="@{operate_voidship}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_operate_voidship" title="@{operate_voidship}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="operate (voidship)">
-            <input name="attr_operate_voidship" title="@{operate_voidship}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_operate_voidship" title="@{operate_voidship}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="operate (voidship)">
+            <input name="attr_operate_voidship" title="@{operate_voidship}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_parry" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{parry}}} {{dice=[[ceil((@{parry}+@{weapon_skill}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_parry" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{parry}}} {{dice=[[ceil(((@{parry}+@{weapon_skill}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="parry"></h2>
               <h2 data-i18n="(ws)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="parry">
-            <input name="attr_parry" title="@{parry}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_parry" title="@{parry}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="parry">
-            <input name="attr_parry" title="@{parry}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_parry" title="@{parry}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="parry">
-            <input name="attr_parry" title="@{parry}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_parry" title="@{parry}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="parry">
-            <input name="attr_parry" title="@{parry}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_parry" title="@{parry}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="parry">
+            <input name="attr_parry" title="@{parry}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_psyniscience" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{psyniscience}}} {{dice=[[ceil((@{psyniscience}+@{perception}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_psyniscience" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{psyniscience}}} {{dice=[[ceil(((@{psyniscience}+@{perception}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="psyniscience"></h2>
               <h2 data-i18n="(per)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="psyniscience">
-            <input name="attr_psyniscience" title="@{psyniscience}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_psyniscience" title="@{psyniscience}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="psyniscience">
-            <input name="attr_psyniscience" title="@{psyniscience}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_psyniscience" title="@{psyniscience}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="psyniscience">
-            <input name="attr_psyniscience" title="@{psyniscience}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_psyniscience" title="@{psyniscience}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="psyniscience">
-            <input name="attr_psyniscience" title="@{psyniscience}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_psyniscience" title="@{psyniscience}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="psyniscience">
+            <input name="attr_psyniscience" title="@{psyniscience}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_scholastic lore" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{scholastic lore}}} {{dice=[[ceil((@{scholastic_lore}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_scholastic lore" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{scholastic lore}}} {{dice=[[ceil(((@{scholastic_lore}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="scholastic lore"></h2>
               <h2 data-i18n="(int)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="scholastic lore">
-            <input name="attr_scholastic_lore" title="@{scholastic_lore}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_scholastic_lore" title="@{scholastic_lore}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="scholastic lore">
-            <input name="attr_scholastic_lore" title="@{scholastic_lore}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_scholastic_lore" title="@{scholastic_lore}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="scholastic lore">
-            <input name="attr_scholastic_lore" title="@{scholastic_lore}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_scholastic_lore" title="@{scholastic_lore}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="scholastic lore">
-            <input name="attr_scholastic_lore" title="@{scholastic_lore}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_scholastic_lore" title="@{scholastic_lore}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="scholastic lore">
+            <input name="attr_scholastic_lore" title="@{scholastic_lore}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="repeating-container">
           <fieldset class="repeating_scholastic-lore">
             <div class="rowx grid">
-              <button class="d20 text-center" name="roll_scholastic lore" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{scholastic lore}}} {{dice=[[ceil((@{skill}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">y</button>
+              <button class="d20 text-center" name="roll_scholastic lore" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{scholastic lore}}} {{dice=[[ceil(((@{skill}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">y</button>
               <label data-i18n-title="name">
                 <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="0"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="(-20)"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="10"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="0"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="20"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="10"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="30"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="20"/><span class="pictos">3</span>
+              </label>
+              <label class="styled-checkbox grid" data-i18n-title="skill">
+                <input name="attr_skill" title="@{skill}" type="radio" value="30"/><span class="pictos">3</span>
               </label>
             </div>
           </fieldset>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_scrutiny" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{scrutiny}}} {{dice=[[ceil((@{scrutiny}+@{perception}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_scrutiny" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{scrutiny}}} {{dice=[[ceil(((@{scrutiny}+@{perception}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="scrutiny"></h2>
               <h2 data-i18n="(per)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="scrutiny">
-            <input name="attr_scrutiny" title="@{scrutiny}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_scrutiny" title="@{scrutiny}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="scrutiny">
-            <input name="attr_scrutiny" title="@{scrutiny}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_scrutiny" title="@{scrutiny}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="scrutiny">
-            <input name="attr_scrutiny" title="@{scrutiny}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_scrutiny" title="@{scrutiny}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="scrutiny">
-            <input name="attr_scrutiny" title="@{scrutiny}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_scrutiny" title="@{scrutiny}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="scrutiny">
+            <input name="attr_scrutiny" title="@{scrutiny}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_security" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{security}}} {{dice=[[ceil((@{security}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_security" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{security}}} {{dice=[[ceil(((@{security}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="security"></h2>
               <h2 data-i18n="(int)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="security">
-            <input name="attr_security" title="@{security}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_security" title="@{security}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="security">
-            <input name="attr_security" title="@{security}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_security" title="@{security}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="security">
-            <input name="attr_security" title="@{security}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_security" title="@{security}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="security">
-            <input name="attr_security" title="@{security}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_security" title="@{security}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="security">
+            <input name="attr_security" title="@{security}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_sleight of hand" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{sleight of hand}}} {{dice=[[ceil((@{sleight_of_hand}+@{agility}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_sleight of hand" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{sleight of hand}}} {{dice=[[ceil(((@{sleight_of_hand}+@{agility}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="sleight of hand"></h2>
               <h2 data-i18n="(ag)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="sleight of hand">
-            <input name="attr_sleight_of_hand" title="@{sleight_of_hand}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_sleight_of_hand" title="@{sleight_of_hand}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="sleight of hand">
-            <input name="attr_sleight_of_hand" title="@{sleight_of_hand}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_sleight_of_hand" title="@{sleight_of_hand}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="sleight of hand">
-            <input name="attr_sleight_of_hand" title="@{sleight_of_hand}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_sleight_of_hand" title="@{sleight_of_hand}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="sleight of hand">
-            <input name="attr_sleight_of_hand" title="@{sleight_of_hand}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_sleight_of_hand" title="@{sleight_of_hand}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="sleight of hand">
+            <input name="attr_sleight_of_hand" title="@{sleight_of_hand}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_stealth" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{stealth}}} {{dice=[[ceil((@{stealth}+@{agility}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_stealth" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{stealth}}} {{dice=[[ceil(((@{stealth}+@{agility}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="stealth"></h2>
               <h2 data-i18n="(ag)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="stealth">
-            <input name="attr_stealth" title="@{stealth}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_stealth" title="@{stealth}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="stealth">
-            <input name="attr_stealth" title="@{stealth}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_stealth" title="@{stealth}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="stealth">
-            <input name="attr_stealth" title="@{stealth}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_stealth" title="@{stealth}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="stealth">
-            <input name="attr_stealth" title="@{stealth}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_stealth" title="@{stealth}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="stealth">
+            <input name="attr_stealth" title="@{stealth}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_tech-use" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{tech-use}}} {{dice=[[ceil((@{tech-use}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_tech-use" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{tech-use}}} {{dice=[[ceil(((@{tech-use}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="tech-use"></h2>
               <h2 data-i18n="(int)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="tech-use">
-            <input name="attr_tech-use" title="@{tech-use}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_tech-use" title="@{tech-use}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="tech-use">
-            <input name="attr_tech-use" title="@{tech-use}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_tech-use" title="@{tech-use}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="tech-use">
-            <input name="attr_tech-use" title="@{tech-use}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_tech-use" title="@{tech-use}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="tech-use">
-            <input name="attr_tech-use" title="@{tech-use}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_tech-use" title="@{tech-use}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="tech-use">
+            <input name="attr_tech-use" title="@{tech-use}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_tracking" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{tracking}}} {{dice=[[ceil((@{tracking}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_tracking" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{tracking}}} {{dice=[[ceil(((@{tracking}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="tracking"></h2>
               <h2 data-i18n="(int)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="tracking">
-            <input name="attr_tracking" title="@{tracking}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_tracking" title="@{tracking}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="tracking">
-            <input name="attr_tracking" title="@{tracking}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_tracking" title="@{tracking}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="tracking">
-            <input name="attr_tracking" title="@{tracking}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_tracking" title="@{tracking}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="tracking">
-            <input name="attr_tracking" title="@{tracking}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_tracking" title="@{tracking}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="tracking">
+            <input name="attr_tracking" title="@{tracking}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="rowx grid">
           <div class="col">
-            <button name="roll_trade" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{trade}}} {{dice=[[ceil((@{trade}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">
+            <button name="roll_trade" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{trade}}} {{dice=[[ceil(((@{trade}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">
               <h2 data-i18n="trade"></h2>
               <h2 data-i18n="(int)"></h2>
             </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="trade">
-            <input name="attr_trade" title="@{trade}" type="checkbox" value="0"/><span class="pictos">3</span>
+            <input name="attr_trade" title="@{trade}" type="radio" value="(-20)"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="trade">
-            <input name="attr_trade" title="@{trade}" type="checkbox" value="10"/><span class="pictos">3</span>
+            <input name="attr_trade" title="@{trade}" type="radio" value="0"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="trade">
-            <input name="attr_trade" title="@{trade}" type="checkbox" value="20"/><span class="pictos">3</span>
+            <input name="attr_trade" title="@{trade}" type="radio" value="10"/><span class="pictos">3</span>
           </label>
           <label class="styled-checkbox grid" data-i18n-title="trade">
-            <input name="attr_trade" title="@{trade}" type="checkbox" value="30"/><span class="pictos">3</span>
+            <input name="attr_trade" title="@{trade}" type="radio" value="20"/><span class="pictos">3</span>
+          </label>
+          <label class="styled-checkbox grid" data-i18n-title="trade">
+            <input name="attr_trade" title="@{trade}" type="radio" value="30"/><span class="pictos">3</span>
           </label>
         </div>
         <div class="repeating-container">
           <fieldset class="repeating_trade">
             <div class="rowx grid">
-              <button class="d20 text-center" name="roll_trade" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{trade}}} {{dice=[[ceil((@{skill}+@{intelligence}+@{modifiers_toggle}-[[d100]])/10)cs>0cf<0]]}}">y</button>
+              <button class="d20 text-center" name="roll_trade" type="roll" value="@{gm_toggle} &{template:rolls} {{header=^{trade}}} {{dice=[[ceil(((@{skill}+@{intelligence}+@{modifiers_toggle})-[[d100]])/10)cs>0cf<0]]}}">y</button>
               <label data-i18n-title="name">
                 <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="0"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="(-20)"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="10"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="0"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="20"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="10"/><span class="pictos">3</span>
               </label>
               <label class="styled-checkbox grid" data-i18n-title="skill">
-                <input name="attr_skill" title="@{skill}" type="checkbox" value="30"/><span class="pictos">3</span>
+                <input name="attr_skill" title="@{skill}" type="radio" value="20"/><span class="pictos">3</span>
+              </label>
+              <label class="styled-checkbox grid" data-i18n-title="skill">
+                <input name="attr_skill" title="@{skill}" type="radio" value="30"/><span class="pictos">3</span>
               </label>
             </div>
           </fieldset>
@@ -1696,6 +1803,8 @@
   const globalAttributesByCatagory = {
 	characteristics: ['weapon_skill', 'ballistic_skill', 'strength', 'toughness', 'agility', 'intelligence', 'perception', 'willpower', 'fellowship', 'infamy'],
 	xp: ['total_xp_earned', 'total_xp_spent'],
+	skills: {'acrobatics':'agility','athletics':'strength','awareness':'perception', 'charm':'fellowship', 'command':'fellowship', 'commerce':'intelligence', 'common lore': 'intelligence', 'deceive':'fellowship','dodge':'agility', 'forbidden lore':'intelligence','inquiry':'fellowship','intimidate':'willpower','linguistics':'intelligence', 'logic':'intelligence', 'medicae':'intelligence','navigation (surface)':'intelligence','navigation (stellar)':'intelligence', 'navigation (warp)':'intelligence', 'operate (aeronautica)': 'agility', 'operate (voidship)': 'agility', 'parry':'weapon_skill','psyniscience':'perception', 'scholastic lore': 'intelligence','scrutiny':'perception','security':'intelligence', 'sleight of hand':'agility', 'stealth': 'agility', 'tech-use': 'intelligence', 'tracking':'intelligence', 'trade':'intelligence'},
+	skillRanks: ['0', '10', '20', '30']
 }
 
 const functions = {
@@ -1721,17 +1830,21 @@ const functions = {
 		}
 		return numbers
 	},
+	determineSkillRank: newValue => {
+
+	},
 	divideByTen: score => Math.floor(score/10),
 	getReprowid: trigger => {
 		const split = trigger.split('_');
 		return `${split[0]}_${split[1]}_${split[2]}`
 	},
-	parseIntegers(numbers) {
+	parseIntegers: numbers => {
 		for (let [key, value] of Object.entries(numbers)) {
 		    numbers[key] = parseInt(value) || 0;
 		}
 		return numbers	
 	},
+	resetSkillRank: value => globalAttributesByCatagory.skillRanks.includes(value) ? true : false,
 	sumIntegers: numbers => numbers.reduce((a,b) => a + b, 0),
 	convertInteger: string => parseInt(string) || 0,
 }
@@ -1775,6 +1888,5 @@ on(`change:repeating_advancement:cost`, eventinfo => {
         });
     });
 });
-
 
 </script>

@@ -18,12 +18,13 @@ mixin checkboxInput(name)
 		input(name=`attr_${attrName}` title=`@{${attrName}}` type='checkbox' value=name)
 		span.pictos 3
 
-mixin checkboxSkills(name)
+mixin checkboxSkills(name, abbreviation)
 	- const attrName = name.replace(/ /g, '_').replace('(', '').replace(')', '');
+	- const score = characteristics[`${abbreviation}`];
 	each val in skillRanks
-		- const value = val === 'trained' ? 0 : val.slice(1);
+		- const value = val === 'untrained' ? `(-20)` : val === 'trained' ? 0 : val.slice(1);
 		label.styled-checkbox.grid(data-i18n-title=name)
-			input(name=`attr_${attrName}` title=`@{${attrName}}` type='checkbox' value=value)
+			input(name=`attr_${attrName}` title=`@{${attrName}}` type='radio' value=value)
 			span.pictos 3
 
 mixin checkboxSymbol (name, symbol)
@@ -39,7 +40,7 @@ mixin repeatingButton()
 		span(name='attr_name')
 
 - const rollPrefix = `@{gm_toggle} &{template:rolls}`;
-- const rollEnding = `@{modifiers_toggle}-[[d100]])/10)cs>0cf<0`;
+- const rollEnding = `@{modifiers_toggle})-[[d100]])/10)cs>0cf<0`;
 - const repeatingEnding = `{{header=@{name}}} {{desc=@{description}}}`;
 mixin repeatingText(name)
 	- const attrName = name.replace(/ /g, '-');
@@ -60,7 +61,7 @@ mixin repeatingSkills(name, abbreviation)
 	.repeating-container
 		fieldset(class=`repeating_${sectionName}`)
 			.rowx.grid
-				button.d20.text-center(name=`roll_${name}` type='roll' value!=`${rollPrefix} {{header=^{${name}}}} {{dice=[[ceil((@{skill}+@{${score}}+${rollEnding}]]}}`) y
+				button.d20.text-center(name=`roll_${name}` type='roll' value!=`${rollPrefix} {{header=^{${name}}}} {{dice=[[ceil(((@{skill}+@{${score}}+${rollEnding}]]}}`) y
 				+textInput(`name`)
 				+checkboxSkills('skill')
 
@@ -70,11 +71,11 @@ mixin skillColumns(name, abbreviation)
 	- const skill = name.replace(/ /g, '_').replace('(', '').replace(')', '');
 	.rowx.grid
 		.col
-			button(name=`roll_${name}` type='roll' value!=`${rollPrefix} {{header=^{${name}}}} {{dice=[[ceil((@{${skill}}+@{${score}}+${rollEnding}]]}}`)
+			button(name=`roll_${name}` type='roll' value!=`${rollPrefix} {{header=^{${name}}}} {{dice=[[ceil(((@{${skill}}+@{${score}}+${rollEnding}]]}}`)
 				h2(data-i18n=name)
 				if abbreviation
 					h2(data-i18n=abbreviation)
-		+checkboxSkills(name)
+		+checkboxSkills(name, abbreviation)
 
 mixin armorAreas(name, range)
 	.col.border

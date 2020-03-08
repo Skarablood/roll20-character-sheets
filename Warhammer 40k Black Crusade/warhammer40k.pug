@@ -10,7 +10,8 @@ include src/pug/mixins.pug
 - const skillsLeft = {'acrobatics':'(ag)','athletics':'(s)','awareness':'(per)', 'charm':'(fel)', 'command':'(fel)', 'commerce':'(int)', 'common lore': '(int)', 'deceive':'(fel)','dodge':'(ag)', 'forbidden lore':'(int)','inquiry':'(fel)','intimidate':'(wp)','linguistics':'(int)', 'logic':'(int)'};
 - const skillsRight = {'medicae':'(int)','navigation (surface)':'(int)','navigation (stellar)':'(int)', 'navigation (warp)':'(int)', 'operate (aeronautica)': '(ag)', 'operate (voidship)': '(ag)', 'parry':'(ws)','psyniscience':'(per)', 'scholastic lore': '(int)','scrutiny':'(per)','security':'(int)', 'sleight of hand':'(ag)', 'stealth': '(ag)', 'tech-use': '(int)', 'tracking':'(int)', 'trade':'(int)'};
 - const repeatingSkills = ['common lore', 'forbidden lore', 'linguistics', 'scholastic lore', 'trade'];
-- const skillRanks = ['trained', '+10', '+20', '+30'];
+- const trainedOnlySkills = ['forbidden lore', 'operate (aeronautica)', 'operate (voidship)'];
+- const skillRanks = ['untrained', 'trained', '+10', '+20', '+30'];
 - const darkGods = ['khorne', 'slaanesh', 'nurgle', 'tzeentch', 'unaligned'];
 
 //- TABS
@@ -82,7 +83,7 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 				- const nameSpaces = val.replace(/_/g, " ");
 				.col.grid
 					.rowx.text-center
-						button(name=`roll_${key}` type='roll' value=`${rollPrefix} {{header=^{${nameSpaces}}}} {{dice=[[ceil((@{${val}}+${rollEnding}]]}}`)
+						button(name=`roll_${key}` type='roll' value=`${rollPrefix} {{header=^{${nameSpaces}}}} {{dice=[[ceil(((@{${val}}+${rollEnding}]]}}`)
 							h2.small-caps(data-i18n=nameSpaces)
 					.rowx.text-center
 						h3.small-caps(data-i18n=key)

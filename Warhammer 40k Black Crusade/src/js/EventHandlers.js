@@ -34,4 +34,3 @@ on(`change:repeating_advancement:cost`, eventinfo => {
         });
     });
 });
-

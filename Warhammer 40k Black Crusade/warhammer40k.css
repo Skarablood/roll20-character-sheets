@@ -360,21 +360,25 @@ div.sheet-pc {
       font-family: 'dicefontd20';
       text-align: center; }
     div.sheet-pc div.sheet-skill-talents-traits div.sheet-skill-list div.sheet-rowx {
-      grid-template-columns: 65% 1fr 1fr 1fr 1fr; }
+      grid-template-columns: 65% 1fr 1fr 1fr 1fr 1fr; }
       div.sheet-pc div.sheet-skill-talents-traits div.sheet-skill-list div.sheet-rowx h2 {
         display: inline-block; }
-        div.sheet-pc div.sheet-skill-talents-traits div.sheet-skill-list div.sheet-rowx h2[data-i18n='trained'] {
+        div.sheet-pc div.sheet-skill-talents-traits div.sheet-skill-list div.sheet-rowx h2[data-i18n='untrained'] {
           grid-column: 2; }
-        div.sheet-pc div.sheet-skill-talents-traits div.sheet-skill-list div.sheet-rowx h2[data-i18n='10+'] {
+        div.sheet-pc div.sheet-skill-talents-traits div.sheet-skill-list div.sheet-rowx h2[data-i18n='trained'] {
           grid-column: 3; }
-        div.sheet-pc div.sheet-skill-talents-traits div.sheet-skill-list div.sheet-rowx h2[data-i18n='20+'] {
+        div.sheet-pc div.sheet-skill-talents-traits div.sheet-skill-list div.sheet-rowx h2[data-i18n='10+'] {
           grid-column: 4; }
-        div.sheet-pc div.sheet-skill-talents-traits div.sheet-skill-list div.sheet-rowx h2[data-i18n='30+'] {
+        div.sheet-pc div.sheet-skill-talents-traits div.sheet-skill-list div.sheet-rowx h2[data-i18n='20+'] {
           grid-column: 5; }
+        div.sheet-pc div.sheet-skill-talents-traits div.sheet-skill-list div.sheet-rowx h2[data-i18n='30+'] {
+          grid-column: 6; }
     div.sheet-pc div.sheet-skill-talents-traits div.sheet-skill-list div.sheet-repeating-container button {
       max-height: 25px; }
     div.sheet-pc div.sheet-skill-talents-traits div.sheet-skill-list div.sheet-repeating-container div.sheet-rowx {
-      grid-template-columns: 9% 55% 1fr 1fr 1fr 1fr; }
+      grid-template-columns: 1.8em 55% 2fr 1fr 1fr 1fr 1fr 1fr; }
+      div.sheet-pc div.sheet-skill-talents-traits div.sheet-skill-list div.sheet-repeating-container div.sheet-rowx div.sheet-grid {
+        grid-template-columns: 1fr 2fr; }
     div.sheet-pc div.sheet-skill-talents-traits div.sheet-left-col {
       display: inline-block;
       margin-right: 2%;
@@ -577,7 +581,7 @@ label.sheet-styled-checkbox input {
   opacity: 0;
   top: 20%;
   z-index: 2; }
-  label.sheet-styled-checkbox input[type="checkbox"]:checked + span {
+  label.sheet-styled-checkbox input[type="checkbox"]:checked + span, label.sheet-styled-checkbox input[type="radio"]:checked + span {
     background-color: #620911;
     color: #fff; }
 
