@@ -90,6 +90,7 @@ div.sheet-pc {
         grid-template-columns: 1fr minmax(auto, 100px) minmax(auto, 100px) minmax(auto, 100px);
         
         img {
+            grid-area: 1 / 1 / 3 / 2;
             max-height: 8em;
         }
 
@@ -247,6 +248,16 @@ div.sheet-pc {
         }
 
         div.sheet-skill-list {
+            button[type='roll'] {
+                text-align: left;
+                width: 100%;
+            }
+
+            button.sheet-d20 {
+                font-family: 'dicefontd20';
+                text-align: center;
+            }
+
             div.sheet-rowx {
                 grid-template-columns: 65% 1fr 1fr 1fr 1fr;
 
@@ -343,6 +354,10 @@ div.sheet-pc {
 
             div.sheet-calculatedXp {
                 padding-top: 5%;
+            }
+
+            input[name="attr_current_alignment"] {
+                text-align: center;
             }
         }
     }
@@ -481,6 +496,8 @@ div.sheet-pc {
 /*  REPEATING SECTIONS
     ============================= */
     div.sheet-repeating-container {
+        margin-bottom: 2%;
+
         button { 
             font-variant: none; 
         }
@@ -496,6 +513,10 @@ div.sheet-pc {
         .repcontrol_del {
             font-family: "pictos";
             position: relative;
+        }
+
+        .repitem {
+            margin-bottom: 1%;
         }
 
         div.sheet-collapse {

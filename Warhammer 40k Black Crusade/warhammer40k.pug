@@ -42,35 +42,24 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 				else
 					input(name=`attr_sheet_type` title=`@{sheet_type}` type='radio' value=val)
 				span.eclipse #{val}
+		.rowx
+			h2.text-lowercase(data-i18n='/w GM') /w GM
+			label.switch(data-i18n-title='whisper rolls to gm')
+				input.whisper-toggle(name='attr_gm_toggle' type='checkbox' value='/w gm')
+				span.slider
+		.rowx
+			each val, key in {'modifiers':'?{Modifiers +/-|0}'}
+				h2(data-i18n=key) #{key}
+				label.switch(data-i18n-title=key title=key)
+					input.whisper-toggle(name=`attr_${key}_toggle` type='checkbox' value=val)
+					span.slider
 
 	.container.grid.info
 		.rowx.grid.names
 			each val in ['character name', 'player name']
 				h1(data-i18n=val)
 				+textInput(val)
-			+checkboxSymbol('info collapse', 'i')
 			+checkboxSymbol('info settings', 'p')
-			.rowx.collapse
-				.rowx.grid.archetype
-					each val in ['archetype', 'rank', 'warband name']
-						h1(data-i18n=val)
-						- val = val.replace(/ /g, '_');
-						if val === 'rank'
-							div.bottom-border.text-center
-								span(name=`attr_${val}`)
-						else
-							div.bottom-border
-								span(name=`attr_${val}`)
-				.rowx.grid.4autocolumn
-					each val in ['pride', 'disgrace']
-						h1(data-i18n=val)
-						div.bottom-border
-							span(name=`attr_${val}`)
-				each val in ['motivation', 'description']
-					.rowx.grid.2autocolumn
-						h1(data-i18n=val)
-						div.bottom-border
-							span.description(name=`attr_${val}`)
 			.rowx.settings
 				.rowx.grid.archetype
 					each val in ['archetype', 'rank', 'warband name']
@@ -142,7 +131,7 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 							span(name='attr_name')
 						+checkboxSymbol('collapse', 'i')
 						+checkboxSymbol('settings', 'p')
-						.rowx.collapse
+						.rowx.collapse.background-color
 							span.collapse.description(name='attr_description')
 						.rowx.settings
 							+textInput(`name`)
@@ -168,7 +157,7 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 							button.text-left.eclipse.font-weight-bold
 							+checkboxSymbol('collapse', 'i')
 							+checkboxSymbol('settings', 'p')
-							.rowx.collapse
+							.rowx.collapse.background-color
 								.rowx.grid.8autocolumn
 									each val in ['class', 'damage', 'type', 'pen']
 										h2(data-i18n=val)
@@ -271,7 +260,7 @@ input.display_string(name='attr_character_settings' type='hidden' value='')
 							span.text-center.text-capitalize(name='attr_alignment')
 							+checkboxSymbol('collapse', 'i')
 							+checkboxSymbol('settings', 'p')
-							.rowx.collapse
+							.rowx.collapse.background-color
 								span.collapse.description(name='attr_description')
 							.rowx.settings
 								+textInput(`name`)

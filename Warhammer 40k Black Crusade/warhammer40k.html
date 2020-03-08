@@ -22,6 +22,18 @@
     <label class="pseudo-button" data-i18n-title="sheet type: advancement">
       <input name="attr_sheet_type" title="@{sheet_type}" type="radio" value="advancement"/><span class="eclipse">advancement</span>
     </label>
+    <div class="rowx">
+      <h2 class="text-lowercase" data-i18n="/w GM">/w GM</h2>
+      <label class="switch" data-i18n-title="whisper rolls to gm">
+        <input class="whisper-toggle" name="attr_gm_toggle" type="checkbox" value="/w gm"/><span class="slider"></span>
+      </label>
+    </div>
+    <div class="rowx">
+      <h2 data-i18n="modifiers">modifiers</h2>
+      <label class="switch" data-i18n-title="modifiers" title="modifiers">
+        <input class="whisper-toggle" name="attr_modifiers_toggle" type="checkbox" value="?{Modifiers +/-|0}"/><span class="slider"></span>
+      </label>
+    </div>
   </div>
   <div class="container grid info">
     <div class="rowx grid names">
@@ -33,32 +45,7 @@
       <label data-i18n-title="player name">
         <input data-i18n-placeholder="player name" name="attr_player_name" placeholder="player name" title="@{player_name}" type="text" value=""/>
       </label>
-      <input class="toggles text-center" name="attr_info_collapse" title="@{info_collapse}" type="checkbox" value="info collapse"/><span class="toggles text-center pictos">i</span>
       <input class="toggles text-center" name="attr_info_settings" title="@{info_settings}" type="checkbox" value="info settings"/><span class="toggles text-center pictos">p</span>
-      <div class="rowx collapse">
-        <div class="rowx grid archetype">
-          <h1 data-i18n="archetype"></h1>
-          <div class="bottom-border"><span name="attr_archetype"></span></div>
-          <h1 data-i18n="rank"></h1>
-          <div class="bottom-border text-center"><span name="attr_rank"></span></div>
-          <h1 data-i18n="warband name"></h1>
-          <div class="bottom-border"><span name="attr_warband_name"></span></div>
-        </div>
-        <div class="rowx grid 4autocolumn">
-          <h1 data-i18n="pride"></h1>
-          <div class="bottom-border"><span name="attr_pride"></span></div>
-          <h1 data-i18n="disgrace"></h1>
-          <div class="bottom-border"><span name="attr_disgrace"></span></div>
-        </div>
-        <div class="rowx grid 2autocolumn">
-          <h1 data-i18n="motivation"></h1>
-          <div class="bottom-border"><span class="description" name="attr_motivation"></span></div>
-        </div>
-        <div class="rowx grid 2autocolumn">
-          <h1 data-i18n="description"></h1>
-          <div class="bottom-border"><span class="description" name="attr_description"></span></div>
-        </div>
-      </div>
       <div class="rowx settings">
         <div class="rowx grid archetype">
           <h1 data-i18n="archetype"></h1>
@@ -241,7 +228,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="weapon skill">
-              <input name="attr_weapon_skill" placeholder="0" title="@{weapon_skill}" type="number" value=""/>
+              <input name="attr_weapon_skill" placeholder="0" title="@{weapon_skill}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -251,7 +238,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="ballistic skill">
-              <input name="attr_ballistic_skill" placeholder="0" title="@{ballistic_skill}" type="number" value=""/>
+              <input name="attr_ballistic_skill" placeholder="0" title="@{ballistic_skill}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -261,7 +248,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="strength">
-              <input name="attr_strength" placeholder="0" title="@{strength}" type="number" value=""/>
+              <input name="attr_strength" placeholder="0" title="@{strength}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -271,7 +258,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="toughness">
-              <input name="attr_toughness" placeholder="0" title="@{toughness}" type="number" value=""/>
+              <input name="attr_toughness" placeholder="0" title="@{toughness}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -281,7 +268,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="agility">
-              <input name="attr_agility" placeholder="0" title="@{agility}" type="number" value=""/>
+              <input name="attr_agility" placeholder="0" title="@{agility}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -291,7 +278,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="intelligence">
-              <input name="attr_intelligence" placeholder="0" title="@{intelligence}" type="number" value=""/>
+              <input name="attr_intelligence" placeholder="0" title="@{intelligence}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -301,7 +288,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="perception">
-              <input name="attr_perception" placeholder="0" title="@{perception}" type="number" value=""/>
+              <input name="attr_perception" placeholder="0" title="@{perception}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -311,7 +298,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="willpower">
-              <input name="attr_willpower" placeholder="0" title="@{willpower}" type="number" value=""/>
+              <input name="attr_willpower" placeholder="0" title="@{willpower}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -321,7 +308,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="fellowship">
-              <input name="attr_fellowship" placeholder="0" title="@{fellowship}" type="number" value=""/>
+              <input name="attr_fellowship" placeholder="0" title="@{fellowship}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -331,7 +318,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="infamy">
-              <input name="attr_infamy" placeholder="0" title="@{infamy}" type="number" value=""/>
+              <input name="attr_infamy" placeholder="0" title="@{infamy}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -342,7 +329,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="weapon skill unnatural bonus">
-              <input name="attr_weapon_skill_unnatural_bonus" placeholder="0" title="@{weapon_skill_unnatural_bonus}" type="number" value=""/>
+              <input name="attr_weapon_skill_unnatural_bonus" placeholder="0" title="@{weapon_skill_unnatural_bonus}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -352,7 +339,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="ballistic skill unnatural bonus">
-              <input name="attr_ballistic_skill_unnatural_bonus" placeholder="0" title="@{ballistic_skill_unnatural_bonus}" type="number" value=""/>
+              <input name="attr_ballistic_skill_unnatural_bonus" placeholder="0" title="@{ballistic_skill_unnatural_bonus}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -362,7 +349,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="strength unnatural bonus">
-              <input name="attr_strength_unnatural_bonus" placeholder="0" title="@{strength_unnatural_bonus}" type="number" value=""/>
+              <input name="attr_strength_unnatural_bonus" placeholder="0" title="@{strength_unnatural_bonus}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -372,7 +359,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="toughness unnatural bonus">
-              <input name="attr_toughness_unnatural_bonus" placeholder="0" title="@{toughness_unnatural_bonus}" type="number" value=""/>
+              <input name="attr_toughness_unnatural_bonus" placeholder="0" title="@{toughness_unnatural_bonus}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -382,7 +369,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="agility unnatural bonus">
-              <input name="attr_agility_unnatural_bonus" placeholder="0" title="@{agility_unnatural_bonus}" type="number" value=""/>
+              <input name="attr_agility_unnatural_bonus" placeholder="0" title="@{agility_unnatural_bonus}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -392,7 +379,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="intelligence unnatural bonus">
-              <input name="attr_intelligence_unnatural_bonus" placeholder="0" title="@{intelligence_unnatural_bonus}" type="number" value=""/>
+              <input name="attr_intelligence_unnatural_bonus" placeholder="0" title="@{intelligence_unnatural_bonus}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -402,7 +389,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="perception unnatural bonus">
-              <input name="attr_perception_unnatural_bonus" placeholder="0" title="@{perception_unnatural_bonus}" type="number" value=""/>
+              <input name="attr_perception_unnatural_bonus" placeholder="0" title="@{perception_unnatural_bonus}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -412,7 +399,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="willpower unnatural bonus">
-              <input name="attr_willpower_unnatural_bonus" placeholder="0" title="@{willpower_unnatural_bonus}" type="number" value=""/>
+              <input name="attr_willpower_unnatural_bonus" placeholder="0" title="@{willpower_unnatural_bonus}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -422,7 +409,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="fellowship unnatural bonus">
-              <input name="attr_fellowship_unnatural_bonus" placeholder="0" title="@{fellowship_unnatural_bonus}" type="number" value=""/>
+              <input name="attr_fellowship_unnatural_bonus" placeholder="0" title="@{fellowship_unnatural_bonus}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -432,7 +419,7 @@
           </div>
           <div class="rowx">
             <label data-i18n-title="infamy unnatural bonus">
-              <input name="attr_infamy_unnatural_bonus" placeholder="0" title="@{infamy_unnatural_bonus}" type="number" value=""/>
+              <input name="attr_infamy_unnatural_bonus" placeholder="0" title="@{infamy_unnatural_bonus}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -458,8 +445,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="acrobatics"></h2>
-            <h2 data-i18n="(ag)"></h2>
+            <button name="roll_acrobatics" type="roll" value="">
+              <h2 data-i18n="acrobatics"></h2>
+              <h2 data-i18n="(ag)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="acrobatics">
             <input name="attr_acrobatics" title="@{acrobatics}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -476,8 +465,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="athletics"></h2>
-            <h2 data-i18n="(s)"></h2>
+            <button name="roll_athletics" type="roll" value="">
+              <h2 data-i18n="athletics"></h2>
+              <h2 data-i18n="(s)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="athletics">
             <input name="attr_athletics" title="@{athletics}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -494,8 +485,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="awareness"></h2>
-            <h2 data-i18n="(per)"></h2>
+            <button name="roll_awareness" type="roll" value="">
+              <h2 data-i18n="awareness"></h2>
+              <h2 data-i18n="(per)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="awareness">
             <input name="attr_awareness" title="@{awareness}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -512,8 +505,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="charm"></h2>
-            <h2 data-i18n="(fel)"></h2>
+            <button name="roll_charm" type="roll" value="">
+              <h2 data-i18n="charm"></h2>
+              <h2 data-i18n="(fel)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="charm">
             <input name="attr_charm" title="@{charm}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -530,8 +525,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="command"></h2>
-            <h2 data-i18n="(fel)"></h2>
+            <button name="roll_command" type="roll" value="">
+              <h2 data-i18n="command"></h2>
+              <h2 data-i18n="(fel)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="command">
             <input name="attr_command" title="@{command}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -548,8 +545,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="commerce"></h2>
-            <h2 data-i18n="(int)"></h2>
+            <button name="roll_commerce" type="roll" value="">
+              <h2 data-i18n="commerce"></h2>
+              <h2 data-i18n="(int)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="commerce">
             <input name="attr_commerce" title="@{commerce}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -566,7 +565,9 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="common lore"></h2>
+            <button name="roll_common lore" type="roll" value="">
+              <h2 data-i18n="common lore"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="common lore">
             <input name="attr_common_lore" title="@{common_lore}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -584,7 +585,7 @@
         <div class="repeating-container">
           <fieldset class="repeating_common-lore">
             <div class="rowx grid">
-              <button class="d20">y</button>
+              <button class="d20 text-center" name="roll_common lore" type="roll">y</button>
               <label data-i18n-title="name">
                 <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
               </label>
@@ -605,8 +606,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="deceive"></h2>
-            <h2 data-i18n="(fel)"></h2>
+            <button name="roll_deceive" type="roll" value="">
+              <h2 data-i18n="deceive"></h2>
+              <h2 data-i18n="(fel)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="deceive">
             <input name="attr_deceive" title="@{deceive}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -623,8 +626,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="dodge"></h2>
-            <h2 data-i18n="(ag)"></h2>
+            <button name="roll_dodge" type="roll" value="">
+              <h2 data-i18n="dodge"></h2>
+              <h2 data-i18n="(ag)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="dodge">
             <input name="attr_dodge" title="@{dodge}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -641,8 +646,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="forbidden lore"></h2>
-            <h2 data-i18n="(int)"></h2>
+            <button name="roll_forbidden lore" type="roll" value="">
+              <h2 data-i18n="forbidden lore"></h2>
+              <h2 data-i18n="(int)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="forbidden lore">
             <input name="attr_forbidden_lore" title="@{forbidden_lore}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -660,7 +667,7 @@
         <div class="repeating-container">
           <fieldset class="repeating_forbidden-lore">
             <div class="rowx grid">
-              <button class="d20">y</button>
+              <button class="d20 text-center" name="roll_forbidden lore" type="roll">y</button>
               <label data-i18n-title="name">
                 <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
               </label>
@@ -681,8 +688,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="inquiry"></h2>
-            <h2 data-i18n="(fel)"></h2>
+            <button name="roll_inquiry" type="roll" value="">
+              <h2 data-i18n="inquiry"></h2>
+              <h2 data-i18n="(fel)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="inquiry">
             <input name="attr_inquiry" title="@{inquiry}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -699,8 +708,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="intimidate"></h2>
-            <h2 data-i18n="(wp)"></h2>
+            <button name="roll_intimidate" type="roll" value="">
+              <h2 data-i18n="intimidate"></h2>
+              <h2 data-i18n="(wp)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="intimidate">
             <input name="attr_intimidate" title="@{intimidate}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -717,8 +728,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="linguistics"></h2>
-            <h2 data-i18n="(int)"></h2>
+            <button name="roll_linguistics" type="roll" value="">
+              <h2 data-i18n="linguistics"></h2>
+              <h2 data-i18n="(int)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="linguistics">
             <input name="attr_linguistics" title="@{linguistics}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -736,7 +749,7 @@
         <div class="repeating-container">
           <fieldset class="repeating_linguistics">
             <div class="rowx grid">
-              <button class="d20">y</button>
+              <button class="d20 text-center" name="roll_linguistics" type="roll">y</button>
               <label data-i18n-title="name">
                 <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
               </label>
@@ -757,8 +770,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="logic"></h2>
-            <h2 data-i18n="(int)"></h2>
+            <button name="roll_logic" type="roll" value="">
+              <h2 data-i18n="logic"></h2>
+              <h2 data-i18n="(int)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="logic">
             <input name="attr_logic" title="@{logic}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -783,8 +798,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="medicae"></h2>
-            <h2 data-i18n="(int)"></h2>
+            <button name="roll_medicae" type="roll" value="">
+              <h2 data-i18n="medicae"></h2>
+              <h2 data-i18n="(int)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="medicae">
             <input name="attr_medicae" title="@{medicae}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -801,8 +818,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="navigation (surface)"></h2>
-            <h2 data-i18n="(int)"></h2>
+            <button name="roll_navigation (surface)" type="roll" value="">
+              <h2 data-i18n="navigation (surface)"></h2>
+              <h2 data-i18n="(int)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="navigation (surface)">
             <input name="attr_navigation_(surface)" title="@{navigation_(surface)}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -819,8 +838,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="navigation (stellar)"></h2>
-            <h2 data-i18n="(int)"></h2>
+            <button name="roll_navigation (stellar)" type="roll" value="">
+              <h2 data-i18n="navigation (stellar)"></h2>
+              <h2 data-i18n="(int)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="navigation (stellar)">
             <input name="attr_navigation_(stellar)" title="@{navigation_(stellar)}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -837,8 +858,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="navigation (warp)"></h2>
-            <h2 data-i18n="(int)"></h2>
+            <button name="roll_navigation (warp)" type="roll" value="">
+              <h2 data-i18n="navigation (warp)"></h2>
+              <h2 data-i18n="(int)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="navigation (warp)">
             <input name="attr_navigation_(warp)" title="@{navigation_(warp)}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -855,8 +878,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="operate (aeronautica)"></h2>
-            <h2 data-i18n="(ag)"></h2>
+            <button name="roll_operate (aeronautica)" type="roll" value="">
+              <h2 data-i18n="operate (aeronautica)"></h2>
+              <h2 data-i18n="(ag)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="operate (aeronautica)">
             <input name="attr_operate_(aeronautica)" title="@{operate_(aeronautica)}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -873,8 +898,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="operate (voidship)"></h2>
-            <h2 data-i18n="(ag)"></h2>
+            <button name="roll_operate (voidship)" type="roll" value="">
+              <h2 data-i18n="operate (voidship)"></h2>
+              <h2 data-i18n="(ag)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="operate (voidship)">
             <input name="attr_operate_(voidship)" title="@{operate_(voidship)}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -891,8 +918,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="parry"></h2>
-            <h2 data-i18n="(ws)"></h2>
+            <button name="roll_parry" type="roll" value="">
+              <h2 data-i18n="parry"></h2>
+              <h2 data-i18n="(ws)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="parry">
             <input name="attr_parry" title="@{parry}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -909,8 +938,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="psyniscience"></h2>
-            <h2 data-i18n="(per)"></h2>
+            <button name="roll_psyniscience" type="roll" value="">
+              <h2 data-i18n="psyniscience"></h2>
+              <h2 data-i18n="(per)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="psyniscience">
             <input name="attr_psyniscience" title="@{psyniscience}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -927,8 +958,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="scholastic lore"></h2>
-            <h2 data-i18n="(int)"></h2>
+            <button name="roll_scholastic lore" type="roll" value="">
+              <h2 data-i18n="scholastic lore"></h2>
+              <h2 data-i18n="(int)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="scholastic lore">
             <input name="attr_scholastic_lore" title="@{scholastic_lore}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -946,7 +979,7 @@
         <div class="repeating-container">
           <fieldset class="repeating_scholastic-lore">
             <div class="rowx grid">
-              <button class="d20">y</button>
+              <button class="d20 text-center" name="roll_scholastic lore" type="roll">y</button>
               <label data-i18n-title="name">
                 <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
               </label>
@@ -967,8 +1000,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="scrutiny"></h2>
-            <h2 data-i18n="(per)"></h2>
+            <button name="roll_scrutiny" type="roll" value="">
+              <h2 data-i18n="scrutiny"></h2>
+              <h2 data-i18n="(per)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="scrutiny">
             <input name="attr_scrutiny" title="@{scrutiny}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -985,8 +1020,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="security"></h2>
-            <h2 data-i18n="(int)"></h2>
+            <button name="roll_security" type="roll" value="">
+              <h2 data-i18n="security"></h2>
+              <h2 data-i18n="(int)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="security">
             <input name="attr_security" title="@{security}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -1003,8 +1040,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="sleight of hand"></h2>
-            <h2 data-i18n="(ag)"></h2>
+            <button name="roll_sleight of hand" type="roll" value="">
+              <h2 data-i18n="sleight of hand"></h2>
+              <h2 data-i18n="(ag)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="sleight of hand">
             <input name="attr_sleight_of_hand" title="@{sleight_of_hand}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -1021,8 +1060,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="stealth"></h2>
-            <h2 data-i18n="(ag)"></h2>
+            <button name="roll_stealth" type="roll" value="">
+              <h2 data-i18n="stealth"></h2>
+              <h2 data-i18n="(ag)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="stealth">
             <input name="attr_stealth" title="@{stealth}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -1039,8 +1080,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="tech-use"></h2>
-            <h2 data-i18n="(int)"></h2>
+            <button name="roll_tech-use" type="roll" value="">
+              <h2 data-i18n="tech-use"></h2>
+              <h2 data-i18n="(int)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="tech-use">
             <input name="attr_tech-use" title="@{tech-use}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -1057,8 +1100,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="tracking"></h2>
-            <h2 data-i18n="(int)"></h2>
+            <button name="roll_tracking" type="roll" value="">
+              <h2 data-i18n="tracking"></h2>
+              <h2 data-i18n="(int)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="tracking">
             <input name="attr_tracking" title="@{tracking}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -1075,8 +1120,10 @@
         </div>
         <div class="rowx grid">
           <div class="col">
-            <h2 data-i18n="trade"></h2>
-            <h2 data-i18n="(int)"></h2>
+            <button name="roll_trade" type="roll" value="">
+              <h2 data-i18n="trade"></h2>
+              <h2 data-i18n="(int)"></h2>
+            </button>
           </div>
           <label class="styled-checkbox grid" data-i18n-title="trade">
             <input name="attr_trade" title="@{trade}" type="checkbox" value="0"/><span class="pictos">3</span>
@@ -1094,7 +1141,7 @@
         <div class="repeating-container">
           <fieldset class="repeating_trade">
             <div class="rowx grid">
-              <button class="d20">y</button>
+              <button class="d20 text-center" name="roll_trade" type="roll">y</button>
               <label data-i18n-title="name">
                 <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
               </label>
@@ -1120,7 +1167,7 @@
             <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
             <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
             <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
-            <div class="rowx collapse"><span class="collapse description" name="attr_description"></span></div>
+            <div class="rowx collapse background-color"><span class="collapse description" name="attr_description"></span></div>
             <div class="rowx settings">
               <label data-i18n-title="name">
                 <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
@@ -1221,7 +1268,7 @@
               <button class="text-left eclipse font-weight-bold"></button>
               <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
               <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
-              <div class="rowx collapse">
+              <div class="rowx collapse background-color">
                 <div class="rowx grid 8autocolumn">
                   <h2 data-i18n="class"></h2><span class="text-center" name="attr_class"></span>
                   <h2 data-i18n="damage"></h2><span class="text-center" name="attr_damage"></span>
@@ -1298,7 +1345,7 @@
             <h2 class="text-center" data-i18n="half"></h2>
             <div class="borders">
               <label data-i18n-title="movement half">
-                <input name="attr_movement_half" placeholder="0" title="@{movement_half}" type="number" value=""/>
+                <input name="attr_movement_half" placeholder="0" title="@{movement_half}" type="number" value="0"/>
               </label>
             </div>
           </div>
@@ -1307,7 +1354,7 @@
             <h2 class="text-center" data-i18n="full"></h2>
             <div class="borders">
               <label data-i18n-title="movement full">
-                <input name="attr_movement_full" placeholder="0" title="@{movement_full}" type="number" value=""/>
+                <input name="attr_movement_full" placeholder="0" title="@{movement_full}" type="number" value="0"/>
               </label>
             </div>
           </div>
@@ -1316,7 +1363,7 @@
             <h2 class="text-center" data-i18n="charge"></h2>
             <div class="borders">
               <label data-i18n-title="movement charge">
-                <input name="attr_movement_charge" placeholder="0" title="@{movement_charge}" type="number" value=""/>
+                <input name="attr_movement_charge" placeholder="0" title="@{movement_charge}" type="number" value="0"/>
               </label>
             </div>
           </div>
@@ -1325,7 +1372,7 @@
             <h2 class="text-center" data-i18n="run"></h2>
             <div class="borders">
               <label data-i18n-title="movement run">
-                <input name="attr_movement_run" placeholder="0" title="@{movement_run}" type="number" value=""/>
+                <input name="attr_movement_run" placeholder="0" title="@{movement_run}" type="number" value="0"/>
               </label>
             </div>
           </div>
@@ -1335,7 +1382,7 @@
           <h2 class="text-center" data-i18n="psy rating"></h2>
           <div class="borders">
             <label data-i18n-title="psy rating">
-              <input name="attr_psy_rating" placeholder="0" title="@{psy_rating}" type="number" value=""/>
+              <input name="attr_psy_rating" placeholder="0" title="@{psy_rating}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -1345,7 +1392,7 @@
               <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
               <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
               <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
-              <div class="rowx collapse"><span class="collapse description" name="attr_description"></span></div>
+              <div class="rowx collapse background-color"><span class="collapse description" name="attr_description"></span></div>
               <div class="rowx settings">
                 <label data-i18n-title="name">
                   <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
@@ -1367,7 +1414,7 @@
                 <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
                 <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
                 <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
-                <div class="rowx collapse"><span class="collapse description" name="attr_description"></span></div>
+                <div class="rowx collapse background-color"><span class="collapse description" name="attr_description"></span></div>
                 <div class="rowx settings">
                   <label data-i18n-title="name">
                     <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
@@ -1387,7 +1434,7 @@
             <h2 class="text-center" data-i18n="total"></h2>
             <div class="borders">
               <label data-i18n-title="wounds total">
-                <input name="attr_wounds_total" placeholder="0" title="@{wounds_total}" type="number" value=""/>
+                <input name="attr_wounds_total" placeholder="0" title="@{wounds_total}" type="number" value="0"/>
               </label>
             </div>
           </div>
@@ -1396,7 +1443,7 @@
             <h2 class="text-center" data-i18n="current"></h2>
             <div class="borders">
               <label data-i18n-title="wounds current">
-                <input name="attr_wounds_current" placeholder="0" title="@{wounds_current}" type="number" value=""/>
+                <input name="attr_wounds_current" placeholder="0" title="@{wounds_current}" type="number" value="0"/>
               </label>
             </div>
           </div>
@@ -1405,7 +1452,7 @@
             <h2 class="text-center" data-i18n="fatigue"></h2>
             <div class="borders">
               <label data-i18n-title="wounds fatigue">
-                <input name="attr_wounds_fatigue" placeholder="0" title="@{wounds_fatigue}" type="number" value=""/>
+                <input name="attr_wounds_fatigue" placeholder="0" title="@{wounds_fatigue}" type="number" value="0"/>
               </label>
             </div>
           </div>
@@ -1420,7 +1467,7 @@
                 <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
                 <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
                 <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
-                <div class="rowx collapse"><span class="collapse description" name="attr_description"></span></div>
+                <div class="rowx collapse background-color"><span class="collapse description" name="attr_description"></span></div>
                 <div class="rowx settings">
                   <label data-i18n-title="name">
                     <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
@@ -1441,7 +1488,7 @@
                 <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
                 <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
                 <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
-                <div class="rowx collapse"><span class="collapse description" name="attr_description"></span></div>
+                <div class="rowx collapse background-color"><span class="collapse description" name="attr_description"></span></div>
                 <div class="rowx settings">
                   <label data-i18n-title="name">
                     <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
@@ -1457,13 +1504,13 @@
           <h2 class="text-center" data-i18n="total"></h2>
           <div class="borders">
             <label data-i18n-title="infamy points total">
-              <input name="attr_infamy_points_total" placeholder="0" title="@{infamy_points_total}" type="number" value=""/>
+              <input name="attr_infamy_points_total" placeholder="0" title="@{infamy_points_total}" type="number" value="0"/>
             </label>
           </div>
           <h2 class="text-center" data-i18n="current"></h2>
           <div class="borders">
             <label data-i18n-title="infamy points current">
-              <input name="attr_infamy_points_current" placeholder="0" title="@{infamy_points_current}" type="number" value=""/>
+              <input name="attr_infamy_points_current" placeholder="0" title="@{infamy_points_current}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -1472,7 +1519,7 @@
           <h2 class="text-center" data-i18n="total"></h2>
           <div class="borders">
             <label data-i18n-title="corruption total">
-              <input name="attr_corruption_total" placeholder="0" title="@{corruption_total}" type="number" value=""/>
+              <input name="attr_corruption_total" placeholder="0" title="@{corruption_total}" type="number" value="0"/>
             </label>
           </div>
         </div>
@@ -1485,7 +1532,7 @@
               <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button>
               <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
               <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
-              <div class="rowx collapse"><span class="collapse description" name="attr_description"></span></div>
+              <div class="rowx collapse background-color"><span class="collapse description" name="attr_description"></span></div>
               <div class="rowx settings">
                 <label data-i18n-title="name">
                   <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
@@ -1515,13 +1562,13 @@
               <button class="text-left eclipse font-weight-bold"><span name="attr_name"></span></button><span class="text-center" name="attr_cost"></span><span class="text-center text-capitalize" name="attr_alignment"></span>
               <input class="toggles text-center" name="attr_collapse" title="@{collapse}" type="checkbox" value="collapse"/><span class="toggles text-center pictos">i</span>
               <input class="toggles text-center" name="attr_settings" title="@{settings}" type="checkbox" value="settings"/><span class="toggles text-center pictos">p</span>
-              <div class="rowx collapse"><span class="collapse description" name="attr_description"></span></div>
+              <div class="rowx collapse background-color"><span class="collapse description" name="attr_description"></span></div>
               <div class="rowx settings">
                 <label data-i18n-title="name">
                   <input data-i18n-placeholder="name" name="attr_name" placeholder="name" title="@{name}" type="text" value=""/>
                 </label>
                 <label data-i18n-title="cost">
-                  <input name="attr_cost" placeholder="0" title="@{cost}" type="number" value=""/>
+                  <input name="attr_cost" placeholder="0" title="@{cost}" type="number" value="0"/>
                 </label>
                 <select name="attr_alignment" value="unaligned">
                   <option data-i18n="khorne" value="khorne"></option>
@@ -1543,7 +1590,7 @@
         <div class="rowx grid">
           <h3 data-i18n="total xp earned"></h3>
           <label data-i18n-title="total xp earned">
-            <input name="attr_total_xp_earned" placeholder="0" title="@{total_xp_earned}" type="number" value=""/>
+            <input name="attr_total_xp_earned" placeholder="0" title="@{total_xp_earned}" type="number" value="0"/>
           </label>
         </div>
         <div class="rowx grid">
@@ -1564,31 +1611,31 @@
         <div class="rowx grid">
           <h3 data-i18n="khorne"></h3>
           <label data-i18n-title="khorne">
-            <input name="attr_khorne" placeholder="0" title="@{khorne}" type="number" value=""/>
+            <input name="attr_khorne" placeholder="0" title="@{khorne}" type="number" value="0"/>
           </label>
         </div>
         <div class="rowx grid">
           <h3 data-i18n="slaanesh"></h3>
           <label data-i18n-title="slaanesh">
-            <input name="attr_slaanesh" placeholder="0" title="@{slaanesh}" type="number" value=""/>
+            <input name="attr_slaanesh" placeholder="0" title="@{slaanesh}" type="number" value="0"/>
           </label>
         </div>
         <div class="rowx grid">
           <h3 data-i18n="nurgle"></h3>
           <label data-i18n-title="nurgle">
-            <input name="attr_nurgle" placeholder="0" title="@{nurgle}" type="number" value=""/>
+            <input name="attr_nurgle" placeholder="0" title="@{nurgle}" type="number" value="0"/>
           </label>
         </div>
         <div class="rowx grid">
           <h3 data-i18n="tzeentch"></h3>
           <label data-i18n-title="tzeentch">
-            <input name="attr_tzeentch" placeholder="0" title="@{tzeentch}" type="number" value=""/>
+            <input name="attr_tzeentch" placeholder="0" title="@{tzeentch}" type="number" value="0"/>
           </label>
         </div>
         <div class="rowx grid">
           <h3 data-i18n="unaligned"></h3>
           <label data-i18n-title="unaligned">
-            <input name="attr_unaligned" placeholder="0" title="@{unaligned}" type="number" value=""/>
+            <input name="attr_unaligned" placeholder="0" title="@{unaligned}" type="number" value="0"/>
           </label>
         </div>
         <div class="rowx headers">
@@ -1673,10 +1720,10 @@ const setAttributes = (update, silent) => {
 const replaceSpaces = name => key.replace(/ /g, '_')
 
 globalAttributesByCatagory.characteristics.forEach(characteristic => {
-	on(`change:${characteristic} change:${characteristic}_modifier_bonus`, () => {
-		getAttrs([`${characteristic}`, `${characteristic}_modifier_bonus`], values => {
-			values = {score: values[`${characteristic}`], bonus: values[`${characteristic}_modifier_bonus`]}
-			setAttributes({[`${characteristic}_modifier`]: functions.calculateAttributes(values)});
+	on(`change:${characteristic} change:${characteristic}_unnatural_bonus`, () => {
+		getAttrs([`${characteristic}`, `${characteristic}_unnatural_bonus`], values => {
+			values = {score: values[`${characteristic}`], bonus: values[`${characteristic}_unnatural_bonus`]}
+			setAttributes({[`${characteristic}_bonus`]: functions.calculateAttributes(values)});
 		})
 	});
 })

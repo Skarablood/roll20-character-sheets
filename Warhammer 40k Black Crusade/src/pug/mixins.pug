@@ -6,7 +6,7 @@ mixin textInput(name)
 mixin numberInput(name)
 	- const attrName = name.replace(/ /g, '_');
 	label(data-i18n-title=name)
-		input(name=`attr_${attrName}` placeholder='0' title=`@{${attrName}}` type='number' value='')
+		input(name=`attr_${attrName}` placeholder='0' title=`@{${attrName}}` type='number' value=0)
 
 mixin hiddenInput(name, value)
 	- const attrName = name.replace(/ /g, '_');
@@ -46,7 +46,7 @@ mixin repeatingText(name)
 				span(name='attr_name')
 			+checkboxSymbol('collapse', 'i')
 			+checkboxSymbol('settings', 'p')
-			.rowx.collapse
+			.rowx.collapse.background-color
 				span.collapse.description(name='attr_description')
 			.rowx.settings
 				+textInput(`name`)
@@ -57,7 +57,7 @@ mixin repeatingSkills(name)
 	.repeating-container
 		fieldset(class=`repeating_${attrName}`)
 			.rowx.grid
-				button.d20 y
+				button.d20.text-center(name=`roll_${name}` type='roll') y
 				+textInput(`name`)
 				+checkboxSkills(name)
 
@@ -65,9 +65,10 @@ mixin skillColumns(name, abbreviation)
 	- const repeating = repeatingSkills.includes(name) ? true : false;
 	.rowx.grid
 		.col
-			h2(data-i18n=name)
-			if abbreviation
-				h2(data-i18n=abbreviation)
+			button(name=`roll_${name}` type='roll' value='')
+				h2(data-i18n=name)
+				if abbreviation
+					h2(data-i18n=abbreviation)
 		+checkboxSkills(name)
 
 

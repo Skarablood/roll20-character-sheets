@@ -13,12 +13,17 @@
         &:before {
             display: none;
         }
+
         &:focus,
         &:hover,
         &:active {
             background: none;
             background-color: $primary !important;
             color: #fff;
+
+            & > h2 {
+                color: #fff;
+            }
         }
         &[type="roll"],
         &[type="action"] {
@@ -31,8 +36,9 @@
                 right              : 0.02em solid hsl(0, 0%, 20%);
                 style              : outset;
             }
+            font-size: 1em;
             margin: 0.2em !important;
-            padding: 0.1em !important;
+            padding: 2% 1% !important;
         }
     }
 
