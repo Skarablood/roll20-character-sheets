@@ -28,9 +28,6 @@ const functions = {
 		}
 		return numbers
 	},
-	determineSkillRank: newValue => {
-
-	},
 	divideByTen: score => Math.floor(score/10),
 	getReprowid: trigger => {
 		const split = trigger.split('_');
@@ -42,7 +39,6 @@ const functions = {
 		}
 		return numbers	
 	},
-	resetSkillRank: value => globalAttributesByCatagory.skillRanks.includes(value) ? true : false,
 	sumIntegers: numbers => numbers.reduce((a,b) => a + b, 0),
 	convertInteger: string => parseInt(string) || 0,
 }
