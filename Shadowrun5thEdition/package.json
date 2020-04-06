@@ -1,0 +1,27 @@
+{
+  "name": "roll20-character-sheets",
+  "version": "1.0.0",
+  "description": "compilers for character sheets",
+  "main": "index.js",
+  "dependencies": {
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  },
+  "scripts": {
+    "test": "mocha",
+    "compile:scss": "node-sass Shadowrun5thEdition.scss /Shadowrun5thEdition.css -w",
+    "compile:pug": "pug Shadowrun5thEdition.pug Shadowrun5thEdition.html -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clevett/roll20-character-sheets.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clevett/roll20-character-sheets/issues"
+  },
+  "homepage": "https://github.com/clevett/roll20-character-sheets#readme"
+}
