@@ -7,12 +7,29 @@ QUnit.module('Shadowrun 5th Edition tests', {
   }
 })
 
-//QUnit.test('findIndexOfStringInArray find a string in an array', assert => assert.ok(findIndexOfStringInArray(['Unnamed Hero', 'Critter (Dog)', 'Movement: x2/x8/+4'], 'Movement:'), 2))
+//* HERO LAB IMPORTER *//
+QUnit.test('findNestedEntries returns without everything before the given string', assert => {
+
+})
+QUnit.test('findNestedEntries returns an array', assert => assert.ok(typeof findNestedEntries(['Unnamed Hero', 'Critter (Dog)', 'Movement: x2/x8/+4']), 'array'))
+
+
+QUnit.test('findIndexWithoutSpaces return first element lacks designated spaces', assert => assert.ok(findIndexWithoutSpaces(["   Datajack (Alphaware)", "Vehicles:"]), 1))
+
+QUnit.test('findEntriesWith return false is element lacks designated spaces', assert => assert.ok(!verifyElementHasSpaces("Vehicles:"), false))
+QUnit.test('findEntriesWith return true if element has the designated spaces', assert => assert.ok(verifyElementHasSpaces("   Datajack (Alphaware)"), true))
+
+QUnit.test('sliceArray returns an array thats sliced at the given index', assert => assert.ok(sliceArray(['Unnamed Hero', 'Critter (Dog)', 'Movement: x2/x8/+4'], 1), ['Critter (Dog)', 'Movement: x2/x8/+4']))
+
+QUnit.test('findIndexOfString returns the index of a string', assert => assert.ok(findIndexOfString(['Unnamed Hero', 'Critter (Dog)', 'Movement: x2/x8/+4'], 'Critter (Dog)'), 1))
+
+QUnit.test('importerHeroLabBuildCharacter returns an object', assert => assert.ok(typeof importerHeroLabBuildCharacter(['Unnamed Hero', 'Critter (Dog)', 'Movement: x2/x8/+4']), 'object'))
 
 QUnit.test('removeUnnecessaryElements remove entries with Shadowrun © 2005', assert => assert.ok(removeUnnecessaryElements(['Shadowrun © 2005', 'armor: 2']), ['armor: 2']))
 QUnit.test('removeUnnecessaryElements remove entries with Hero Lab', assert => assert.ok(removeUnnecessaryElements(['Hero Lab', 'armor: 2']), ['armor: 2']))
 QUnit.test('removeUnnecessaryElements remove empty entries', assert => assert.ok(removeUnnecessaryElements(['', 'armor: 2']), ['armor: 2']))
 
+//* CHARACTER SHEET FUNCTIONS *//
 QUnit.test('setAttributes returns error if update is not an object', assert => assert.throws(processingFunctions.setAttributes(6)))
 
 QUnit.test('parseIntegers returns a number', assert => {

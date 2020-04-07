@@ -2794,25 +2794,24 @@ const importerChummerProcessor = mancerValues => {
 }
 const herolabDirections = `
 	<ol>
-		<li>Download the file "HLtoRoll20Export.hl" from: https://drive.google.com/file/d/0B3E3jkp51s8aRmpTU1NMRjRIVkk/view</li>
-		<li>Double click the file. Hero Lab will import it automatically now.</li>
-		<li>Load a character</li>
-		<li>Go to File/Save Custom Output and select the "Roll20 Export"</li>
-		<li>Save the file. It should open automatically in your browser</li>
-		<li>Follow the directions.</li>
+		<li>In Hero Lab go to File => Output Hero Statblock</li>
+		<li>Select Plain Text and copy.</li>
+		<li>Paste into the input here.</li>
   </ol>`;
   
 const importerHeroLabProcess = mancerValues => {
   const rawStatBlockArray = mancerValues.importedData.split("\n")
   const characterStatArray = removeUnnecessaryElements(rawStatBlockArray)
-  const hlCharacter = importerHeroLabBuildCharacter(characterStatArray)
+  const hlCharacter = importerHeroLabBuildCharacter(characterStatArray.entries())
   const character = new Character(characterStatArray.shift())
+
+  //console.log(characterStatArray)
 
   console.log("Hero Lab Data")
   console.log(hlCharacter)
 
-  console.log("CHARACTER")
-  console.log(character)
+  //console.log("CHARACTER")
+  //console.log(character)
 }
 
 const importerHeroLabBuildCharacter = characterStatArray => {
@@ -2833,8 +2832,40 @@ const importerHeroLabBuildCharacter = characterStatArray => {
   hlCharacter['Metatype Abilities: '] = findString('Metatype Abilities: ')
   hlCharacter['Qualities: '] = findString('Qualities: ')
 
+  hlCharacter['Augmentations:'] = findNestedEntries(characterStatArray, 'Augmentations')
+
   return hlCharacter
 }
+
+const findIndexOfString = (array, string) => {
+  const elementEqualsString = element => element === string
+  return array.findIndex(elementEqualsString)
+}
+
+//Nested entries have muplie spaces before them
+//Find the next entry that does not such as "Vehicles:"
+const findIndexWithoutSpaces = array => {
+  const elementEqualsString = element => !element.includes('   ')
+  return array.findIndex(elementEqualsString)
+}
+
+const sliceArray = (array, index) => array.slice(index)
+
+const verifyElementHasSpaces = element => element.includes('   ') ? true : false
+
+//Take string such as "Augmentations"
+const findNestedEntries = (characterStatArray, string) => {
+  //Remove everything before the string we're looking for
+  let index = findIndexOfString(characterStatArray, string)
+  let slicedArray = sliceArray(characterStatArray, index + 1)
+
+  //Remove everything after the next entry that is not nested
+  index = findIndexWithoutSpaces(characterStatArray)
+  slicedArray = sliceArray(slicedArray, index)
+
+  return slicedArray
+}
+
 
 const removeUnnecessaryElements = rawStatBlockArray => {
   let statBlock = []
