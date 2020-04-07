@@ -8,13 +8,27 @@ QUnit.module('Shadowrun 5th Edition tests', {
 })
 
 //* HERO LAB IMPORTER *//
-QUnit.test('importerHeroLabProcess returns a character_name and deletes the key', assert => {
-  const expect = "Quin"
-  const actual = processStatBlockObject({ 0: 'Quin', 1: 'METATYPE: TROLL' })
-  assert.ok(actual.name, expect)
-  assert.ok(!actual[0], false)
+QUnit.test('processStatBlockObject returns a completed HeroLabCharacter using past in object', assert => {
+  const actual = processStatBlockObject({ 0: 'Quin', 1: 'METATYPE: TROLL', 2: "B 9, A 5/6, R 4, S 9/10, W 5, L 3, I 3, C 3, ESS 4.47, EDG 3" })
+  //If the statBlock value includes the string found in the classValue
+  //Set the classkey equal to the statBlock value - the string
+  assert.strictEqual(actual.metatype, 'TROLL')
+  //Do not trim attributes
+  assert.strictEqual(actual.attributes, "B 9, A 5/6, R 4, S 9/10, W 5, L 3, I 3, C 3, ESS 4.47, EDG 3")
+  //Delete the statBlock key
+  assert.deepEqual(actual[1], undefined)
+  //Else set the classKey to empty value
+  assert.strictEqual(actual.armor, '')
 })
-QUnit.test('importerHeroLabProcess returns an object', assert => assert.ok(typeof processStatBlockObject({}), 'object'))
+
+QUnit.test('processStatBlockObject returns a new HeroLabCharacter with name equal key 0', assert => {
+  const actual = processStatBlockObject({ 0: 'Quin', 1: 'METATYPE: TROLL'})
+  //add name to class & delete the first key
+  assert.ok(actual.name, "Quin")
+  assert.ok(!actual[0], false)
+  //returns an object
+  assert.ok(typeof actual, 'object')
+})
 
 QUnit.test('findNestedEntries returns an array', assert => assert.ok(typeof findNestedEntries(['Unnamed Hero', 'Critter (Dog)', 'Movement: x2/x8/+4']), 'array'))
 
@@ -74,13 +88,12 @@ QUnit.test('Get the attribute name from the trigger', assert => {
   assert.ok(actual, 'attrName')
 })
 
-QUnit.test('convertSkillSelectToHiddenSkill removes " Group" in skill groups ', assert => {
-  const actual = shadowrunFunctions.convertSkillSelectToHiddenSkill('Firearms Group')
-  assert.ok(actual, 'firearms')
-})
-
-QUnit.test('convertSkillSelectToHiddenSkill removes all " " in skill groups ', assert => {
+QUnit.test('convertSkillSelectToHiddenSkill removes all the spaces and Group', assert => {
+  //Removes " Group in skill groups"
   const actual = shadowrunFunctions.convertSkillSelectToHiddenSkill('Close Combat Group')
+  assert.ok(!actual.includes('Group'), 'Close Combat')
+
+  //Removes all " " in skill groups
   assert.ok(actual, 'closecombat')
 })
 
@@ -131,36 +144,29 @@ QUnit.test('searchs an array of keys for any containing modifier', assert => {
   assert.ok(actual, "soak_modifier")
 })
 
-QUnit.test('should return an object', assert => {
-  const actual = shadowrunFunctions.conditionFactory({})
+QUnit.test('conditionFactory', assert => {
+  //return an object
+  let actual = shadowrunFunctions.conditionFactory({})
   assert.ok(actual, 'object')
-})
 
-QUnit.test('should contain an attribute key', assert => {
-  const actual = shadowrunFunctions.conditionFactory({body: 3})
-  assert.ok(actual.attribute, true) 
-})
+  //return base key
+  assert.ok(actual.base, true)
 
-QUnit.test('should return attribute key wQUnit.testh the value of willpower', assert => {
-  const actual = shadowrunFunctions.conditionFactory({body: 3, willpower: 5})
+  //return attribute key QUnit.test the value of willpower
+  actual = shadowrunFunctions.conditionFactory({ body: 3, willpower: 5 })
+  assert.ok(actual.attribute, true)
   assert.strictEqual(actual.attribute, 5) 
-})
 
-QUnit.test('should return base key', assert => {
-  const actual = shadowrunFunctions.conditionFactory({})
-  assert.ok(actual.base, true) 
-})
-
-QUnit.test('should return modifier key', assert => {
-  const actual = shadowrunFunctions.conditionFactory({stun_modifier: 6})
+  //return modifier key
+  actual = shadowrunFunctions.conditionFactory({ stun_modifier: 6 })
   assert.ok(actual.modifier, true) 
-})
 
-QUnit.test('should convert the attrs object into condQUnit.testion object', assert => {
-  const expected = {modifier: 7, attribute: 10, base: 8}
-  const actual = shadowrunFunctions.conditionFactory({stun_modifier: 7, willpower: 10})
+  //convert the attrs object into condQUnit.testion object
+  const expected = { modifier: 7, attribute: 10, base: 8 }
+  actual = shadowrunFunctions.conditionFactory({ stun_modifier: 7, willpower: 10 })
   assert.deepEqual(actual, expected)
 })
+
 
 QUnit.test('divide attribute by 2 then add base and modiifer', assert => {
   const actual = shadowrunFunctions.calculateConditionTracks({attribute: 3, base: 8, modifier: 2})

@@ -8,7 +8,7 @@ const herolabDirections = `
 const importerHeroLabProcess = mancerValues => {
   const rawStatBlockArray = mancerValues.importedData.split("\n")
   const splitStatBlock = removeUnnecessaryElements(rawStatBlockArray)
-  const characterHeroLab = processStatBlockObject(splitStatBlock.entries())
+  const characterHeroLab = processStatBlockObject(Object.assign({}, splitStatBlock))
 
   console.log("Hero Lab Data")
   console.log(characterHeroLab)
@@ -18,20 +18,22 @@ const processStatBlockObject = statBlockObject => {
   const characterHeroLab = new HeroLabCharacter(statBlockObject[0])
   delete statBlockObject[0]
 
-  const findString = string => characterStatArray.find(element => element.includes(string))
-
-  //Player Character
-  //hlCharacter.METATYPE = findString('METATYPE: ')
-  //hlCharacter.attributes = findString('EDG ')
-  //hlCharacter['Condition Monitor (P/S)'] = findString('Condition Monitor')
-  //hlCharacter.Armor = findString('Armor: ')
-  //hlCharacter.Limits = findString('Limits: ')
-  //hlCharacter['Physical Initiative'] = findString('Physical Initiative:')
-  //hlCharacter['Active Skills'] = findString('Active Skills: ')
-  //hlCharacter['Knowledge Skills'] = findString('Knowledge Skills: ')
-  //hlCharacter['Languages: '] = findString('Languages: ')
-  //hlCharacter['Metatype Abilities: '] = findString('Metatype Abilities: ')
-  //hlCharacter['Qualities: '] = findString('Qualities: ')
+  const findStringInArray = (array, string) => array.find(element => element.includes(string))
+  
+  for (let [key, findString] of Object.entries(characterHeroLab)) {
+    if (key != 'name' && key != 'repeating') {
+      if (findStringInArray(Object.values(statBlockObject), findString)) {
+        for (let [indexKey, value] of Object.entries(statBlockObject)) {
+          if (value.includes(findString)) {
+            characterHeroLab[key] = key === 'attributes' ? value : value.split(findString)[1]
+            delete statBlockObject[indexKey]
+          }
+        } 
+      } else {
+        characterHeroLab[key] = ''
+      }
+    }
+  }
 
  // hlCharacter['Augmentations:'] = findNestedEntries(characterStatArray, 'Augmentations')
 

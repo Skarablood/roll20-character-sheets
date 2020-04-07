@@ -1,9 +1,9 @@
 class HeroLabCharacter {
   constructor(name) {
-    this.name = name || ''
+    this.name = name || 'Unamed Hero'
     this.metatype = 'METATYPE: '
     this.attributes = 'EDG ' //Vehicles, Spirits, Sprites, Critters may not have this attribute adjust as needed
-    this.condition_monitors = 'Condition Monitor'
+    this.condition_monitors = 'Condition Monitor '
     this.armor = 'Armor: '
     this.limits = 'Limits: '
     this.physical_initiative = 'Physical Initiative: '
