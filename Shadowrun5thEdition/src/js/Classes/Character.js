@@ -5,4 +5,18 @@ class Character {
   }
 }
 
+class NPC extends Character {
+  constructor(name) {
+    super(name)
+
+  }
+}
+
+class PC extends Character {
+  constructor(name) {
+    super(name)
+    this.metatype = ''
+  }  
+}
+
 

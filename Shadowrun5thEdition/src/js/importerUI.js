@@ -19,7 +19,7 @@ on("clicked:import", () => {
 	if (mancerValues.builder === "Hero Lab") {
 		importerHeroLabProcess(mancerValues)
 	} else if (mancerValues.builder === "Chummer") {
-		importerChummerProcessor(mancerValues)
+		chummerImporter(mancerValues)
 	} else {
 		console.warn("Builder type not selected")
 	}

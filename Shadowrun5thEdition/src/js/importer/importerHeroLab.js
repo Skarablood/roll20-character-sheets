@@ -7,40 +7,35 @@ const herolabDirections = `
   
 const importerHeroLabProcess = mancerValues => {
   const rawStatBlockArray = mancerValues.importedData.split("\n")
-  const characterStatArray = removeUnnecessaryElements(rawStatBlockArray)
-  const hlCharacter = importerHeroLabBuildCharacter(characterStatArray.entries())
-  const character = new Character(characterStatArray.shift())
-
-  //console.log(characterStatArray)
+  const splitStatBlock = removeUnnecessaryElements(rawStatBlockArray)
+  const characterHeroLab = processStatBlockObject(splitStatBlock.entries())
 
   console.log("Hero Lab Data")
-  console.log(hlCharacter)
-
-  //console.log("CHARACTER")
-  //console.log(character)
+  console.log(characterHeroLab)
 }
 
-const importerHeroLabBuildCharacter = characterStatArray => {
-  let hlCharacter = {}
+const processStatBlockObject = statBlockObject => {
+  const characterHeroLab = new HeroLabCharacter(statBlockObject[0])
+  delete statBlockObject[0]
 
   const findString = string => characterStatArray.find(element => element.includes(string))
 
   //Player Character
-  hlCharacter.METATYPE = findString('METATYPE: ')
-  hlCharacter.attributes = findString('EDG ')
-  hlCharacter['Condition Monitor (P/S)'] = findString('Condition Monitor')
-  hlCharacter.Armor = findString('Armor: ')
-  hlCharacter.Limits = findString('Limits: ')
-  hlCharacter['Physical Initiative'] = findString('Physical Initiative:')
-  hlCharacter['Active Skills'] = findString('Active Skills: ')
-  hlCharacter['Knowledge Skills'] = findString('Knowledge Skills: ')
-  hlCharacter['Languages: '] = findString('Languages: ')
-  hlCharacter['Metatype Abilities: '] = findString('Metatype Abilities: ')
-  hlCharacter['Qualities: '] = findString('Qualities: ')
+  //hlCharacter.METATYPE = findString('METATYPE: ')
+  //hlCharacter.attributes = findString('EDG ')
+  //hlCharacter['Condition Monitor (P/S)'] = findString('Condition Monitor')
+  //hlCharacter.Armor = findString('Armor: ')
+  //hlCharacter.Limits = findString('Limits: ')
+  //hlCharacter['Physical Initiative'] = findString('Physical Initiative:')
+  //hlCharacter['Active Skills'] = findString('Active Skills: ')
+  //hlCharacter['Knowledge Skills'] = findString('Knowledge Skills: ')
+  //hlCharacter['Languages: '] = findString('Languages: ')
+  //hlCharacter['Metatype Abilities: '] = findString('Metatype Abilities: ')
+  //hlCharacter['Qualities: '] = findString('Qualities: ')
 
-  hlCharacter['Augmentations:'] = findNestedEntries(characterStatArray, 'Augmentations')
+ // hlCharacter['Augmentations:'] = findNestedEntries(characterStatArray, 'Augmentations')
 
-  return hlCharacter
+  return characterHeroLab
 }
 
 const findIndexOfString = (array, string) => {
