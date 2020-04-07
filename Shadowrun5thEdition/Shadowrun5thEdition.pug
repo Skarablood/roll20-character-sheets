@@ -93,8 +93,10 @@ script(type="text/worker")
 
 	include src/js/attributes.js
 
+	//- Classes
 	include src/js/Classes/PrimaryWeapon.js
 	include src/js/Classes/PrimaryArmor.js
+	include src/js/Classes/Character.js
 
 	//- Generic helper functions used by shadowrunFunctions
 	//- Has unit tests
@@ -115,6 +117,8 @@ script(type="text/worker")
 
 	//- Chummer Importer Functions
 	include src/js/importer.js
+	include src/js/importer/importerChummer.js
+	include src/js/importer/importerHeroLab.js
 	include src/js/importerUI.js
 
 //- CHUMMER IMPORTER

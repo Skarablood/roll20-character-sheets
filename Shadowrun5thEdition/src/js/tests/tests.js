@@ -7,6 +7,12 @@ QUnit.module('Shadowrun 5th Edition tests', {
   }
 })
 
+//QUnit.test('findIndexOfStringInArray find a string in an array', assert => assert.ok(findIndexOfStringInArray(['Unnamed Hero', 'Critter (Dog)', 'Movement: x2/x8/+4'], 'Movement:'), 2))
+
+QUnit.test('removeUnnecessaryElements remove entries with Shadowrun © 2005', assert => assert.ok(removeUnnecessaryElements(['Shadowrun © 2005', 'armor: 2']), ['armor: 2']))
+QUnit.test('removeUnnecessaryElements remove entries with Hero Lab', assert => assert.ok(removeUnnecessaryElements(['Hero Lab', 'armor: 2']), ['armor: 2']))
+QUnit.test('removeUnnecessaryElements remove empty entries', assert => assert.ok(removeUnnecessaryElements(['', 'armor: 2']), ['armor: 2']))
+
 QUnit.test('setAttributes returns error if update is not an object', assert => assert.throws(processingFunctions.setAttributes(6)))
 
 QUnit.test('parseIntegers returns a number', assert => {

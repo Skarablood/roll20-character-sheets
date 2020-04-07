@@ -1,10 +1,6 @@
 
-	//IMPORTERS
-	const importHeroLab = (character) => {
-		console.log(`%c HERO LAB IMPORTER:`, "color: purple; font-weight:bold");
-	};
 
-	const importChummer = (character) => {
+	const importChummer = character => {
 		//Match Chummer JSON keys with their sheet attribute. 
 		//Chummer name is on the left, Roll20 sheet atribute on right.
 		const jsonKeys = {
@@ -761,7 +757,7 @@
 		const mancerValues = mancerData["importer"].values;
 
 		Object.keys(mancerValues).forEach((key) => {
-			if (key == "builder" || key == "jsonData" || key == "hidden") {
+			if (key == "builder" || key == "importedData" || key == "hidden") {
 				delete mancerValues[key];
 			};
 		});
