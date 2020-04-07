@@ -1105,11 +1105,10 @@ class HeroLabCharacter {
     this.metatype_abilities = 'Metatype Abilities: '
     this.qualities = 'Qualities: '
 
-    this.repeating = {
-      "Augemenations": [],
-      "Gear": [],
-      "Weapons": []
-    }
+    this.contacts = []
+
+    //Handling the weird entries
+    this.special = ["Augemenations", "Gear", "Weapons"]
   }
 }
 
@@ -2840,35 +2839,63 @@ const herolabDirections = `
 const importerHeroLabProcess = mancerValues => {
   const rawStatBlockArray = mancerValues.importedData.split("\n")
   const splitStatBlock = removeUnnecessaryElements(rawStatBlockArray)
-  const characterHeroLab = processStatBlockObject(Object.assign({}, splitStatBlock))
+  const characterHeroLab = convertStatBlockArrayToObject(Object.assign({}, splitStatBlock))
 
   console.log("Hero Lab Data")
   console.log(characterHeroLab)
 }
 
-const processStatBlockObject = statBlockObject => {
+const convertStatBlockArrayToObject = statBlockObject => {
   const characterHeroLab = new HeroLabCharacter(statBlockObject[0])
   delete statBlockObject[0]
 
   const findStringInArray = (array, string) => array.find(element => element.includes(string))
-  
+
+  const loopThroughStatBlockObject = (key, findString) => {
+    for (let [indexKey, value] of Object.entries(statBlockObject)) {
+      if (value.includes(findString)) {
+        characterHeroLab[key] = key === 'attributes' ? value : value.split(findString)[1]
+        delete statBlockObject[indexKey]
+      }
+    } 
+  }
+
+  let statBlockValuesArray = Object.values(statBlockObject);
+  //Set character keys that are individual or a list
+  //Example "Armor: 7" or "Limits: Physical 11, Mental 5, Social 6"
   for (let [key, findString] of Object.entries(characterHeroLab)) {
-    if (key != 'name' && key != 'repeating') {
-      if (findStringInArray(Object.values(statBlockObject), findString)) {
-        for (let [indexKey, value] of Object.entries(statBlockObject)) {
-          if (value.includes(findString)) {
-            characterHeroLab[key] = key === 'attributes' ? value : value.split(findString)[1]
-            delete statBlockObject[indexKey]
-          }
-        } 
+    if (key != 'name' && key != 'special' && key != 'contacts') {
+      if (findStringInArray(statBlockValuesArray, findString)) {
+        loopThroughStatBlockObject(key, findString)
       } else {
         characterHeroLab[key] = ''
       }
     }
   }
 
- // hlCharacter['Augmentations:'] = findNestedEntries(characterStatArray, 'Augmentations')
+  const findContacts = () => {
+    contacts = []
+    for (let [indexKey, value] of Object.entries(statBlockObject)) {
+      if (value.includes('(Connection ') && value.includes(', Loyalty ')) {
+        contacts.push(value)
+        delete statBlockObject[indexKey]
+      }
+    }
 
+    return contacts
+  }
+
+  characterHeroLab.contacts = findContacts()
+
+  //Turn special nested values into a list. Example:
+  //12: "Augmentations:"
+  //13: "   Datajack (Alphaware)"
+  characterHeroLab.special.forEach(specialElement => {
+    const keyName = specialElement.toLowerCase()
+    console.log(specialElement)
+  })
+
+  
   return characterHeroLab
 }
 

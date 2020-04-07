@@ -13,11 +13,10 @@ class HeroLabCharacter {
     this.metatype_abilities = 'Metatype Abilities: '
     this.qualities = 'Qualities: '
 
-    this.repeating = {
-      "Augemenations": [],
-      "Gear": [],
-      "Weapons": []
-    }
+    this.contacts = []
+
+    //Handling the weird entries
+    this.special = ["Augemenations", "Gear", "Weapons"]
   }
 }
 

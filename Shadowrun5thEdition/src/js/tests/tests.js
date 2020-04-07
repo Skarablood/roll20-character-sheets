@@ -8,8 +8,36 @@ QUnit.module('Shadowrun 5th Edition tests', {
 })
 
 //* HERO LAB IMPORTER *//
-QUnit.test('processStatBlockObject returns a completed HeroLabCharacter using past in object', assert => {
-  const actual = processStatBlockObject({ 0: 'Quin', 1: 'METATYPE: TROLL', 2: "B 9, A 5/6, R 4, S 9/10, W 5, L 3, I 3, C 3, ESS 4.47, EDG 3" })
+QUnit.test('convertStatBlockArrayToObject returns a completed HeroLabCharacter with special attributes', assert => {
+  const expected = ["Streetline Special [Hold-out, Acc 4, DV 6P, AP –, SA, 6 (c)] w/ (10x) Regular Ammo", "Extendable Baton [Club, Reach 2, Acc 5, DV 12P, AP –]"];
+  const actual = convertStatBlockArrayToObject({ 
+    30: "Weapons:"
+    ,31: "   Streetline Special [Hold-out, Acc 4, DV 6P, AP –, SA, 6 (c)] w/ (10x) Regular Ammo"
+    ,32: "   Extendable Baton [Club, Reach 2, Acc 5, DV 12P, AP –]"
+    ,36: "Contacts:"
+  })
+  //Contacts should have be a list
+  assert.deepEqual(actual.weapons, expected)
+})
+
+QUnit.test('convertStatBlockArrayToObject returns a new HeroLabCharacter', assert => {
+  const actual = convertStatBlockArrayToObject({ 
+    0: 'Quin', 
+    1: 'METATYPE: TROLL', 
+    2: "B 9, A 5/6, R 4, S 9/10, W 5, L 3, I 3, C 3, ESS 4.47, EDG 3",
+    30: "Weapons:",
+    31: "   Streetline Special [Hold-out, Acc 4, DV 6P, AP –, SA, 6 (c)] w/ (10x) Regular Ammo",
+    32: "   Extendable Baton [Club, Reach 2, Acc 5, DV 12P, AP –]",
+    33: "   Garrote [Exotic Melee Weapon, Reach 1, Acc 5, DV 14S, AP -6]",
+    34: "   Knife [Blade, Reach 1, Acc 5, DV 11P, AP -1]",
+    35: "   Throwing Knife x5 [Throwing Weapon, Acc 11, DV 11P, AP -1]",
+    36: "Contacts:",
+    37: "Leo Markow (Connection 4, Loyalty 3)",
+    39: "Officer Ripley (Connection 1, Loyalty 1)",
+  })
+  //Contacts should have be a list
+  assert.deepEqual(actual.contacts, ["Leo Markow (Connection 4, Loyalty 3)", "Officer Ripley (Connection 1, Loyalty 1)"])
+
   //If the statBlock value includes the string found in the classValue
   //Set the classkey equal to the statBlock value - the string
   assert.strictEqual(actual.metatype, 'TROLL')
@@ -19,13 +47,11 @@ QUnit.test('processStatBlockObject returns a completed HeroLabCharacter using pa
   assert.deepEqual(actual[1], undefined)
   //Else set the classKey to empty value
   assert.strictEqual(actual.armor, '')
-})
 
-QUnit.test('processStatBlockObject returns a new HeroLabCharacter with name equal key 0', assert => {
-  const actual = processStatBlockObject({ 0: 'Quin', 1: 'METATYPE: TROLL'})
   //add name to class & delete the first key
-  assert.ok(actual.name, "Quin")
+  assert.strictEqual(actual.name, "Quin")
   assert.ok(!actual[0], false)
+
   //returns an object
   assert.ok(typeof actual, 'object')
 })
@@ -44,8 +70,6 @@ QUnit.test('findEntriesWith return false is element lacks designated spaces', as
 QUnit.test('sliceArray returns an array thats sliced at the given index', assert => assert.ok(sliceArray(['Unnamed Hero', 'Critter (Dog)', 'Movement: x2/x8/+4'], 1), ['Critter (Dog)', 'Movement: x2/x8/+4']))
 
 QUnit.test('findIndexOfString returns the index of a string', assert => assert.ok(findIndexOfString(['Unnamed Hero', 'Critter (Dog)', 'Movement: x2/x8/+4'], 'Critter (Dog)'), 1))
-
-QUnit.test('processStatBlockObject returns an object', assert => assert.ok(typeof processStatBlockObject(['Unnamed Hero', 'Critter (Dog)', 'Movement: x2/x8/+4']), 'object'))
 
 QUnit.test('removeUnnecessaryElements remove entries with Shadowrun © 2005', assert => {
   //Remove the Shadowrun text
