@@ -16,7 +16,6 @@ const sheetAttributes = {
 
   initiative_mod: ['reaction', 'intuition', 'initiative_mod_modifier', 'initiative_mod_temp', 'initiative_mod_temp_flag'],
   astral_mod: ['intuition', 'astral_mod_modifier'],
-  matrix_mod: [],
 
   derivedAttributes: ['memory', 'composure', 'defense', 'soak', 'overflow', 'judge_intentions', 'lift_carry'],
   lift_carry: ['body', 'strength', 'lift_carry_modifier'],
