@@ -394,8 +394,8 @@
                 <input name="attr_dicepool" type="hidden" value="0"/>
                 <input class="settings-flag" name="attr_flag" type="hidden" value="settings" title="undefined_flag}"/>
                 <div class="buttons">
-                  <button name="roll_skill" type="roll" value="@{gm_toggle} &{template:rolls}{{mod=[[@{modifiers_toggle}]]}}{{wound=[[@{wounds_toggle}]]}}{{edge=[[@{edge_toggle}]]}}{{header=@{skill}}}{{base=@{display_attribute}}}{{dice=[[((@{dicepool}+@{attribute})+@{wounds_toggle}+@{modifiers_toggle}+@{edge_toggle})d6>5@{explode_toggle}]]}}{{desc=@{display_limit}}}"><span name="attr_display"></span></button>
-                  <button name="roll_specialization" type="roll" value="@{gm_toggle} &{template:rolls}{{mod=[[@{modifiers_toggle}]]}}{{wound=[[@{wounds_toggle}]]}}{{edge=[[@{edge_toggle}]]}}{{header=@{skill}}}{{base=@{display_attribute}}}{{dice=[[((@{dicepool}+@{attribute}+2)+@{wounds_toggle}+@{modifiers_toggle}+@{edge_toggle})d6>5@{explode_toggle}]]}}{{desc=Spec: @{specialization}, @{display_limit}}}"><span name="attr_display_specialization"></span></button>
+                  <button data-i18n="roll_skill" name="roll_skill" type="roll" value="@{gm_toggle} &{template:rolls}{{mod=[[@{modifiers_toggle}]]}}{{wound=[[@{wounds_toggle}]]}}{{edge=[[@{edge_toggle}]]}}{{header=@{skill}}}{{base=@{display_attribute}}}{{dice=[[((@{dicepool}+@{attribute})+@{wounds_toggle}+@{modifiers_toggle}+@{edge_toggle})d6>5@{explode_toggle}]]}}{{desc=@{display_limit}}}"><span name="attr_display"></span></button>
+                  <button data-i18n="roll_specialization" name="roll_specialization" type="roll" value="@{gm_toggle} &{template:rolls}{{mod=[[@{modifiers_toggle}]]}}{{wound=[[@{wounds_toggle}]]}}{{edge=[[@{edge_toggle}]]}}{{header=@{skill}}}{{base=@{display_attribute}}}{{dice=[[((@{dicepool}+@{attribute}+2)+@{wounds_toggle}+@{modifiers_toggle}+@{edge_toggle})d6>5@{explode_toggle}]]}}{{desc=Spec: @{specialization}, @{display_limit}}}"><span name="attr_display_specialization"></span></button>
                 </div><span class="text-align-center" name="attr_display_rating" title="@{repeating_skills_${x}_display_rating}"></span>
                 <select class="attribute-select" name="attr_attribute" title="undefined_attribute}">
                   <option data-i18n="body" value="@{body}">Body</option>
@@ -434,27 +434,27 @@
 <option value="Tasking" data-i18n="Tasking">Tasking</option>
                   </select>
                   <label data-i18n-title="name" title="name">
-                    <input name="attr_name" placeholder="name" type="text" title="undefined_name}"/>
+                    <input name="attr_name" placeholder="name" type="text" title="undefined_name"/>
                   </label>
                   <label data-i18n-title="rating" title="rating">
-                    <input name="attr_rating" min="0" placeholder="0" type="number" title="undefined_rating}"/>
+                    <input name="attr_rating" min="0" placeholder="0" type="number" title="undefined_rating"/>
                   </label>
                   <label data-i18n-title="rating modifier" title="rating modifier"><span data-i18n="rating modifier">rating modifier</span>
-                    <input name="attr_rating_modifier" placeholder="0" type="number" title="undefined_rating_modifier}"/>
+                    <input name="attr_rating_modifier" placeholder="0" type="number" title="undefined_rating_modifier"/>
                   </label>
                   <label data-i18n-title="specialization" title="specialization"> <span data-i18n="specialization">specialization</span>
-                    <input name="attr_specialization}" placeholder="specialization" type="text" title="undefined_specialization}"/>
+                    <input name="attr_specialization" placeholder="specialization" type="text" title="undefined_specialization"/>
                   </label>
                   <label data-i18n-title="focus" title="focus"> <span data-i18n="focus">focus</span>
-                    <input name="attr_focus}" placeholder="focus" type="text" title="undefined_focus}"/>
+                    <input name="attr_focus" placeholder="focus" type="text" title="undefined_focus"/>
                   </label>
-                  <select name="attr_type" value="active" title="undefined_type}">
+                  <select name="attr_type" value="active" title="undefined_type">
                     <option data-i18n="Active" value="@{active}">Active</option>
                     <option data-i18n="Knowledge" value="@{knowledge}">Knowledge</option>
                     <option data-i18n="Language" value="@{language}">Language</option>
                   </select>
                   <label data-i18n-title="notes" title="notes"><span data-i18n="notes">Notes</span>
-                    <textarea name="attr_notes" value="" placeholder="Notes" title="undefined_notes}"></textarea>
+                    <textarea name="attr_notes" value="" placeholder="Notes" title="undefined_notes"></textarea>
                   </label>
                 </div>
               </fieldset>
