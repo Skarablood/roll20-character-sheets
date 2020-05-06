@@ -373,7 +373,7 @@
             <div class="rows repeating-container">
               <div class="row-long">
                 <input name="attr_default_display" type="hidden" value="Agility"/>
-                <button data-i18n="default" name="roll_default" type="roll" value="@{gm_toggle} &{template:rolls}{{mod=[[@{modifiers_toggle}]]}}{{wound=[[@{wounds_toggle}]]}}{{edge=[[@{edge_toggle}]]}}{{header=^{default}}}{{base=@{default_display}}}{{dice=[[((@{default_attribute}+-1)+@{wounds_toggle}+@{modifiers_toggle}+@{edge_toggle})d6>5@{explode_toggle}]]}}">default</button><span class="text-align-center">-</span>
+                <button data-i18n="default" name="roll_default" type="roll" value="@{gm_toggle} &{template:rolls}{{mod=[[@{modifiers_toggle}]]}}{{wound=[[@{wounds_toggle}]]}}{{edge=[[@{edge_toggle}]]}}{{header=^{default}}}{{base=@{default_display}}}{{dice=[[((@{default_attribute}-1)+@{wounds_toggle}+@{modifiers_toggle}+@{edge_toggle})d6>5@{explode_toggle}]]}}">default</button><span class="text-align-center">-</span>
                 <select class="attribute-select" name="attr_default_attribute" title="Skill attribute">
                   <option data-i18n="body" value="@{body}">Body</option>
                   <option data-i18n="agility" value="@{agility}" selected="selected">Agility</option>
